@@ -48,7 +48,7 @@ public class Plot : MonoBehaviour
         tower = Instantiate(entry.tower.prefab, transform.position, Quaternion.identity);
 
         Ghost ghost = tower.GetComponent<Ghost>();
-        if (ghost != null) ghost.Initialize(entry.pathIndex);
+        if (ghost != null) ghost.Initialize(entry.tower.towerId, entry.pathIndex);
 
         sr.color = startColor;
         return true;

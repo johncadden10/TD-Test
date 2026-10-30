@@ -32,16 +32,22 @@ MonoBehaviour:
         displayName: Strong Orbs
         description: Fires orbs faster and gives additional pierce.
         cost: 100
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: phantom_1_2
         displayName: Twin Orbs
         description: Fires two orbs at once.
         cost: 450
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: phantom_1_3
         displayName: Orbliteration
         description: Fires five orbs in different directions that track down stars.
         cost: 1200
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
     - pathId: phantom_path_2
       displayName: Path 2
@@ -50,17 +56,23 @@ MonoBehaviour:
         displayName: Lively Shots
         description: Increases lifetime and fires orbs faster.
         cost: 200
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: phantom_2_2
         displayName: Phantom Sense
         description: Phantoms become invisible when attacked by a star and take no
           damage.
         cost: 450
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: phantom_2_3
         displayName: Reclamation
         description: Phantoms regenerate lifetime when becoming invisible.
         cost: 1000
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
   - towerId: reaper
     displayName: Reaper
@@ -82,35 +94,46 @@ MonoBehaviour:
         description: Harvested souls that expire turn into vengeful souls that launch
           themselves at nearby stars to deal damage.
         cost: 175
+        ectoCost: 300
+        modifierPrefab: {fileID: 5066518819745044181, guid: 392fdf2b7b443674da57b2ffc5baf4d9, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_1_2
         displayName: Explosive Souls
         description: Vengeful souls deal more damage and explode on contact.
         cost: 400
+        ectoCost: 500
+        modifierPrefab: {fileID: 5066518819745044181, guid: 36fccaa24bb342944a8060d0a7eaa1fa, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_1_3
         displayName: Rapid Harvest
         description: Harvests souls much faster.
         cost: 1200
+        ectoCost: 650
+        modifierPrefab: {fileID: 5066518819745044181, guid: 361f0f6f6989b54418519f17852d5b5c, type: 3}
         icon: {fileID: 0}
     - pathId: reaper_path_2
       displayName: Path 2
       tiers:
       - upgradeId: reaper_2_1
-        displayName: Soul Jars
-        description: Harvested souls are kept in jars, and do not expire.
+        displayName: Auto Harvest
+        description: Souls are automatically collected.
         cost: 100
+        ectoCost: 250
+        modifierPrefab: {fileID: 5066518819745044181, guid: 85695eb72718b4d46bc6df3983c5bd01, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_2_2
-        displayName: Exponential Growth
+        displayName: Coworkers
         description: Souls increase in value the longer they are jarred for.
         cost: 600
+        ectoCost: 500
+        modifierPrefab: {fileID: 5066518819745044181, guid: 361097da8bd78db409a37a6008006de3, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_2_3
-        displayName: Monolith
-        description: Souls are automatically harvested into a single monolith that
-          can be collected all at once. Souls have a higher rate of increasing value.
+        displayName: Older and Wiser
+        description: Souls increase in value the longer the reaper is alive.
         cost: 1500
+        ectoCost: 725
+        modifierPrefab: {fileID: 5066518819745044181, guid: eb46d98d07fe0e94db6840c5765bc251, type: 3}
         icon: {fileID: 0}
   - towerId: banshee
     displayName: Banshee
@@ -131,17 +154,23 @@ MonoBehaviour:
         displayName: Side Effects
         description: Targets affected by outside effects take additional damage.
         cost: 175
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: banshee_1_2
         displayName: Amplify
         description: Projectiles that travel through banshee's radius are amplified,
           causing them to move faster and deal increased damage.
         cost: 400
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: banshee_1_3
         displayName: Stripping Screams
         description: Removes belted resistance from targets.
         cost: 1200
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
     - pathId: banshee_path_2
       displayName: Path 2
@@ -150,17 +179,23 @@ MonoBehaviour:
         displayName: Constructive Resonance
         description: Screams that cross paths have their damage increased significantly.
         cost: 100
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: banshee_2_2
         displayName: Worldwide Screams
         description: Drastically increases radius.
         cost: 600
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: banshee_2_3
         displayName: Rupture
         description: Targets killed in banshees radius explode, dealing massive damage
           to nearby stars.
         cost: 1500
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
   - towerId: vanish
     displayName: Vanish
@@ -181,17 +216,23 @@ MonoBehaviour:
         displayName: Quick Clouds
         description: Fires clouds much faster.
         cost: 175
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: vanish_1_2
         displayName: Cloudburst
         description: Clouds blow up after a short delay upon impact, dealing damage
           twice.
         cost: 400
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: vanish_1_3
         displayName: Multi-Cloud
         description: Fires three clouds at once.
         cost: 1200
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
     - pathId: vanish_path_2
       displayName: Path 2
@@ -200,16 +241,22 @@ MonoBehaviour:
         displayName: Improved Stats
         description: Increases range, pierce, and projectile speed.
         cost: 100
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: vanish_2_2
         displayName: Don't Vanish
         description: Greatly increases lifetime.
         cost: 600
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: vanish_2_3
         displayName: Cirrostratus
         description: Clouds are no longer projectiles or magic type damage.
         cost: 1500
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
   - towerId: spirit
     displayName: Spirit
@@ -230,16 +277,22 @@ MonoBehaviour:
         displayName: Frozen Solid
         description: Slow effect becomes a freeze that locks stars in place temporarily.
         cost: 175
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: spirit_1_2
         displayName: Permafrost
         description: Stars move slower even after thawing.
         cost: 400
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: spirit_1_3
         displayName: Stronger Freeze
         description: Attacks can freeze larger stars like galaxies.
         cost: 1200
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
     - pathId: spirit_path_2
       displayName: Path 2
@@ -248,16 +301,22 @@ MonoBehaviour:
         displayName: Improved Aura
         description: Increases range and attack speed.
         cost: 100
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: spirit_2_2
         displayName: Frostbite
         description: Attacks cause slowed stars to be vulnerable and deal less damage.
         cost: 600
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: spirit_2_3
         displayName: Viral Frost
         description: Ice beams now have a splash effect.
         cost: 1500
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
   - towerId: poltergeist
     displayName: Poltergeist
@@ -278,16 +337,22 @@ MonoBehaviour:
         displayName: Good Arm
         description: Sharper shards pierce targets and travel faster.
         cost: 175
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: poltergeist_1_2
         displayName: Backtrack
         description: Periodically throws targets backwards on the track.
         cost: 400
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: poltergeist_1_3
         displayName: Shattering Shards
         description: Shards split off into fragments at the end of their travel time.
         cost: 1200
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
     - pathId: poltergeist_path_2
       displayName: Path 2
@@ -296,18 +361,24 @@ MonoBehaviour:
         displayName: Tighter Spread
         description: Shards are thrown with reduced spread.
         cost: 100
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: poltergeist_2_2
         displayName: Bowling Ball
         description: High damage boulders are rolled forward, and explode with debris
           attack upon contact with a star.
         cost: 600
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: poltergeist_2_3
         displayName: Gutter Ball
         description: Boulders that come in contact with the track roll backwards
           along the path.
         cost: 1500
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
   - towerId: yokai
     displayName: Yokai
@@ -330,17 +401,23 @@ MonoBehaviour:
         description: Yokai's burst leaves behind flames in its radius that persist
           for a period of time.
         cost: 175
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: yokai_1_2
         displayName: Stunning Blast
         description: Any star that takes damage from the residual flames is stunned
           until the disappear.
         cost: 400
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: yokai_1_3
         displayName: Nuclear Explosion
         description: Gives additional range.
         cost: 1200
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
     - pathId: yokai_path_2
       displayName: Path 2
@@ -349,15 +426,21 @@ MonoBehaviour:
         displayName: Restoration
         description: Burst gives ghosts half of their lifetime back.
         cost: 100
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: yokai_2_2
         displayName: Overstay
         description: Yokai's burst can now overheal ghosts.
         cost: 600
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}
       - upgradeId: yokai_2_3
         displayName: Thrive
         description: Yokai's burst gives ghosts even more of their lifetime back;
           ghosts have increased rate of fire while overhealed.
         cost: 1500
+        ectoCost: 0
+        modifierPrefab: {fileID: 0}
         icon: {fileID: 0}

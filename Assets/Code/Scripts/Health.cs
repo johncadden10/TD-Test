@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     private bool isDestroyed = false;
 
     public int LivesWorth => livesToSubtract;
+    public int HitPoints => hitPoints;
 
     public void TakeDamage(int dmg)
     {

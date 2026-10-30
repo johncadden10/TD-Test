@@ -1,5 +1,4 @@
 using System.IO;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
@@ -8,9 +7,32 @@ public class SaveManager : MonoBehaviour
 
     private const int SAVE_SLOTS = 3;
     private const string SAVE_PREFIX = "save_slot_";
+    private const int DefaultSlot = 0; // slot used when nothing was chosen in the menu
 
-    public SaveData CurrentSave { get; private set; }
+    private SaveData currentSave;
     public int CurrentSlot { get; private set; } = -1;
+
+    // loads the default slot automatically if nobody has chosen one yet
+    public SaveData CurrentSave
+    {
+        get
+        {
+            if (currentSave == null)
+            {
+                Debug.Log($"No slot selected, auto-loading slot {DefaultSlot}");
+                LoadSlot(DefaultSlot);
+            }
+            return currentSave;
+        }
+    }
+
+    // creates a SaveManager if the scene you started from doesn't have one
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Bootstrap()
+    {
+        if (main == null)
+            new GameObject("SaveManager").AddComponent<SaveManager>();
+    }
 
     private void Awake()
     {
@@ -22,60 +44,43 @@ public class SaveManager : MonoBehaviour
         main = this;
         DontDestroyOnLoad(gameObject);
     }
-    /*
-    private void Start()
-    {
-        if (CurrentSlot < 0)
-        {
-            Debug.Log("No save slot loaded, auto-loading slot 0 for testing");
-            LoadSlot(0);
-        }
-    } */
 
     public void LoadSlot(int slot)
     {
-        CurrentSlot = slot; // must be set BEFORE any save call
+        CurrentSlot = slot; // must be set before any save call
 
         string path = GetPath(slot);
         if (File.Exists(path))
         {
-            string json = File.ReadAllText(path);
-            CurrentSave = JsonUtility.FromJson<SaveData>(json);
+            currentSave = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
         }
         else
         {
-            CurrentSave = new SaveData();
-            CurrentSave.saveName = $"Save {slot + 1}";
+            currentSave = new SaveData();
+            currentSave.saveName = $"Save {slot + 1}";
             SaveCurrentSlot();
         }
     }
 
     public void SaveCurrentSlot()
     {
-        if (CurrentSlot < 0) return;
-        string json = JsonUtility.ToJson(CurrentSave, true);
-        File.WriteAllText(GetPath(CurrentSlot), json);
+        if (CurrentSlot < 0 || currentSave == null) return;
+        File.WriteAllText(GetPath(CurrentSlot), JsonUtility.ToJson(currentSave, true));
     }
 
     public void DeleteSlot(int slot)
     {
         string path = GetPath(slot);
-        if (File.Exists(path))
-            File.Delete(path);
+        if (File.Exists(path)) File.Delete(path);
     }
 
     public SaveData PeekSlot(int slot)
     {
         string path = GetPath(slot);
-        if (File.Exists(path))
-            return JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
-        return null;
+        return File.Exists(path) ? JsonUtility.FromJson<SaveData>(File.ReadAllText(path)) : null;
     }
 
-    public bool SlotExists(int slot)
-    {
-        return File.Exists(GetPath(slot));
-    }
+    public bool SlotExists(int slot) => File.Exists(GetPath(slot));
 
     private string GetPath(int slot)
     {

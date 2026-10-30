@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using System;
+using System.Collections.Generic;
 
 public abstract class Ghost : MonoBehaviour
 {
@@ -19,13 +21,25 @@ public abstract class Ghost : MonoBehaviour
     
     public int PathIndex { get; private set; }
     public int CurrentTier { get; private set; }
+    public string TowerId { get; private set; }
+    // stat multipliers modifiers can change
+    public float DamageMultiplier { get; set; } = 1f;
+    public float AttackSpeedMultiplier { get; set; } = 1f;
+    public float RangeBonus { get; set; } = 0f;
+
+
+    // events modifiers can subscribe to
+    public event Action<Transform> OnFired;       // call inside Shoot logic
+    public event Action OnTick;                   // call every Update
 
     protected Transform target;
     protected float timeUntilFire;
+    protected void RaiseFired(Transform t) => OnFired?.Invoke(t);
 
     public float TargetingRange => targetingRange;
 
     private bool isAttackAnimationPlaying = false;
+    private List<GhostModifier> modifiers = new List<GhostModifier>();
 
     protected virtual void Start()
     {
@@ -150,15 +164,33 @@ public abstract class Ghost : MonoBehaviour
             : new Vector3(1f, 1f, 1f);
     }
 
-    public void Initialize(int pathIndex)
+    public void Initialize(string towerId, int pathIndex)
     {
+        TowerId = towerId;
         PathIndex = pathIndex;
-    }
 
+        TowerDefinition def = LevelLoadout.entries.Find(e => e.tower.towerId == towerId).tower;
+        int tier = LevelUpgradeManager.main != null ? LevelUpgradeManager.main.GetTier(towerId) : 0;
+
+        for (int i = 0; i < tier; i++)
+        {
+            GameObject prefab = def.upgradePaths[pathIndex].tiers[i].modifierPrefab;
+            if (prefab == null) continue;
+
+            GameObject obj = Instantiate(prefab, transform);
+            foreach (GhostModifier m in obj.GetComponents<GhostModifier>())
+            {
+                m.Attach(this);
+                modifiers.Add(m);
+            }
+        }
+    }
     public virtual void ApplyUpgrade()
     {
         CurrentTier++;
     }
+
+    protected virtual void ApplyTierEffect(int pathIndex, int tierIndex) { }
 
     //private void OnDrawGizmosSelected()
     //{

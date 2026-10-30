@@ -8,6 +8,8 @@ public class UpgradeTier
     public string displayName;
     public string description;
     public int cost;
+    public int ectoCost;
+    public GameObject modifierPrefab;
     public Sprite icon;
 }
 

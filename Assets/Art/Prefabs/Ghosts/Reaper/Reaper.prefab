@@ -599,7 +599,7 @@ MonoBehaviour:
   towerAnimator: {fileID: 2548884815331398073}
   enemyMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   firingPoint: {fileID: 0}
   healthBar: {fileID: 6164741889389074283}
   targetingRange: 5
@@ -607,9 +607,12 @@ MonoBehaviour:
   lifetime: 100
   attackDamage: 10
   preDeathDuration: 1
-  reaperText: {fileID: 897683388670816920}
+  reaperEffect: {fileID: 897683388670816920}
+  soulPrefab: {fileID: 2225912334050266548, guid: cc69a79b0d58b704c8fb3a3a0f24ad14, type: 3}
+  vengefulSoulPrefab: {fileID: 4852131558035956408, guid: dfb297e4b809d0d459d9522826c8a6a9, type: 3}
   currencyGain: 25
-  generationSpeed: 13.5
+  generationSpeed: 11
+  vengefulBaseDamage: 50
 --- !u!212 &4714573070721817640
 SpriteRenderer:
   m_ObjectHideFlags: 0
