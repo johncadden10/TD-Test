@@ -1,0 +1,920 @@
+fileFormatVersion: 2
+guid: 90e0b03e5b1dfad4eb19236b0552414d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1502894127881087160
+    second: SpiritAttackSS_0
+  - first:
+      213: -7291473201102317487
+    second: SpiritAttackSS_1
+  - first:
+      213: -3440755170498897524
+    second: SpiritAttackSS_2
+  - first:
+      213: 1914838211963635747
+    second: SpiritAttackSS_3
+  - first:
+      213: 8027225562901895596
+    second: SpiritAttackSS_4
+  - first:
+      213: -7482721639006957696
+    second: SpiritAttackSS_5
+  - first:
+      213: 5755096985684625029
+    second: SpiritAttackSS_6
+  - first:
+      213: 89148433744220302
+    second: SpiritAttackSS_7
+  - first:
+      213: 7723938874508299575
+    second: SpiritAttackSS_8
+  - first:
+      213: 7194034438605061470
+    second: SpiritAttackSS_9
+  - first:
+      213: -1385102018495382010
+    second: SpiritAttackSS_10
+  - first:
+      213: -4258764315296762866
+    second: SpiritAttackSS_11
+  - first:
+      213: 2448429686782131576
+    second: SpiritAttackSS_12
+  - first:
+      213: -1847386972910396570
+    second: SpiritAttackSS_13
+  - first:
+      213: -8616384294791692363
+    second: SpiritAttackSS_14
+  - first:
+      213: 599754317883339589
+    second: SpiritAttackSS_15
+  - first:
+      213: -5807135006767119954
+    second: SpiritAttackSS_16
+  - first:
+      213: -3298942337393328696
+    second: SpiritAttackSS_17
+  - first:
+      213: -4389776276064836540
+    second: SpiritAttackSS_18
+  - first:
+      213: -8307027670355069820
+    second: SpiritAttackSS_19
+  - first:
+      213: 3222000978599406333
+    second: SpiritAttackSS_20
+  - first:
+      213: -5686734713614543822
+    second: SpiritAttackSS_21
+  - first:
+      213: 4754306073551306773
+    second: SpiritAttackSS_22
+  - first:
+      213: 434572394250051261
+    second: SpiritAttackSS_23
+  - first:
+      213: 5282440658510433017
+    second: SpiritAttackSS_24
+  - first:
+      213: -7558316660700081201
+    second: SpiritAttackSS_25
+  - first:
+      213: -3210248821205338641
+    second: SpiritAttackSS_26
+  - first:
+      213: -6629450424979808963
+    second: SpiritAttackSS_27
+  - first:
+      213: -2891487287933958079
+    second: SpiritAttackSS_28
+  - first:
+      213: -1366063983773098617
+    second: SpiritAttackSS_29
+  - first:
+      213: 3387367506619123840
+    second: SpiritAttackSS_30
+  - first:
+      213: -6260102075523592347
+    second: SpiritAttackSS_31
+  - first:
+      213: 3892907832529211777
+    second: SpiritAttackSS_32
+  - first:
+      213: 6839014648464137743
+    second: SpiritAttackSS_33
+  - first:
+      213: -732952165561846179
+    second: SpiritAttackSS_34
+  - first:
+      213: 9170107894832679121
+    second: SpiritAttackSS_35
+  - first:
+      213: -75991978077840283
+    second: SpiritAttackSS_36
+  - first:
+      213: -8352655678649592864
+    second: SpiritAttackSS_37
+  - first:
+      213: 5121733861090151254
+    second: SpiritAttackSS_38
+  - first:
+      213: -1219030869833540157
+    second: SpiritAttackSS_39
+  - first:
+      213: 1359465581231797848
+    second: SpiritAttackSS_40
+  - first:
+      213: -2181267603252560463
+    second: SpiritAttackSS_41
+  - first:
+      213: 5527939833205927884
+    second: SpiritAttackSS_42
+  - first:
+      213: -1277161701785169127
+    second: SpiritAttackSS_43
+  - first:
+      213: 4405562188932531204
+    second: SpiritAttackSS_44
+  - first:
+      213: -2010658015691236558
+    second: SpiritAttackSS_45
+  - first:
+      213: -7723546132226679866
+    second: SpiritAttackSS_46
+  - first:
+      213: 3480151616295054041
+    second: SpiritAttackSS_47
+  - first:
+      213: 694489077104340522
+    second: SpiritAttackSS_48
+  - first:
+      213: 3775250487516156184
+    second: SpiritAttackSS_49
+  - first:
+      213: -7397195229416355947
+    second: SpiritAttackSS_50
+  - first:
+      213: -2301463535758489803
+    second: SpiritAttackSS_51
+  - first:
+      213: -5813078499121929180
+    second: SpiritAttackSS_52
+  - first:
+      213: 6932201554233010810
+    second: SpiritAttackSS_53
+  - first:
+      213: 3717999434151642011
+    second: SpiritAttackSS_54
+  - first:
+      213: -4520109845184712510
+    second: SpiritAttackSS_55
+  - first:
+      213: 5269374807967013981
+    second: SpiritAttackSS_56
+  - first:
+      213: -8819061408979472440
+    second: SpiritAttackSS_57
+  - first:
+      213: -3772310359450371301
+    second: SpiritAttackSS_58
+  - first:
+      213: -3101973748315133468
+    second: SpiritAttackSS_59
+  - first:
+      213: -2699709100985701017
+    second: SpiritAttackSS_60
+  - first:
+      213: -73080532141352501
+    second: SpiritAttackSS_61
+  - first:
+      213: 7223615524814228069
+    second: SpiritAttackSS_62
+  - first:
+      213: 978934602085846606
+    second: SpiritAttackSS_63
+  - first:
+      213: -5770150578552916306
+    second: SpiritAttackSS_64
+  - first:
+      213: 767852630376147466
+    second: SpiritAttackSS_65
+  - first:
+      213: 6332485168521835965
+    second: SpiritAttackSS_66
+  - first:
+      213: 2601234613235695274
+    second: SpiritAttackSS_67
+  - first:
+      213: -8320397753048357295
+    second: SpiritAttackSS_68
+  - first:
+      213: 5889745014513625318
+    second: SpiritAttackSS_69
+  - first:
+      213: 328314154230385031
+    second: SpiritAttackSS_70
+  - first:
+      213: -2963215064388587848
+    second: SpiritAttackSS_71
+  - first:
+      213: -8082778185045510950
+    second: SpiritAttackSS_72
+  - first:
+      213: -8002916130926387066
+    second: SpiritAttackSS_73
+  - first:
+      213: -6334647869167036721
+    second: SpiritAttackSS_74
+  - first:
+      213: -2047580423756370453
+    second: SpiritAttackSS_75
+  - first:
+      213: 7049470045194977339
+    second: SpiritAttackSS_76
+  - first:
+      213: 1104988732446362811
+    second: SpiritAttackSS_77
+  - first:
+      213: 5893289896532438991
+    second: SpiritAttackSS_78
+  - first:
+      213: 4203907752362753956
+    second: SpiritAttackSS_79
+  - first:
+      213: -1053089715600365541
+    second: SpiritAttackSS_80
+  - first:
+      213: -8079424764583899927
+    second: SpiritAttackSS_81
+  - first:
+      213: -6247458262986622677
+    second: SpiritAttackSS_82
+  - first:
+      213: 5879080064192726868
+    second: SpiritAttackSS_83
+  - first:
+      213: -7263479440605809954
+    second: SpiritAttackSS_84
+  - first:
+      213: 2702765605033256443
+    second: SpiritAttackSS_85
+  - first:
+      213: -3053626977098513050
+    second: SpiritAttackSS_86
+  - first:
+      213: -6353258315210336264
+    second: SpiritAttackSS_87
+  - first:
+      213: -3129259918750346978
+    second: SpiritAttackSS_88
+  - first:
+      213: 5264500055166207638
+    second: SpiritAttackSS_89
+  - first:
+      213: 6879310693614022157
+    second: SpiritAttackSS_90
+  - first:
+      213: 7150902190630127908
+    second: SpiritAttackSS_91
+  - first:
+      213: -8456123502746046395
+    second: SpiritAttackSS_92
+  - first:
+      213: -1126996231939073869
+    second: SpiritAttackSS_93
+  - first:
+      213: -6628506031447331261
+    second: SpiritAttackSS_94
+  - first:
+      213: 1375733072525297093
+    second: SpiritAttackSS_95
+  - first:
+      213: -1800223246263132522
+    second: SpiritAttackSS_96
+  - first:
+      213: 8437866372530066672
+    second: SpiritAttackSS_97
+  - first:
+      213: -8985333170189908503
+    second: SpiritAttackSS_98
+  - first:
+      213: -6070297577597811726
+    second: SpiritAttackSS_99
+  - first:
+      213: -3416976131060559372
+    second: SpiritAttackSS_100
+  - first:
+      213: -2750478722080238128
+    second: SpiritAttackSS_101
+  - first:
+      213: -8229853058814174897
+    second: SpiritAttackSS_102
+  - first:
+      213: -7982161146431620527
+    second: SpiritAttackSS_103
+  - first:
+      213: -6728949922808640140
+    second: SpiritAttackSS_104
+  - first:
+      213: 2967388212210205617
+    second: SpiritAttackSS_105
+  - first:
+      213: -8182783621538660384
+    second: SpiritAttackSS_106
+  - first:
+      213: 3904916501611550804
+    second: SpiritAttackSS_107
+  - first:
+      213: -3152232912974286533
+    second: SpiritAttackSS_108
+  - first:
+      213: -5428560975718961908
+    second: SpiritAttackSS_109
+  - first:
+      213: 400872741490195470
+    second: SpiritAttackSS_110
+  - first:
+      213: 5762511387117317208
+    second: SpiritAttackSS_111
+  - first:
+      213: -1165787819109680105
+    second: SpiritAttackSS_112
+  - first:
+      213: -2247043287249899070
+    second: SpiritAttackSS_113
+  - first:
+      213: 3549599394926755659
+    second: SpiritAttackSS_114
+  - first:
+      213: -280685104766151167
+    second: SpiritAttackSS_115
+  - first:
+      213: -8722835850007368857
+    second: SpiritAttackSS_116
+  - first:
+      213: -4880934052980498355
+    second: SpiritAttackSS_117
+  - first:
+      213: 3695970962529700207
+    second: SpiritAttackSS_118
+  - first:
+      213: 670028898767458874
+    second: SpiritAttackSS_119
+  - first:
+      213: 937003831636831965
+    second: SpiritAttackSS_120
+  - first:
+      213: -2694856476750081912
+    second: SpiritAttackSS_121
+  - first:
+      213: 5870203825230456006
+    second: SpiritAttackSS_122
+  - first:
+      213: 1872198650856942812
+    second: SpiritAttackSS_123
+  - first:
+      213: -7577377474287399214
+    second: SpiritAttackSS_124
+  - first:
+      213: -1844422861365446542
+    second: SpiritAttackSS_125
+  - first:
+      213: -272057166311692330
+    second: SpiritAttackSS_126
+  - first:
+      213: -5624309356259803711
+    second: SpiritAttackSS_127
+  - first:
+      213: 5022203269022525517
+    second: SpiritAttackSS_128
+  - first:
+      213: -1106334793650208500
+    second: SpiritAttackSS_129
+  - first:
+      213: -3339844838929035774
+    second: SpiritAttackSS_130
+  - first:
+      213: -6415687962804842097
+    second: SpiritAttackSS_131
+  - first:
+      213: 2221530938488448411
+    second: SpiritAttackSS_132
+  - first:
+      213: 3533973616513347719
+    second: SpiritAttackSS_133
+  - first:
+      213: -7998021339558224210
+    second: SpiritAttackSS_134
+  - first:
+      213: -5775743211854883354
+    second: SpiritAttackSS_135
+  - first:
+      213: 5288499406892605456
+    second: SpiritAttackSS_136
+  - first:
+      213: 3116692607742696399
+    second: SpiritAttackSS_137
+  - first:
+      213: 5003308689318613067
+    second: SpiritAttackSS_138
+  - first:
+      213: 680026964687559611
+    second: SpiritAttackSS_139
+  - first:
+      213: 1004597304627872285
+    second: SpiritAttackSS_140
+  - first:
+      213: 2756294252129864484
+    second: SpiritAttackSS_141
+  - first:
+      213: 5374237884267082671
+    second: SpiritAttackSS_142
+  - first:
+      213: -1775399933637363251
+    second: SpiritAttackSS_143
+  - first:
+      213: 7984137667749924364
+    second: SpiritAttackSS_144
+  - first:
+      213: -3789386455137672173
+    second: SpiritAttackSS_145
+  - first:
+      213: 535038425087868151
+    second: SpiritAttackSS_146
+  - first:
+      213: -7249514981566867820
+    second: SpiritAttackSS_147
+  - first:
+      213: -373370195323496900
+    second: SpiritAttackSS_148
+  - first:
+      213: -7893345349658245748
+    second: SpiritAttackSS_149
+  - first:
+      213: 7459515997706938273
+    second: SpiritAttackSS_150
+  - first:
+      213: 2607256721729321938
+    second: SpiritAttackSS_151
+  - first:
+      213: 5539548513028157593
+    second: SpiritAttackSS_152
+  - first:
+      213: -3682772256098780941
+    second: SpiritAttackSS_153
+  - first:
+      213: -5767374995980858674
+    second: SpiritAttackSS_154
+  - first:
+      213: 9128814407193308346
+    second: SpiritAttackSS_155
+  - first:
+      213: -4783626978011458240
+    second: SpiritAttackSS_156
+  - first:
+      213: -8524868759538661937
+    second: SpiritAttackSS_157
+  - first:
+      213: 173356146322153915
+    second: SpiritAttackSS_158
+  - first:
+      213: -2420427658756764555
+    second: SpiritAttackSS_159
+  - first:
+      213: 4970845430133009072
+    second: SpiritAttackSS_160
+  - first:
+      213: 2015589068981080564
+    second: SpiritAttackSS_161
+  - first:
+      213: -7503297218927792557
+    second: SpiritAttackSS_162
+  - first:
+      213: -3642531357814596562
+    second: SpiritAttackSS_163
+  - first:
+      213: -6320424096158945533
+    second: SpiritAttackSS_164
+  - first:
+      213: 3983788241734676780
+    second: SpiritAttackSS_165
+  - first:
+      213: -5278534271046126840
+    second: SpiritAttackSS_166
+  - first:
+      213: -2352895295267490414
+    second: SpiritAttackSS_167
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpiritAttackSS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b86f532f3a5bd410800000000000000
+      internalID: 1502894127881087160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 158140761cb7fca90800000000000000
+      internalID: -7291473201102317487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89135ff66bff30d0800000000000000
+      internalID: -3440755170498897524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328cf62653fd29a10800000000000000
+      internalID: 1914838211963635747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca9d3b09e1f666f60800000000000000
+      internalID: 8027225562901895596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08f8cd18058082890800000000000000
+      internalID: -7482721639006957696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58647a777363edf40800000000000000
+      internalID: 5755096985684625029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_7
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e805b953708bc3100800000000000000
+      internalID: 89148433744220302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_8
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73dc5e1bb71f03b60800000000000000
+      internalID: 7723938874508299575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_9
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d3bfec43856d360800000000000000
+      internalID: 7194034438605061470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ef7e18d0127cce0800000000000000
+      internalID: -1385102018495382010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_11
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0470ac4b64d5e4c0800000000000000
+      internalID: -4258764315296762866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritAttackSS_12
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87d7b2ae3d19af120800000000000000
+      internalID: 2448429686782131576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 544c381c759a52b41999f61d82df0f06
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpiritAttackSS_0: 1502894127881087160
+      SpiritAttackSS_1: -7291473201102317487
+      SpiritAttackSS_10: -1385102018495382010
+      SpiritAttackSS_11: -4258764315296762866
+      SpiritAttackSS_12: 2448429686782131576
+      SpiritAttackSS_2: -3440755170498897524
+      SpiritAttackSS_3: 1914838211963635747
+      SpiritAttackSS_4: 8027225562901895596
+      SpiritAttackSS_5: -7482721639006957696
+      SpiritAttackSS_6: 5755096985684625029
+      SpiritAttackSS_7: 89148433744220302
+      SpiritAttackSS_8: 7723938874508299575
+      SpiritAttackSS_9: 7194034438605061470
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3677c5a2399d14aa1a94188990fa5a, type: 3}
+  m_Name: EnemyRegistry
+  m_EditorClassIdentifier: 
+  enemies:
+  - enemyId: red_star
+    displayName: Red Star
+    description: Weakest basic star
+    icon: {fileID: -8284390914871688179, guid: f78e4b89c73d5b744874fa56b298c15b, type: 3}
+  - enemyId: yellow_star
+    displayName: Yellow Star
+    description: Average basic star
+    icon: {fileID: -3768136888096122267, guid: 3c690e864371ab9479e745b48b1fde6e, type: 3}
+  - enemyId: blue_star
+    displayName: Blue Star
+    description: Toughest basic star
+    icon: {fileID: -1413163155605188201, guid: 447a969135b02574b98ba86a7a76e83d, type: 3}
+  - enemyId: galaxy
+    displayName: Galaxy
+    description: Slow, with extremely high health
+    icon: {fileID: -6479558217058493216, guid: 36cf4ef800dd1544ca4e965342eabcea, type: 3}

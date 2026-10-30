@@ -1,0 +1,363 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3baf71058d9d2445a8ed81814b94644, type: 3}
+  m_Name: TowerRegistry
+  m_EditorClassIdentifier: Assembly-CSharp::TowerRegistry
+  towers:
+  - towerId: phantom
+    displayName: Phantom
+    description: Fires seeking ghost orbs from a great distance.
+    cost: 75
+    baseRange: 0
+    baseAttackSpeed: 0
+    baseDamage: 5
+    prefab: {fileID: 2866573512344937733, guid: 127fc7bb2ed1e8b44b9c784a6bdab18d, type: 3}
+    icon: {fileID: 7263154431260547652, guid: a8edf187b2fdbe04c88c08fe4d211969, type: 3}
+    unlockedByDefault: 1
+    unlockedAfterLevel: 0
+    upgradePaths:
+    - pathId: phantom_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: phantom_1_1
+        displayName: Strong Orbs
+        description: Fires orbs faster and gives additional pierce.
+        cost: 100
+        icon: {fileID: 0}
+      - upgradeId: phantom_1_2
+        displayName: Twin Orbs
+        description: Fires two orbs at once.
+        cost: 450
+        icon: {fileID: 0}
+      - upgradeId: phantom_1_3
+        displayName: Orbliteration
+        description: Fires five orbs in different directions that track down stars.
+        cost: 1200
+        icon: {fileID: 0}
+    - pathId: phantom_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: phantom_2_1
+        displayName: Lively Shots
+        description: Increases lifetime and fires orbs faster.
+        cost: 200
+        icon: {fileID: 0}
+      - upgradeId: phantom_2_2
+        displayName: Phantom Sense
+        description: Phantoms become invisible when attacked by a star and take no
+          damage.
+        cost: 450
+        icon: {fileID: 0}
+      - upgradeId: phantom_2_3
+        displayName: Reclamation
+        description: Phantoms regenerate lifetime when becoming invisible.
+        cost: 1000
+        icon: {fileID: 0}
+  - towerId: reaper
+    displayName: Reaper
+    description: Harvests souls that can be collected for ecto.
+    cost: 125
+    baseRange: 0
+    baseAttackSpeed: 0
+    baseDamage: 0
+    prefab: {fileID: 8801678570361711476, guid: df494da4b4aa86c42a366810a50d1f88, type: 3}
+    icon: {fileID: 4178998774675028891, guid: d83ee7849ea7ffd478eadf9795bef75a, type: 3}
+    unlockedByDefault: 1
+    unlockedAfterLevel: 0
+    upgradePaths:
+    - pathId: reaper_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: reaper_1_1
+        displayName: Vengeful Souls
+        description: Harvested souls that expire turn into vengeful souls that launch
+          themselves at nearby stars to deal damage.
+        cost: 175
+        icon: {fileID: 0}
+      - upgradeId: reaper_1_2
+        displayName: Explosive Souls
+        description: Vengeful souls deal more damage and explode on contact.
+        cost: 400
+        icon: {fileID: 0}
+      - upgradeId: reaper_1_3
+        displayName: Rapid Harvest
+        description: Harvests souls much faster.
+        cost: 1200
+        icon: {fileID: 0}
+    - pathId: reaper_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: reaper_2_1
+        displayName: Soul Jars
+        description: Harvested souls are kept in jars, and do not expire.
+        cost: 100
+        icon: {fileID: 0}
+      - upgradeId: reaper_2_2
+        displayName: Exponential Growth
+        description: Souls increase in value the longer they are jarred for.
+        cost: 600
+        icon: {fileID: 0}
+      - upgradeId: reaper_2_3
+        displayName: Monolith
+        description: Souls are automatically harvested into a single monolith that
+          can be collected all at once. Souls have a higher rate of increasing value.
+        cost: 1500
+        icon: {fileID: 0}
+  - towerId: banshee
+    displayName: Banshee
+    description: Loud screams do rapid damage close by.
+    cost: 175
+    baseRange: 1.5
+    baseAttackSpeed: 0
+    baseDamage: 1
+    prefab: {fileID: 4525154340494255734, guid: f55f1947629d3c64a9d48a0051395cff, type: 3}
+    icon: {fileID: 21300000, guid: 5d7481682c04e6c46af82fed1133c09e, type: 3}
+    unlockedByDefault: 1
+    unlockedAfterLevel: 0
+    upgradePaths:
+    - pathId: banshee_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: banshee_1_1
+        displayName: Side Effects
+        description: Targets affected by outside effects take additional damage.
+        cost: 175
+        icon: {fileID: 0}
+      - upgradeId: banshee_1_2
+        displayName: Amplify
+        description: Projectiles that travel through banshee's radius are amplified,
+          causing them to move faster and deal increased damage.
+        cost: 400
+        icon: {fileID: 0}
+      - upgradeId: banshee_1_3
+        displayName: Stripping Screams
+        description: Removes belted resistance from targets.
+        cost: 1200
+        icon: {fileID: 0}
+    - pathId: banshee_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: banshee_2_1
+        displayName: Constructive Resonance
+        description: Screams that cross paths have their damage increased significantly.
+        cost: 100
+        icon: {fileID: 0}
+      - upgradeId: banshee_2_2
+        displayName: Worldwide Screams
+        description: Drastically increases radius.
+        cost: 600
+        icon: {fileID: 0}
+      - upgradeId: banshee_2_3
+        displayName: Rupture
+        description: Targets killed in banshees radius explode, dealing massive damage
+          to nearby stars.
+        cost: 1500
+        icon: {fileID: 0}
+  - towerId: vanish
+    displayName: Vanish
+    description: A cheap, short lived ghost that fires weak clouds.
+    cost: 25
+    baseRange: 2.5
+    baseAttackSpeed: 0
+    baseDamage: 3
+    prefab: {fileID: 2866573512344937733, guid: 836361f9356a8104eb9ab27eeaea0d46, type: 3}
+    icon: {fileID: -771845516268585335, guid: 9955d6b4d961c5545b656e5d97e545f5, type: 3}
+    unlockedByDefault: 1
+    unlockedAfterLevel: 0
+    upgradePaths:
+    - pathId: vanish_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: vanish_1_1
+        displayName: Quick Clouds
+        description: Fires clouds much faster.
+        cost: 175
+        icon: {fileID: 0}
+      - upgradeId: vanish_1_2
+        displayName: Cloudburst
+        description: Clouds blow up after a short delay upon impact, dealing damage
+          twice.
+        cost: 400
+        icon: {fileID: 0}
+      - upgradeId: vanish_1_3
+        displayName: Multi-Cloud
+        description: Fires three clouds at once.
+        cost: 1200
+        icon: {fileID: 0}
+    - pathId: vanish_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: vanish_2_1
+        displayName: Improved Stats
+        description: Increases range, pierce, and projectile speed.
+        cost: 100
+        icon: {fileID: 0}
+      - upgradeId: vanish_2_2
+        displayName: Don't Vanish
+        description: Greatly increases lifetime.
+        cost: 600
+        icon: {fileID: 0}
+      - upgradeId: vanish_2_3
+        displayName: Cirrostratus
+        description: Clouds are no longer projectiles or magic type damage.
+        cost: 1500
+        icon: {fileID: 0}
+  - towerId: spirit
+    displayName: Spirit
+    description: Freezes single targets with beams of ice.
+    cost: 50
+    baseRange: 2.5
+    baseAttackSpeed: 0
+    baseDamage: 0
+    prefab: {fileID: 8310401880475599105, guid: 45c1c99cec321444f814af33a2835b1c, type: 3}
+    icon: {fileID: 4559490955071778096, guid: 9c56f818206e0084890cc617ea36fc20, type: 3}
+    unlockedByDefault: 0
+    unlockedAfterLevel: 0
+    upgradePaths:
+    - pathId: spirit_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: spirit_1_1
+        displayName: Frozen Solid
+        description: Slow effect becomes a freeze that locks stars in place temporarily.
+        cost: 175
+        icon: {fileID: 0}
+      - upgradeId: spirit_1_2
+        displayName: Permafrost
+        description: Stars move slower even after thawing.
+        cost: 400
+        icon: {fileID: 0}
+      - upgradeId: spirit_1_3
+        displayName: Stronger Freeze
+        description: Attacks can freeze larger stars like galaxies.
+        cost: 1200
+        icon: {fileID: 0}
+    - pathId: spirit_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: spirit_2_1
+        displayName: Improved Aura
+        description: Increases range and attack speed.
+        cost: 100
+        icon: {fileID: 0}
+      - upgradeId: spirit_2_2
+        displayName: Frostbite
+        description: Attacks cause slowed stars to be vulnerable and deal less damage.
+        cost: 600
+        icon: {fileID: 0}
+      - upgradeId: spirit_2_3
+        displayName: Viral Frost
+        description: Ice beams now have a splash effect.
+        cost: 1500
+        icon: {fileID: 0}
+  - towerId: poltergeist
+    displayName: Poltergeist
+    description: Hurls an array of rock shards with a wide spread.
+    cost: 300
+    baseRange: 2
+    baseAttackSpeed: 0
+    baseDamage: 0
+    prefab: {fileID: 172405090663571643, guid: 829051b417f8d294faf07152e7bc12cc, type: 3}
+    icon: {fileID: 3086133501085875104, guid: aa8eeff14fdec8749929a1e49424ad8c, type: 3}
+    unlockedByDefault: 0
+    unlockedAfterLevel: 0
+    upgradePaths:
+    - pathId: poltergeist_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: poltergeist_1_1
+        displayName: Good Arm
+        description: Sharper shards pierce targets and travel faster.
+        cost: 175
+        icon: {fileID: 0}
+      - upgradeId: poltergeist_1_2
+        displayName: Backtrack
+        description: Periodically throws targets backwards on the track.
+        cost: 400
+        icon: {fileID: 0}
+      - upgradeId: poltergeist_1_3
+        displayName: Shattering Shards
+        description: Shards split off into fragments at the end of their travel time.
+        cost: 1200
+        icon: {fileID: 0}
+    - pathId: poltergeist_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: poltergeist_2_1
+        displayName: Tighter Spread
+        description: Shards are thrown with reduced spread.
+        cost: 100
+        icon: {fileID: 0}
+      - upgradeId: poltergeist_2_2
+        displayName: Bowling Ball
+        description: High damage boulders are rolled forward, and explode with debris
+          attack upon contact with a star.
+        cost: 600
+        icon: {fileID: 0}
+      - upgradeId: poltergeist_2_3
+        displayName: Gutter Ball
+        description: Boulders that come in contact with the track roll backwards
+          along the path.
+        cost: 1500
+        icon: {fileID: 0}
+  - towerId: yokai
+    displayName: Yokai
+    description: Incredibly short lifetime that gives effects on expiration; base
+      deals heavy damage
+    cost: 200
+    baseRange: 1.5
+    baseAttackSpeed: 0
+    baseDamage: 0
+    prefab: {fileID: 6544359843665614805, guid: f32f060c7cbcc32499c8988d1a93a2ec, type: 3}
+    icon: {fileID: 8450310420150804600, guid: cd125db1c6c3c3f47bda88cca2ab5efc, type: 3}
+    unlockedByDefault: 0
+    unlockedAfterLevel: 0
+    upgradePaths:
+    - pathId: yokai_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: yokai_1_1
+        displayName: Burning Burst
+        description: Yokai's burst leaves behind flames in its radius that persist
+          for a period of time.
+        cost: 175
+        icon: {fileID: 0}
+      - upgradeId: yokai_1_2
+        displayName: Stunning Blast
+        description: Any star that takes damage from the residual flames is stunned
+          until the disappear.
+        cost: 400
+        icon: {fileID: 0}
+      - upgradeId: yokai_1_3
+        displayName: Nuclear Explosion
+        description: Gives additional range.
+        cost: 1200
+        icon: {fileID: 0}
+    - pathId: yokai_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: yokai_2_1
+        displayName: Restoration
+        description: Burst gives ghosts half of their lifetime back.
+        cost: 100
+        icon: {fileID: 0}
+      - upgradeId: yokai_2_2
+        displayName: Overstay
+        description: Yokai's burst can now overheal ghosts.
+        cost: 600
+        icon: {fileID: 0}
+      - upgradeId: yokai_2_3
+        displayName: Thrive
+        description: Yokai's burst gives ghosts even more of their lifetime back;
+          ghosts have increased rate of fire while overhealed.
+        cost: 1500
+        icon: {fileID: 0}
