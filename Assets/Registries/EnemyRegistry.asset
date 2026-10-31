@@ -29,3 +29,15 @@ MonoBehaviour:
     displayName: Galaxy
     description: Slow, with extremely high health
     icon: {fileID: -6479558217058493216, guid: 36cf4ef800dd1544ca4e965342eabcea, type: 3}
+  - enemyId: red_shooting_star
+    displayName: Red Shooting Star
+    description: A weak star that can shoot bolts at ghosts to lower their lifetime
+    icon: {fileID: -6479558217058493216, guid: 36cf4ef800dd1544ca4e965342eabcea, type: 3}
+  - enemyId: yellow_shooting_star
+    displayName: Yellow Shooting Star
+    description: An average star that can shoot bolts at ghosts to lower their lifetime
+    icon: {fileID: -6479558217058493216, guid: 36cf4ef800dd1544ca4e965342eabcea, type: 3}
+  - enemyId: yellow_shooting_star
+    displayName: Yellow Shooting Star
+    description: An average star that can shoot bolts at ghosts to lower their lifetime
+    icon: {fileID: -6479558217058493216, guid: 36cf4ef800dd1544ca4e965342eabcea, type: 3}

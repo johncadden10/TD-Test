@@ -5513,7 +5513,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
       count: 4
       spawnInterval: 0.75
-    - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
+    - enemyPrefab: {fileID: 3903896035924657682, guid: 813cbaadc54dc4c4392a0642fca5297a, type: 3}
       count: 4
       spawnInterval: 0.75
     timeBetweenGroups: 4
@@ -5523,7 +5523,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
       count: 6
       spawnInterval: 2
-    - enemyPrefab: {fileID: 3903896035924657682, guid: 0fbb337121f93e441bbf1464be207f10, type: 3}
+    - enemyPrefab: {fileID: 3903896035924657682, guid: 813cbaadc54dc4c4392a0642fca5297a, type: 3}
       count: 2
       spawnInterval: 4
     timeBetweenGroups: 5

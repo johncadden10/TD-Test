@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8667694526957637468}
   - component: {fileID: 7403611210583159226}
   - component: {fileID: 3721793081759124625}
+  - component: {fileID: 4546729993126191527}
+  - component: {fileID: 634580855661544790}
   m_Layer: 6
   m_Name: Galaxy
   m_TagString: Enemy
@@ -183,3 +185,29 @@ MonoBehaviour:
   hitPoints: 2048
   livesToSubtract: 20
   currencyWorth: 0
+--- !u!114 &4546729993126191527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043083814474225297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1910875303c7d11459984256c35cf398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entries: []
+--- !u!114 &634580855661544790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043083814474225297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458c28f62e34723419650d66703e6863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  immuneToColdSlow: 0

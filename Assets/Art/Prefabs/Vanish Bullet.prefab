@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7680738360411829348}
   - component: {fileID: 6637853578854068638}
   - component: {fileID: -6405297959585724611}
+  - component: {fileID: -8808622916621832454}
   m_Layer: 7
   m_Name: Vanish Bullet
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1311277959
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -169,3 +170,15 @@ MonoBehaviour:
   bulletSpeed: 3
   bulletLifetime: 3
   bulletDamage: 3
+--- !u!114 &-8808622916621832454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691850364357836796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bb233830ff2d24ba5df5bea2ea398b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

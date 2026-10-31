@@ -46,6 +46,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3290854983589083369}
   - component: {fileID: 6164741889389074283}
+  - component: {fileID: 6516499633029100661}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -82,6 +83,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1503661747210185243}
+--- !u!114 &6516499633029100661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886734987734846729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bb233830ff2d24ba5df5bea2ea398b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5535928203046870780
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +620,11 @@ MonoBehaviour:
   lifetime: 100
   attackDamage: 10
   preDeathDuration: 1
+  tierColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.5, b: 0, a: 1}
   reaperEffect: {fileID: 897683388670816920}
   soulPrefab: {fileID: 2225912334050266548, guid: cc69a79b0d58b704c8fb3a3a0f24ad14, type: 3}
   vengefulSoulPrefab: {fileID: 4852131558035956408, guid: dfb297e4b809d0d459d9522826c8a6a9, type: 3}

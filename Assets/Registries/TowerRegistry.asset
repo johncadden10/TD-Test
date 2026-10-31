@@ -106,7 +106,7 @@ MonoBehaviour:
         icon: {fileID: 0}
       - upgradeId: reaper_1_3
         displayName: Rapid Harvest
-        description: Harvests souls much faster.
+        description: Harvests souls much faster, but souls provide less ecto.
         cost: 1200
         ectoCost: 650
         modifierPrefab: {fileID: 5066518819745044181, guid: 361f0f6f6989b54418519f17852d5b5c, type: 3}
@@ -118,7 +118,7 @@ MonoBehaviour:
         displayName: Auto Harvest
         description: Souls are automatically collected.
         cost: 100
-        ectoCost: 250
+        ectoCost: 100
         modifierPrefab: {fileID: 5066518819745044181, guid: 85695eb72718b4d46bc6df3983c5bd01, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_2_2

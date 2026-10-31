@@ -10,15 +10,18 @@ public class EnemyMovement : MonoBehaviour
 
     private Transform target;
     private int pathIndex = 0;
+    private StatusController status;
 
-    private float baseSpeed;
+    private void Awake()
+    {
+        status = GetComponent<StatusController>();
+    }
 
     private void Start()
     {
-        baseSpeed = moveSpeed;
-
         target = LevelManager.main.path[pathIndex];
     }
+
     private void Update()
     {
         if (Vector2.Distance(target.position, transform.position) <= 0.1f)
@@ -27,31 +30,19 @@ public class EnemyMovement : MonoBehaviour
 
             if (pathIndex >= LevelManager.main.path.Length)
             {
-                EnemySpawner.onEnemyDestroy.Invoke();
-                Destroy(gameObject);
+                // reaching the end is handled by EndPoint, so nothing here
+                // (avoids double-counting enemiesAlive and skipping lives)
                 return;
             }
-            else
-            {
-                target = LevelManager.main.path[pathIndex];
-            }
+
+            target = LevelManager.main.path[pathIndex];
         }
     }
 
     private void FixedUpdate()
     {
+        float mult = status != null ? status.SpeedMultiplier : 1f;
         Vector2 direction = (target.position - transform.position).normalized;
-        rb.linearVelocity = direction * moveSpeed;
+        rb.linearVelocity = direction * moveSpeed * mult;
     }
-
-    public void UpdateSpeed(float slowPercent)
-    {
-        moveSpeed = baseSpeed * slowPercent;
-    }
-
-    public void ResetSpeed()
-    {
-        moveSpeed = baseSpeed;
-    }
-
 }

@@ -18,6 +18,15 @@ public abstract class Ghost : MonoBehaviour
     [SerializeField] protected float lifetime = 16f;
     [SerializeField] protected int attackDamage = 10;
     [SerializeField] protected float preDeathDuration = 1f;
+
+    [Header("Tier Visuals")]
+    [SerializeField] private Color[] tierColors =
+    {
+        Color.white,                    // base
+        Color.cyan,                     // tier 1
+        Color.magenta,                  // tier 2
+        new Color(1f, 0.5f, 0f)         // tier 3 (orange)
+    };
     
     public int PathIndex { get; private set; }
     public int CurrentTier { get; private set; }
@@ -26,11 +35,23 @@ public abstract class Ghost : MonoBehaviour
     public float DamageMultiplier { get; set; } = 1f;
     public float AttackSpeedMultiplier { get; set; } = 1f;
     public float RangeBonus { get; set; } = 0f;
+    public int Tier { get; private set; }
 
 
     // events modifiers can subscribe to
     public event Action<Transform> OnFired;       // call inside Shoot logic
     public event Action OnTick;                   // call every Update
+
+    private static readonly List<Ghost> active = new List<Ghost>();
+    public static IReadOnlyList<Ghost> Active => active;
+
+    private float stunUntil;
+    private bool wasStunned;
+    public bool IsStunned => Time.time < stunUntil;
+
+    protected float lifetimeRemaining;
+    private bool preDeathTriggered;
+    public bool IsAlive => lifetimeRemaining > 0f;
 
     protected Transform target;
     protected float timeUntilFire;
@@ -44,11 +65,13 @@ public abstract class Ghost : MonoBehaviour
     protected virtual void Start()
     {
         towerAnimator = GetComponent<TowerAnimator>();
+        active.Add(this);
         StartCoroutine(LifetimeCoroutine());
     }
 
     protected virtual void Update()
     {
+        if (IsStunned) return;
         timeUntilFire += Time.deltaTime;
         
         if (target == null)
@@ -99,25 +122,38 @@ public abstract class Ghost : MonoBehaviour
 
     private IEnumerator LifetimeCoroutine()
     {
-        float timeRemaining = lifetime;
+        lifetimeRemaining = lifetime;
 
-        while (timeRemaining > preDeathDuration)
+        while (lifetimeRemaining > 0f)
         {
-            timeRemaining -= Time.deltaTime;
-            if (healthBar != null) healthBar.SetProgress(timeRemaining / lifetime);
-            yield return null;
-        }
+            lifetimeRemaining -= Time.deltaTime;
 
-        OnPreDeath();
+            if (!preDeathTriggered && preDeathDuration > 0f && lifetimeRemaining <= preDeathDuration)
+            {
+                preDeathTriggered = true;
+                OnPreDeath();
+            }
 
-        while (timeRemaining > 0f)
-        {
-            timeRemaining -= Time.deltaTime;
-            if (healthBar != null) healthBar.SetProgress(timeRemaining / lifetime);
+            if (healthBar != null)
+                healthBar.SetProgress(Mathf.Clamp01(lifetimeRemaining / lifetime));
+
             yield return null;
         }
 
         OnLifetimeExpired();
+    }
+
+    public void Stun(float duration)
+    {
+        stunUntil = Mathf.Max(stunUntil, Time.time + duration);
+    }
+
+    private void LateUpdate()
+    {
+        bool stunned = IsStunned;
+        if (stunned == wasStunned) return;
+        wasStunned = stunned;
+        if (towerAnimator != null) towerAnimator.SetPaused(stunned);
     }
 
     protected virtual void OnLifetimeExpired()
@@ -142,6 +178,30 @@ public abstract class Ghost : MonoBehaviour
     public void OnDeathEnd()
     {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        active.Remove(this);
+    }
+
+    public void ReduceLifetime(float seconds)
+    {
+        if (!IsAlive) return;
+        lifetimeRemaining -= seconds; // the coroutine handles pre-death and expiry
+    }
+
+    public static Ghost Nearest(Vector2 from, float maxRange)
+    {
+        Ghost best = null;
+        float bestDist = maxRange;
+        foreach (Ghost g in active)
+        {
+            if (!g.IsAlive) continue;
+            float d = Vector2.Distance(from, g.transform.position);
+            if (d <= bestDist) { bestDist = d; best = g; }
+        }
+        return best;
     }
 
     protected void FindTarget()
@@ -182,12 +242,25 @@ public abstract class Ghost : MonoBehaviour
             {
                 m.Attach(this);
                 modifiers.Add(m);
+                ApplyTierColor(tier);
             }
         }
     }
     public virtual void ApplyUpgrade()
     {
         CurrentTier++;
+    }
+
+    private void ApplyTierColor(int tier)
+    {
+        Tier = tier;
+        Color color = tierColors[Mathf.Clamp(tier, 0, tierColors.Length - 1)];
+
+        foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (sr.GetComponent<NoTierTint>() != null) continue; // skip excluded sprites
+            sr.color = color;
+        }
     }
 
     protected virtual void ApplyTierEffect(int pathIndex, int tierIndex) { }

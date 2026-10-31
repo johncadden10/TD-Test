@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8499441215823948231}
   - component: {fileID: 6523916359788269461}
   - component: {fileID: -6163944980004024821}
+  - component: {fileID: 7474519971126947222}
+  - component: {fileID: -6407747852262008338}
   m_Layer: 6
   m_Name: Blue Star
   m_TagString: Enemy
@@ -183,3 +185,29 @@ MonoBehaviour:
   hitPoints: 95
   livesToSubtract: 4
   currencyWorth: 0
+--- !u!114 &7474519971126947222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458c28f62e34723419650d66703e6863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  immuneToColdSlow: 0
+--- !u!114 &-6407747852262008338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1910875303c7d11459984256c35cf398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entries: []

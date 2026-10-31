@@ -63,6 +63,11 @@ MonoBehaviour:
   lifetime: 72
   attackDamage: 10
   preDeathDuration: 1
+  tierColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.5, b: 0, a: 1}
   bulletPrefab: {fileID: 691850364357836796, guid: b4aad9fb5795f4642802eb5457e854dd, type: 3}
   pelletCount: 5
   spreadAngle: 30
@@ -300,6 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2460920124043369765}
   - component: {fileID: 555148536855975246}
+  - component: {fileID: 364382133815834542}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -336,6 +342,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 741848076977079171}
+--- !u!114 &364382133815834542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2305211809244393209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bb233830ff2d24ba5df5bea2ea398b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3321500068508204271
 GameObject:
   m_ObjectHideFlags: 0

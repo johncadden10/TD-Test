@@ -1,10 +1,9 @@
-using System.Collections;
 using UnityEngine;
 
 public class Spirit : Ghost
 {
     [Header("Spirit References")]
-    [SerializeField] private SpiritAttack spiritAttack;
+    [SerializeField] private SpiritAttack spiritEffect;
 
     [Header("Spirit Attributes")]
     [SerializeField] private float freezeTime = 2f;
@@ -14,6 +13,7 @@ public class Spirit : Ghost
 
     protected override void Update()
     {
+        if (IsStunned) return;
         if (isAnimationPlaying) return;
 
         timeUntilFire += Time.deltaTime;
@@ -38,13 +38,15 @@ public class Spirit : Ghost
         }
     }
 
+    // animation event at the frame the slow should apply
     public void OnSlowApply()
     {
         Shoot();
-        if (spiritAttack != null)
-            spiritAttack.TriggerEffect(); // trigger effect when slow is applied
+        if (spiritEffect != null)
+            spiritEffect.TriggerEffect();
     }
 
+    // animation event on the last frame
     public void OnAttackEnd()
     {
         isAnimationPlaying = false;
@@ -57,15 +59,9 @@ public class Spirit : Ghost
 
         foreach (RaycastHit2D hit in hits)
         {
-            EnemyMovement em = hit.transform.GetComponent<EnemyMovement>();
-            em.UpdateSpeed(slowPercent);
-            StartCoroutine(ResetEnemySpeed(em));
+            StatusController status = hit.transform.GetComponent<StatusController>();
+            if (status != null)
+                status.AddSlow(slowPercent, freezeTime, isCold: true);
         }
-    }
-
-    private IEnumerator ResetEnemySpeed(EnemyMovement em)
-    {
-        yield return new WaitForSeconds(freezeTime);
-        em.ResetSpeed();
     }
 }

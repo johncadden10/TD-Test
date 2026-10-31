@@ -48,6 +48,7 @@ public class Reaper : Ghost
 
     protected override void Update()
     {
+        if (IsStunned) return;
         if (isGenerating) return;
 
         progress += Time.deltaTime * SpeedMultiplier * AdjacencyMultiplier;

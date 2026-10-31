@@ -7,6 +7,7 @@ public class Banshee : Ghost
 
     protected override void Update()
     {
+        if (IsStunned) return;
         timeUntilFire += Time.deltaTime;
 
         bool enemiesInRange = EnemiesInRange();

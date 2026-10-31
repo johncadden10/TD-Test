@@ -4,6 +4,7 @@ public class Wisp : Ghost
 {
     protected override void Update()
     {
+        if (IsStunned) return;
         timeUntilFire += Time.deltaTime;
 
         if (timeUntilFire >= attackSpeed)

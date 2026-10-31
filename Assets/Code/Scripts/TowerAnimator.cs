@@ -11,6 +11,11 @@ public class TowerAnimator : MonoBehaviour
     private static readonly int IsAttackingBool = Animator.StringToHash("isAttacking");
     private static readonly int IsPreDeath = Animator.StringToHash("PreDeath");
 
+    public void SetPaused(bool paused)
+    {
+        animator.speed = paused ? 0f : 1f;
+    }
+    
     public void SetAttacking()
     {
         animator.SetTrigger(IsAttacking); // trigger instead of bool
