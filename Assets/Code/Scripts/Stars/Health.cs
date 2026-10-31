@@ -3,28 +3,39 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [Header("Attributes")]
-    [SerializeField] private int hitPoints = 15;
+    [SerializeField] private float hitPoints = 15f;
     [SerializeField] private int livesToSubtract = 1;
     [SerializeField] private int currencyWorth = 0;
 
     private bool isDestroyed = false;
+    private float maxHitPoints;
 
-    public int HitPoints => hitPoints;
+    public float HitPoints => hitPoints;
     public int LivesWorth => livesToSubtract;
+    public float MaxHitPoints => maxHitPoints;
+    public bool IsFull => hitPoints >= maxHitPoints;
     public event System.Action<DamageInfo> OnDamaged;
+    
 
     private IDamageModifier[] modifiers;
     private IDeathEffect[] deathEffects;
 
     private void Awake()
     {
+        maxHitPoints = hitPoints;
         modifiers = GetComponents<IDamageModifier>();
         System.Array.Sort(modifiers, (a, b) => a.Order.CompareTo(b.Order));
         deathEffects = GetComponents<IDeathEffect>();
     }
 
+    public void Heal(float amount)
+    {
+        if (isDestroyed || amount <= 0f) return;
+        hitPoints = Mathf.Min(hitPoints + amount, maxHitPoints);
+    }
+
     // old signature, so existing ghosts still compile
-    public void TakeDamage(int dmg) => TakeDamage(new DamageInfo(dmg));
+    public void TakeDamage(float dmg) => TakeDamage(new DamageInfo(dmg));
 
     public void TakeDamage(DamageInfo info)
     {

@@ -16,7 +16,7 @@ public abstract class Ghost : MonoBehaviour
     [SerializeField] protected float targetingRange = 5f;
     [SerializeField] protected float attackSpeed = 1f;
     [SerializeField] protected float lifetime = 16f;
-    [SerializeField] protected int attackDamage = 10;
+    [SerializeField] protected float attackDamage = 10f;
     [SerializeField] protected float preDeathDuration = 1f;
 
     [Header("Tier Visuals")]

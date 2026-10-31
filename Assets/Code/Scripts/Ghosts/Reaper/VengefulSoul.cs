@@ -5,7 +5,7 @@ public class VengefulSettings
 {
     public bool enabled;
     public GameObject prefab;
-    public int baseDamage = 40;
+    public float baseDamage = 40f;
     public float damageMultiplier = 1f;
     public float splashRadius = 0f; // 0 = single target
     public LayerMask enemyMask;
@@ -18,12 +18,12 @@ public class VengefulSoul : MonoBehaviour
 
     private VengefulSettings settings;
     private Transform target;
-    private int damage;
+    private float damage;
 
     public void Init(VengefulSettings s)
     {
         settings = s;
-        damage = Mathf.RoundToInt(s.baseDamage * s.damageMultiplier);
+        damage = s.baseDamage * s.damageMultiplier;
         target = FindStrongest();
     }
 

@@ -50,8 +50,11 @@ public class EnemySpawner : MonoBehaviour
     private bool isSpawning = false;
     private bool victoryTriggered = false;
 
+    private static EnemySpawner instance;
+
     private void Awake()
     {
+        instance = this;
         onEnemyDestroy.AddListener(EnemyDestroyed);
     }
 
@@ -66,6 +69,11 @@ public class EnemySpawner : MonoBehaviour
         {
             EndWave();
         }
+    }
+
+    public static void RegisterSpawnedEnemy()
+    {
+        if (instance != null) instance.enemiesAlive++;
     }
 
     private void EnemyDestroyed()

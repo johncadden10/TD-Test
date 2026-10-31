@@ -8,7 +8,7 @@ public class VanishBullet : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 3f;
     [SerializeField] private float bulletLifetime = 2f;
-    [SerializeField] private int bulletDamage = 2;
+    [SerializeField] private float bulletDamage = 2f;
     
 
 

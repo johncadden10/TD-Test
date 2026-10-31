@@ -8,7 +8,7 @@ public class PoltergeistBullet : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 6f;
     [SerializeField] private float bulletLifetime = 2.5f;
-    [SerializeField] private int bulletDamage = 4;
+    [SerializeField] private float bulletDamage = 4f;
     
     private Transform target;
     //private float timeLeft;

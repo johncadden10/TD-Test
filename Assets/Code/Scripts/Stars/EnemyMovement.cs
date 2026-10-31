@@ -12,6 +12,8 @@ public class EnemyMovement : MonoBehaviour
     private int pathIndex = 0;
     private StatusController status;
 
+    public int PathIndex => pathIndex;
+
     private void Awake()
     {
         status = GetComponent<StatusController>();
@@ -44,5 +46,11 @@ public class EnemyMovement : MonoBehaviour
         float mult = status != null ? status.SpeedMultiplier : 1f;
         Vector2 direction = (target.position - transform.position).normalized;
         rb.linearVelocity = direction * moveSpeed * mult;
+    }
+
+    public void SetPathProgress(int index)
+    {
+        pathIndex = Mathf.Clamp(index, 0, LevelManager.main.path.Length - 1);
+        target = LevelManager.main.path[pathIndex];
     }
 }

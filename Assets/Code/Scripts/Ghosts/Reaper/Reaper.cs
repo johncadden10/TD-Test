@@ -14,7 +14,7 @@ public class Reaper : Ghost
     [Header("Reaper Attributes")]
     [SerializeField] private int currencyGain = 20;
     [SerializeField] private float generationSpeed = 7.5f;
-    [SerializeField] private int vengefulBaseDamage = 40;
+    [SerializeField] private float vengefulBaseDamage = 40f;
 
     // set by modifiers
     public float SpeedMultiplier { get; set; } = 1f;
