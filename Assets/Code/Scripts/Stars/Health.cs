@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
     public float MaxHitPoints => maxHitPoints;
     public bool IsFull => hitPoints >= maxHitPoints;
     public event System.Action<DamageInfo> OnDamaged;
+
+    public bool IsTargetable { get; set; } = true;
     
 
     private IDamageModifier[] modifiers;
@@ -39,7 +41,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(DamageInfo info)
     {
-        if (isDestroyed) return;
+        if (isDestroyed || !IsTargetable) return; // immune while untargetable
 
         foreach (IDamageModifier m in modifiers) m.Modify(ref info);
         if (info.amount <= 0) return;

@@ -630,7 +630,7 @@ MonoBehaviour:
   vengefulSoulPrefab: {fileID: 4852131558035956408, guid: dfb297e4b809d0d459d9522826c8a6a9, type: 3}
   currencyGain: 25
   generationSpeed: 11
-  vengefulBaseDamage: 50
+  vengefulBaseDamage: 40
 --- !u!212 &4714573070721817640
 SpriteRenderer:
   m_ObjectHideFlags: 0

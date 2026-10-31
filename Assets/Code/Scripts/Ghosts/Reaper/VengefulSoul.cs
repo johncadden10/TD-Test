@@ -29,6 +29,9 @@ public class VengefulSoul : MonoBehaviour
 
     private void Update()
     {
+        if (target != null && !target.GetComponent<Health>().IsTargetable)
+            target = null;
+
         if (target == null)
         {
             target = FindStrongest();
@@ -63,7 +66,10 @@ public class VengefulSoul : MonoBehaviour
     {
         Health best = null;
         foreach (Health h in FindObjectsByType<Health>(FindObjectsSortMode.None))
+        {
+            if (!h.IsTargetable) continue;
             if (best == null || h.HitPoints > best.HitPoints) best = h;
+        }
         return best != null ? best.transform : null;
     }
 }

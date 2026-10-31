@@ -53,4 +53,14 @@ public class EnemyMovement : MonoBehaviour
         pathIndex = Mathf.Clamp(index, 0, LevelManager.main.path.Length - 1);
         target = LevelManager.main.path[pathIndex];
     }
+
+    public void AdvanceAlongPath(int waypoints)
+    {
+        int path = LevelManager.main.path.Length;
+        int newIndex = Mathf.Min(pathIndex + waypoints, path - 1);
+        if (newIndex <= pathIndex) return;
+
+        pathIndex = newIndex;
+        target = LevelManager.main.path[pathIndex];
+    }
 }

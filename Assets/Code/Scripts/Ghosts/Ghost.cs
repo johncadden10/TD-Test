@@ -72,6 +72,7 @@ public abstract class Ghost : MonoBehaviour
     protected virtual void Update()
     {
         if (IsStunned) return;
+        if (target != null && !IsValidTarget(target)) target = null;
         timeUntilFire += Time.deltaTime;
         
         if (target == null)
@@ -208,8 +209,21 @@ public abstract class Ghost : MonoBehaviour
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
 
-        if (hits.Length > 0)
-            target = hits[0].transform;
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (IsValidTarget(hit.transform))
+            {
+                target = hit.transform;
+                return;
+            }
+        }
+    }
+
+    protected static bool IsValidTarget(Transform t)
+    {
+        if (t == null) return false;
+        Health h = t.GetComponent<Health>();
+        return h != null && h.IsTargetable;
     }
 
     protected bool CheckTargetIsInRange()
