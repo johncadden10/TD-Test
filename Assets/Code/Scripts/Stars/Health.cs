@@ -25,9 +25,14 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         maxHitPoints = hitPoints;
+        RefreshModifiers();
+        deathEffects = GetComponents<IDeathEffect>();
+    }
+
+    public void RefreshModifiers()
+    {
         modifiers = GetComponents<IDamageModifier>();
         System.Array.Sort(modifiers, (a, b) => a.Order.CompareTo(b.Order));
-        deathEffects = GetComponents<IDeathEffect>();
     }
 
     public void Heal(float amount)

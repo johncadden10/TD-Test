@@ -18,6 +18,7 @@ public abstract class Ghost : MonoBehaviour
     [SerializeField] protected float lifetime = 16f;
     [SerializeField] protected float attackDamage = 10f;
     [SerializeField] protected float preDeathDuration = 1f;
+    [SerializeField] private float retargetInterval = 0.1f;
 
     [Header("Tier Visuals")]
     [SerializeField] private Color[] tierColors =
@@ -59,6 +60,8 @@ public abstract class Ghost : MonoBehaviour
 
     public float TargetingRange => targetingRange;
 
+    private float retargetTimer;
+
     private bool isAttackAnimationPlaying = false;
     private List<GhostModifier> modifiers = new List<GhostModifier>();
 
@@ -72,38 +75,41 @@ public abstract class Ghost : MonoBehaviour
     protected virtual void Update()
     {
         if (IsStunned) return;
+
         if (target != null && !IsValidTarget(target)) target = null;
-        timeUntilFire += Time.deltaTime;
-        
-        if (target == null)
+
+        retargetTimer -= Time.deltaTime;
+        if (retargetTimer <= 0f)
         {
+            retargetTimer = retargetInterval;
             FindTarget();
-            return;
         }
+
+        if (target == null) return;
 
         RotateTowardsTarget();
 
         if (!CheckTargetIsInRange())
         {
             target = null;
+            return;
         }
-        else
-        {
-            if (timeUntilFire >= attackSpeed && !isAttackAnimationPlaying)
-            {
-                if (towerAnimator != null)
-                {
-                    isAttackAnimationPlaying = true;
-                    towerAnimator.SetAttacking(); // no argument needed
-                    timeUntilFire = 0f;
-                }
-                else
-                {
-                    Shoot();
-                    timeUntilFire = 0f;
-                }
 
+        if (!isAttackAnimationPlaying)
+            timeUntilFire += Time.deltaTime;
+
+        if (timeUntilFire >= attackSpeed && !isAttackAnimationPlaying)
+        {
+            if (towerAnimator != null)
+            {
+                isAttackAnimationPlaying = true;
+                towerAnimator.SetAttacking();
             }
+            else
+            {
+                Shoot();
+            }
+            timeUntilFire = 0f;
         }
     }
 
@@ -209,14 +215,24 @@ public abstract class Ghost : MonoBehaviour
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
 
+        Transform best = null;
+        float bestRemaining = float.MaxValue;
+
         foreach (RaycastHit2D hit in hits)
         {
-            if (IsValidTarget(hit.transform))
+            if (!IsValidTarget(hit.transform)) continue;
+
+            EnemyMovement m = hit.transform.GetComponentInParent<EnemyMovement>();
+            float remaining = m != null ? m.DistanceRemaining : float.MaxValue;
+
+            if (best == null || remaining < bestRemaining)
             {
-                target = hit.transform;
-                return;
+                best = hit.transform;
+                bestRemaining = remaining;
             }
         }
+
+        target = best;
     }
 
     protected static bool IsValidTarget(Transform t)

@@ -69,4 +69,8 @@ public class HiddenUnlessNearGhost : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, revealRadius);
     }
+    public void RefreshRenderers()
+    {
+        renderers = GetComponentsInChildren<SpriteRenderer>();
+    }
 }

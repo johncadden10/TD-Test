@@ -63,4 +63,18 @@ public class EnemyMovement : MonoBehaviour
         pathIndex = newIndex;
         target = LevelManager.main.path[pathIndex];
     }
+
+    public float DistanceRemaining
+    {
+        get
+        {
+            Transform[] path = LevelManager.main.path;
+            if (target == null) return float.MaxValue;
+
+            float d = Vector2.Distance(transform.position, target.position);
+            for (int i = pathIndex; i < path.Length - 1; i++)
+                d += Vector2.Distance(path[i].position, path[i + 1].position);
+            return d;
+        }
+    }
 }

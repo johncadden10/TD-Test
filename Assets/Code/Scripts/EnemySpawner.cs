@@ -10,6 +10,11 @@ public class EnemyGroup
     public GameObject enemyPrefab;
     public int count;
     public float spawnInterval;
+
+    [Header("Modifiers")]
+    public bool belted;
+    public bool fused;
+    public bool constellation; // links this group's stars into one chain
 }
 
 [System.Serializable]
@@ -25,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private ModifierVisuals modifierVisuals;
 
     [Header("Waves")]
     [SerializeField] private List<Wave> waves;
@@ -100,13 +106,16 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnCustomWave(Wave wave)
     {
-        Debug.Log($"Starting wave: {wave.waveName}");
-
         foreach (EnemyGroup group in wave.enemyGroups)
         {
+            Health previous = null;
+
             for (int i = 0; i < group.count; i++)
             {
-                SpawnEnemy(group.enemyPrefab);
+                GameObject star = SpawnEnemy(group.enemyPrefab);
+                StarModifiers.Apply(star, group, previous, modifierVisuals);
+                previous = star.GetComponent<Health>();
+
                 yield return new WaitForSeconds(group.spawnInterval);
             }
 
@@ -138,10 +147,11 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy(GameObject prefab)
+    private GameObject SpawnEnemy(GameObject prefab)
     {
-        Instantiate(prefab, LevelManager.main.startPoint.position, Quaternion.identity);
+        GameObject obj = Instantiate(prefab, LevelManager.main.startPoint.position, Quaternion.identity);
         enemiesAlive++;
+        return obj;
     }
 
     private void EndWave()

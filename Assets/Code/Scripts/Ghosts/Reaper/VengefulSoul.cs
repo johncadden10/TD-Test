@@ -65,11 +65,25 @@ public class VengefulSoul : MonoBehaviour
     private Transform FindStrongest()
     {
         Health best = null;
+        float bestRemaining = float.MaxValue;
+
         foreach (Health h in FindObjectsByType<Health>(FindObjectsSortMode.None))
         {
             if (!h.IsTargetable) continue;
-            if (best == null || h.HitPoints > best.HitPoints) best = h;
+
+            EnemyMovement m = h.GetComponent<EnemyMovement>();
+            float remaining = m != null ? m.DistanceRemaining : float.MaxValue;
+
+            bool stronger = best == null || h.HitPoints > best.HitPoints + 0.001f;
+            bool tied = best != null && Mathf.Abs(h.HitPoints - best.HitPoints) <= 0.001f;
+
+            if (stronger || (tied && remaining < bestRemaining))
+            {
+                best = h;
+                bestRemaining = remaining;
+            }
         }
+
         return best != null ? best.transform : null;
     }
 }

@@ -1,0 +1,18 @@
+using UnityEngine;
+
+public class BeltedModifier : MonoBehaviour, IDamageModifier
+{
+    public float physicalMultiplier = 0.5f;
+    public float maxHit = 1f;
+
+    public int Order => 30;
+
+    public void Modify(ref DamageInfo info)
+    {
+        if (info.type == DamageType.Physical)
+            info.amount *= physicalMultiplier;
+
+        if (info.amount > maxHit)
+            info.amount = maxHit;
+    }
+}
