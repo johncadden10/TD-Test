@@ -17,7 +17,7 @@ public class ResistanceModifier : MonoBehaviour, IDamageModifier
     {
         foreach (Entry e in entries)
         {
-            if (e.type == info.type)
+            if (info.type.Has(e.type))
                 info.amount *= e.multiplier;
         }
     }

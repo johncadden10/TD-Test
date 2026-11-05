@@ -9,7 +9,7 @@ public class FusionModifier : MonoBehaviour, IDamageModifier
 
     public void Modify(ref DamageInfo info)
     {
-        if (info.type == DamageType.Magic)
+        if (info.type.Has(DamageType.Magic))
             info.amount *= magicMultiplier;
 
         if (info.amount < threshold)

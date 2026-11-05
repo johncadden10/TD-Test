@@ -61,7 +61,7 @@ public class Spirit : Ghost
         {
             StatusController status = hit.transform.GetComponent<StatusController>();
             if (status != null)
-                status.AddSlow(slowPercent, freezeTime, isCold: true);
+                status.AddSlow(slowPercent, freezeTime, DamageType.Has(DamageType.Cold));
         }
     }
 }

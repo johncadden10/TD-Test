@@ -5492,6 +5492,7 @@ MonoBehaviour:
   - {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
   - {fileID: 3903896035924657682, guid: 05f14ffcc6dd43e41884fbc00c587e0b, type: 3}
   - {fileID: 2043083814474225297, guid: 4b9dc92806562f343bc8430fb0d512ad, type: 3}
+  modifierVisuals: {fileID: 11400000, guid: f6a4caf0b2858a04a9071625fbfab0ae, type: 2}
   waves:
   - waveName: Round 1
     useCustomWave: 1
@@ -5506,12 +5507,24 @@ MonoBehaviour:
   - waveName: Round 2
     useCustomWave: 1
     enemyGroups:
-    - enemyPrefab: {fileID: 3903896035924657682, guid: 93ceb7f2ef91fc04f8453e6b0f7c9c91, type: 3}
-      count: 5
+    - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
+      count: 3
+      spawnInterval: 3
+      belted: 1
+      fused: 0
+      constellation: 0
+    - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
+      count: 3
+      spawnInterval: 3
+      belted: 0
+      fused: 1
+      constellation: 0
+    - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
+      count: 3
       spawnInterval: 3
       belted: 0
       fused: 0
-      constellation: 0
+      constellation: 1
     timeBetweenGroups: 0
   - waveName: Round 3
     useCustomWave: 1

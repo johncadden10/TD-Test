@@ -9,7 +9,7 @@ public class BeltedModifier : MonoBehaviour, IDamageModifier
 
     public void Modify(ref DamageInfo info)
     {
-        if (info.type == DamageType.Physical)
+        if (info.type.Has(DamageType.Physical))
             info.amount *= physicalMultiplier;
 
         if (info.amount > maxHit)

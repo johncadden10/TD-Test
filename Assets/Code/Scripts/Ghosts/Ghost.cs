@@ -20,6 +20,9 @@ public abstract class Ghost : MonoBehaviour
     [SerializeField] protected float preDeathDuration = 1f;
     [SerializeField] private float retargetInterval = 0.1f;
 
+    [Header("Damage Type")]
+    [SerializeField] private DamageType damageType = DamageType.Neutral;
+
     [Header("Tier Visuals")]
     [SerializeField] private Color[] tierColors =
     {
@@ -37,6 +40,11 @@ public abstract class Ghost : MonoBehaviour
     public float AttackSpeedMultiplier { get; set; } = 1f;
     public float RangeBonus { get; set; } = 0f;
     public int Tier { get; private set; }
+    public DamageType DamageType
+    {
+        get => damageType;
+        set => damageType = value;
+    }
 
 
     // events modifiers can subscribe to
@@ -291,6 +299,11 @@ public abstract class Ghost : MonoBehaviour
             if (sr.GetComponent<NoTierTint>() != null) continue; // skip excluded sprites
             sr.color = color;
         }
+    }
+
+    protected DamageInfo MakeDamage(float amount)
+    {
+        return new DamageInfo(amount, damageType, gameObject);
     }
 
     protected virtual void ApplyTierEffect(int pathIndex, int tierIndex) { }

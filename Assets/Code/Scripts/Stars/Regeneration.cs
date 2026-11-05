@@ -26,7 +26,7 @@ public class Regeneration : MonoBehaviour
 
     private void HandleDamaged(DamageInfo info)
     {
-        if (info.type == DamageType.Fire)
+        if (info.type.Has(DamageType.Fire))
             suppressedUntil = Time.time + fireSuppressTime;
     }
 

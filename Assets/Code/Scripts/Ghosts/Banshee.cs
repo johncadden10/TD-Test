@@ -37,7 +37,8 @@ public class Banshee : Ghost
 
         foreach (RaycastHit2D hit in hits)
         {
-            hit.transform.GetComponent<Health>().TakeDamage(attackDamage);
+            Health h = hit.transform.GetComponent<Health>();
+            if (h != null) h.TakeDamage(MakeDamage(attackDamage));
         }
     }
 }

@@ -6,7 +6,7 @@ public struct DamageInfo
     public DamageType type;
     public GameObject source;
 
-    public DamageInfo(float amount, DamageType type = DamageType.Physical, GameObject source = null)
+    public DamageInfo(float amount, DamageType type = DamageType.Neutral, GameObject source = null)
     {
         this.amount = amount;
         this.type = type;

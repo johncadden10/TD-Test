@@ -13,11 +13,17 @@ public class VanishBullet : MonoBehaviour
 
 
     private Transform target;
+    private DamageType damageType = DamageType.Neutral;
     //private float timeLeft;
 
     public void SetTarget(Transform _target)
     {
         target = _target;
+    }
+
+    public void SetDamageType(DamageType type)
+    {
+        damageType = type;
     }
 
     private void Start()
@@ -42,7 +48,8 @@ public class VanishBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Health h = other.gameObject.GetComponent<Health>();
+        Health h = other.gameObject.GetComponentInParent<Health>();
+        if (h != null) h.TakeDamage(new DamageInfo(bulletDamage, damageType, gameObject));
         if (h != null && !h.IsTargetable) return;
         other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
         Destroy(gameObject);
