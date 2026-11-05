@@ -69,7 +69,7 @@ public abstract class Ghost : MonoBehaviour
     public float TargetingRange => targetingRange;
 
     private float retargetTimer;
-
+    private bool isDying;
     private bool isAttackAnimationPlaying = false;
     private List<GhostModifier> modifiers = new List<GhostModifier>();
 
@@ -160,6 +160,7 @@ public abstract class Ghost : MonoBehaviour
 
     public void Stun(float duration)
     {
+        if (isDying) return; // a dying ghost can't be stunned
         stunUntil = Mathf.Max(stunUntil, Time.time + duration);
     }
 
@@ -173,9 +174,17 @@ public abstract class Ghost : MonoBehaviour
 
     protected virtual void OnLifetimeExpired()
     {
+        isDying = true;
+
+        // clear any stun so the death animation can actually play
+        stunUntil = 0f;
+        wasStunned = false;
+
         enabled = false;
+
         if (towerAnimator != null)
         {
+            towerAnimator.SetPaused(false); // must come before SetDying
             towerAnimator.SetDying();
         }
         else

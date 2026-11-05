@@ -63,6 +63,8 @@ MonoBehaviour:
   lifetime: 72
   attackDamage: 10
   preDeathDuration: 1
+  retargetInterval: 0.1
+  damageType: 1
   tierColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 1, b: 1, a: 1}

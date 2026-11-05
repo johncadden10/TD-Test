@@ -620,6 +620,8 @@ MonoBehaviour:
   lifetime: 100
   attackDamage: 10
   preDeathDuration: 1
+  retargetInterval: 0.1
+  damageType: 0
   tierColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 1, b: 1, a: 1}
@@ -628,7 +630,7 @@ MonoBehaviour:
   reaperEffect: {fileID: 897683388670816920}
   soulPrefab: {fileID: 2225912334050266548, guid: cc69a79b0d58b704c8fb3a3a0f24ad14, type: 3}
   vengefulSoulPrefab: {fileID: 4852131558035956408, guid: dfb297e4b809d0d459d9522826c8a6a9, type: 3}
-  currencyGain: 25
+  currencyGain: 2500
   generationSpeed: 11
   vengefulBaseDamage: 40
 --- !u!212 &4714573070721817640
