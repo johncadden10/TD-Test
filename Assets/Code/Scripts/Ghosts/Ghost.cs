@@ -31,6 +31,9 @@ public abstract class Ghost : MonoBehaviour
         Color.magenta,                  // tier 2
         new Color(1f, 0.5f, 0f)         // tier 3 (orange)
     };
+
+    [Header("Phase Visuals")]
+    [SerializeField, Range(0.1f, 1f)] private float phasedOpacity = 0.5f;
     
     public int PathIndex { get; private set; }
     public int CurrentTier { get; private set; }
@@ -40,6 +43,8 @@ public abstract class Ghost : MonoBehaviour
     public float AttackSpeedMultiplier { get; set; } = 1f;
     public float RangeBonus { get; set; } = 0f;
     public int Tier { get; private set; }
+    public float LifetimeMultiplier { get; set; } = 1f;
+    public float MaxLifetime => lifetime * LifetimeMultiplier;
     public DamageType DamageType
     {
         get => damageType;
@@ -58,6 +63,15 @@ public abstract class Ghost : MonoBehaviour
     private bool wasStunned;
     public bool IsStunned => Time.time < stunUntil;
 
+    public bool PhaseOnAttack { get; set; }
+    public float PhaseDuration { get; set; } = 3f;
+    public float PhaseCooldown { get; set; } = 5f;
+    public float PhaseLifetimeRegen { get; set; }
+    public float PhaseShareRadius { get; set; } 
+    public float PhaseShareRegenFraction { get; set; }
+    public float PhaseRegenMultiplier { get; set; } = 1f;
+    public bool IsPhased => Time.time < phaseUntil;
+
     protected float lifetimeRemaining;
     private bool preDeathTriggered;
     public bool IsAlive => lifetimeRemaining > 0f;
@@ -67,6 +81,10 @@ public abstract class Ghost : MonoBehaviour
     protected void RaiseFired(Transform t) => OnFired?.Invoke(t);
 
     public float TargetingRange => targetingRange;
+
+    private float phaseUntil;
+    private float nextPhaseAllowed;
+    private float phaseAlpha = 1f;
 
     private float retargetTimer;
     private bool isDying;
@@ -137,7 +155,7 @@ public abstract class Ghost : MonoBehaviour
 
     private IEnumerator LifetimeCoroutine()
     {
-        lifetimeRemaining = lifetime;
+        lifetimeRemaining = MaxLifetime;
 
         while (lifetimeRemaining > 0f)
         {
@@ -150,7 +168,7 @@ public abstract class Ghost : MonoBehaviour
             }
 
             if (healthBar != null)
-                healthBar.SetProgress(Mathf.Clamp01(lifetimeRemaining / lifetime));
+                healthBar.SetProgress(Mathf.Clamp01(lifetimeRemaining / MaxLifetime));
 
             yield return null;
         }
@@ -160,16 +178,26 @@ public abstract class Ghost : MonoBehaviour
 
     public void Stun(float duration)
     {
-        if (isDying) return; // a dying ghost can't be stunned
+        if (isDying) return;
+        if (AbsorbStarAttack()) return;
         stunUntil = Mathf.Max(stunUntil, Time.time + duration);
     }
 
     private void LateUpdate()
     {
         bool stunned = IsStunned;
-        if (stunned == wasStunned) return;
-        wasStunned = stunned;
-        if (towerAnimator != null) towerAnimator.SetPaused(stunned);
+        if (stunned != wasStunned)
+        {
+            wasStunned = stunned;
+            if (towerAnimator != null) towerAnimator.SetPaused(stunned);
+        }
+
+        float targetAlpha = IsPhased ? phasedOpacity : 1f;
+        if (!Mathf.Approximately(phaseAlpha, targetAlpha))
+        {
+            phaseAlpha = Mathf.MoveTowards(phaseAlpha, targetAlpha, 6f * Time.deltaTime);
+            SetSpriteAlpha(phaseAlpha);
+        }
     }
 
     protected virtual void OnLifetimeExpired()
@@ -179,6 +207,7 @@ public abstract class Ghost : MonoBehaviour
         // clear any stun so the death animation can actually play
         stunUntil = 0f;
         wasStunned = false;
+        SetSpriteAlpha(1f);
 
         enabled = false;
 
@@ -209,10 +238,51 @@ public abstract class Ghost : MonoBehaviour
         active.Remove(this);
     }
 
+    private bool AbsorbStarAttack()
+    {
+        if (IsPhased) return true;                         // phased (by itself or a Phantom): immune
+        if (!PhaseOnAttack) return false;
+        if (Time.time < nextPhaseAllowed) return false;
+
+        phaseUntil = Time.time + PhaseDuration;
+        nextPhaseAllowed = phaseUntil + PhaseCooldown;
+        AddLifetime(PhaseLifetimeRegen);
+        SharePhase();
+        return true;                                       // the hit that triggered it does nothing
+    }
+
+    private void SharePhase()
+    {
+        if (PhaseShareRadius <= 0f) return;
+
+        foreach (Ghost g in active)
+        {
+            if (g == this || !g.IsAlive) continue;
+            if (Vector2.Distance(g.transform.position, transform.position) > PhaseShareRadius) continue;
+
+            g.ForcePhase(PhaseDuration);
+            g.AddLifetime(PhaseLifetimeRegen * PhaseShareRegenFraction);
+        }
+    }
+
+    // phase without needing to be attacked: no cooldown, and it never triggers sharing itself
+    public void ForcePhase(float duration)
+    {
+        if (isDying) return;
+        phaseUntil = Mathf.Max(phaseUntil, Time.time + duration);
+    }
+
     public void ReduceLifetime(float seconds)
     {
-        if (!IsAlive) return;
-        lifetimeRemaining -= seconds; // the coroutine handles pre-death and expiry
+        if (!IsAlive || isDying) return;
+        if (AbsorbStarAttack()) return;
+        lifetimeRemaining -= seconds;
+    }
+
+    public void AddLifetime(float seconds)
+    {
+        if (!IsAlive || isDying || seconds <= 0f) return;
+        lifetimeRemaining = Mathf.Min(lifetimeRemaining + seconds, MaxLifetime);
     }
 
     public static Ghost Nearest(Vector2 from, float maxRange)
@@ -307,6 +377,17 @@ public abstract class Ghost : MonoBehaviour
         {
             if (sr.GetComponent<NoTierTint>() != null) continue; // skip excluded sprites
             sr.color = color;
+        }
+    }
+
+    private void SetSpriteAlpha(float a)
+    {
+        foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (sr.GetComponent<NoTierTint>() != null) continue;
+            Color c = sr.color;
+            c.a = a;
+            sr.color = c;
         }
     }
 

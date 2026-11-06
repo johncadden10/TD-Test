@@ -58,7 +58,7 @@ MonoBehaviour:
     m_Bits: 64
   firingPoint: {fileID: 6343064466735335165}
   healthBar: {fileID: 6569988708267055651}
-  targetingRange: 5
+  targetingRange: 4.5
   attackSpeed: 1.6
   lifetime: 48
   attackDamage: 10
@@ -70,7 +70,9 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 1, g: 0, b: 1, a: 1}
   - {r: 1, g: 0.5, b: 0, a: 1}
+  phasedOpacity: 0.4
   bulletPrefab: {fileID: 691850364357836796, guid: f76f0d15a246b394bad1f1ac4b9fe668, type: 3}
+  baseTurnRate: 72
 --- !u!212 &3305258821969237562
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -121,7 +121,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -167,9 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6637853578854068638}
-  bulletSpeed: 4
-  bulletLifetime: 5
+  bulletSpeed: 3
+  bulletLifetime: 6
   bulletDamage: 5
+  pierce: 0
+  turnRate: 6
 --- !u!114 &5395906829471617771
 MonoBehaviour:
   m_ObjectHideFlags: 0

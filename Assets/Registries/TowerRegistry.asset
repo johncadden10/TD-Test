@@ -29,50 +29,51 @@ MonoBehaviour:
       displayName: Path 1
       tiers:
       - upgradeId: phantom_1_1
-        displayName: Strong Orbs
-        description: Fires orbs faster and gives additional pierce.
-        cost: 100
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
-        icon: {fileID: 0}
-      - upgradeId: phantom_1_2
         displayName: Twin Orbs
         description: Fires two orbs at once.
-        cost: 450
+        cost: 175
         ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        modifierPrefab: {fileID: 735922247001707355, guid: c0b0629f78807d44a9295f1a5f63d788, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: phantom_1_2
+        displayName: Strong Orbs
+        description: Fires orbs faster and gives additional pierce.
+        cost: 325
+        ectoCost: 0
+        modifierPrefab: {fileID: 735922247001707355, guid: 588300c23bea81b4fa47cf18bf1a2120, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_1_3
         displayName: Orbliteration
         description: Fires five orbs in different directions that track down stars.
-        cost: 1200
+        cost: 750
         ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        modifierPrefab: {fileID: 735922247001707355, guid: 507750827b9462042938f665329daaea, type: 3}
         icon: {fileID: 0}
     - pathId: phantom_path_2
       displayName: Path 2
       tiers:
       - upgradeId: phantom_2_1
-        displayName: Lively Shots
-        description: Increases lifetime and fires orbs faster.
-        cost: 200
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
-        icon: {fileID: 0}
-      - upgradeId: phantom_2_2
         displayName: Phantom Sense
         description: Phantoms become invisible when attacked by a star and take no
           damage.
+        cost: 200
+        ectoCost: 0
+        modifierPrefab: {fileID: 735922247001707355, guid: 9ab656a336bf5a04b930b688104b04fd, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: phantom_2_2
+        displayName: Phase Absorption
+        description: Phantoms regenerate lifetime when becoming invisible.
         cost: 450
         ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        modifierPrefab: {fileID: 735922247001707355, guid: f356c5073b0bff34abcf7a70d312c05b, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_2_3
         displayName: Reclamation
-        description: Phantoms regenerate lifetime when becoming invisible.
+        description: Phantoms gain increased overall lifetime, and gain more lifetime
+          from becoming invisible.
         cost: 1000
         ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        modifierPrefab: {fileID: 735922247001707355, guid: f59fecee314152248ba238be46ed40f3, type: 3}
         icon: {fileID: 0}
   - towerId: reaper
     displayName: Reaper
