@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1.1
-  bonusPerNeighbor: 0.2
+  bonusPerNeighbor: 0.15
   checkInterval: 0.5

@@ -41,6 +41,16 @@ MonoBehaviour:
       preview: {fileID: 0}
       enemyTypes: []
       towerSlotCount: 4
+    - levelId: world1_level3
+      displayName: Level 1-3
+      sceneName: GameScene1
+      essenceReward: 200
+      worldIndex: 2
+      mapPosition: {x: 160, y: 240}
+      connections: 0100000003000000
+      preview: {fileID: 0}
+      enemyTypes: []
+      towerSlotCount: 4
   - worldName: Mansion
     background: {fileID: 0}
     constellationColor: {r: 1, g: 0.71290123, b: 0, a: 0}

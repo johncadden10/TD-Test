@@ -15,12 +15,12 @@ public class GameOverScreen : MonoBehaviour
     private void ShowGameOver()
     {
         gameOverPanel.SetActive(true);
-        Time.timeScale = 0f; // pause the game
+        GameSpeed.Pause();
     }
 
     public void OnRetryPressed()
     {
-        Time.timeScale = 1f; // restore time before reloading
+        GameSpeed.ClearPauses();   // keeps your chosen speed, only removes the pause
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

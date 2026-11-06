@@ -617,8 +617,8 @@ MonoBehaviour:
   healthBar: {fileID: 6164741889389074283}
   targetingRange: 5
   attackSpeed: 1
-  lifetime: 100
-  attackDamage: 10
+  lifetime: 76
+  attackDamage: 25
   preDeathDuration: 1
   retargetInterval: 0.1
   damageType: 0
@@ -632,8 +632,8 @@ MonoBehaviour:
   soulPrefab: {fileID: 2225912334050266548, guid: cc69a79b0d58b704c8fb3a3a0f24ad14, type: 3}
   vengefulSoulPrefab: {fileID: 4852131558035956408, guid: dfb297e4b809d0d459d9522826c8a6a9, type: 3}
   currencyGain: 25
-  generationSpeed: 11
-  vengefulBaseDamage: 40
+  generationSpeed: 10.25
+  vengefulBaseDamage: 35
 --- !u!212 &4714573070721817640
 SpriteRenderer:
   m_ObjectHideFlags: 0

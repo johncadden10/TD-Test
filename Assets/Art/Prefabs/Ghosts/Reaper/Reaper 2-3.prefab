@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653f3bdd27d23e54c841c997b26f5b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growthPerSecond: 0.3
-  maxBonus: 75
+  growthPerSecond: 0.2
+  maxBonus: 25
