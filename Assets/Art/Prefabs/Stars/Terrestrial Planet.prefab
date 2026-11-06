@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entries:
-  - type: 0
+  - type: 1
     multiplier: 0
 --- !u!114 &3973099344988002473
 MonoBehaviour:

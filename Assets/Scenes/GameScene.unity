@@ -5539,19 +5539,19 @@ MonoBehaviour:
   - waveName: Round 4
     useCustomWave: 1
     enemyGroups:
-    - enemyPrefab: {fileID: 3903896035924657682, guid: ee6f7493381d79e44ab4bddaadbbf64d, type: 3}
-      count: 6
+    - enemyPrefab: {fileID: 2043083814474225297, guid: 344c18716ad19134eb573ad3671dbb0c, type: 3}
+      count: 3
       spawnInterval: 2
       belted: 0
       fused: 0
-      constellation: 1
-    - enemyPrefab: {fileID: 2043083814474225297, guid: 18052988f835f7f44ba6884718f1be96, type: 3}
-      count: 1
-      spawnInterval: 4
+      constellation: 0
+    - enemyPrefab: {fileID: 3903896035924657682, guid: 93ceb7f2ef91fc04f8453e6b0f7c9c91, type: 3}
+      count: 6
+      spawnInterval: 1
       belted: 0
       fused: 0
       constellation: 0
-    timeBetweenGroups: 5
+    timeBetweenGroups: 1
   - waveName: Round 5
     useCustomWave: 1
     enemyGroups:

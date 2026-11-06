@@ -58,8 +58,8 @@ MonoBehaviour:
     m_Bits: 64
   firingPoint: {fileID: 6343064466735335165}
   healthBar: {fileID: 6569988708267055651}
-  targetingRange: 5.5
-  attackSpeed: 2.5
+  targetingRange: 5
+  attackSpeed: 1.6
   lifetime: 48
   attackDamage: 10
   preDeathDuration: 1

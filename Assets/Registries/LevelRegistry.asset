@@ -19,7 +19,7 @@ MonoBehaviour:
     levels:
     - levelId: world1_level1
       displayName: Level 1-1
-      sceneName: GameScene
+      sceneName: TestScene1
       essenceReward: 150
       worldIndex: 0
       mapPosition: {x: 0, y: 0}

@@ -29,6 +29,11 @@ public class VengefulSoul : MonoBehaviour
 
     private void Update()
     {
+        if (ProjectileAbsorber.TryAbsorbAt(transform.position))
+        {
+            Destroy(gameObject);
+            return;
+        }
         if (target != null && !target.GetComponent<Health>().IsTargetable)
             target = null;
 

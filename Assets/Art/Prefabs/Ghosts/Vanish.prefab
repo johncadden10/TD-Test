@@ -272,7 +272,7 @@ MonoBehaviour:
   firingPoint: {fileID: 6343064466735335165}
   healthBar: {fileID: 3362116431857955420}
   targetingRange: 2.5
-  attackSpeed: 1.4
+  attackSpeed: 0.4
   lifetime: 12
   attackDamage: 10
   preDeathDuration: 1
