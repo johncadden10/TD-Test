@@ -17,6 +17,7 @@ MonoBehaviour:
     displayName: Phantom
     description: Fires seeking ghost orbs from a great distance.
     cost: 75
+    placementCooldown: 5
     baseRange: 0
     baseAttackSpeed: 0
     baseDamage: 5
@@ -79,6 +80,7 @@ MonoBehaviour:
     displayName: Reaper
     description: Harvests souls that can be collected for ecto.
     cost: 125
+    placementCooldown: 10
     baseRange: 0
     baseAttackSpeed: 0
     baseDamage: 0
@@ -140,6 +142,7 @@ MonoBehaviour:
     displayName: Banshee
     description: Loud screams do rapid damage close by.
     cost: 175
+    placementCooldown: 8
     baseRange: 1.5
     baseAttackSpeed: 0
     baseDamage: 1
@@ -202,6 +205,7 @@ MonoBehaviour:
     displayName: Vanish
     description: A cheap, short lived ghost that fires weak clouds.
     cost: 25
+    placementCooldown: 3
     baseRange: 2.5
     baseAttackSpeed: 0
     baseDamage: 3
@@ -263,6 +267,7 @@ MonoBehaviour:
     displayName: Spirit
     description: Freezes single targets with beams of ice.
     cost: 50
+    placementCooldown: 5
     baseRange: 2.5
     baseAttackSpeed: 0
     baseDamage: 0
@@ -323,6 +328,7 @@ MonoBehaviour:
     displayName: Poltergeist
     description: Hurls an array of rock shards with a wide spread.
     cost: 300
+    placementCooldown: 8
     baseRange: 2
     baseAttackSpeed: 0
     baseDamage: 0
@@ -386,6 +392,7 @@ MonoBehaviour:
     description: Incredibly short lifetime that gives effects on expiration; base
       deals heavy damage
     cost: 200
+    placementCooldown: 30
     baseRange: 1.5
     baseAttackSpeed: 0
     baseDamage: 0

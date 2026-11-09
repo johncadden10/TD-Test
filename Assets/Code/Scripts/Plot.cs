@@ -36,6 +36,7 @@ public class Plot : MonoBehaviour
     public bool TryBuild(LevelLoadout.Entry entry)
     {
         if (tower != null) return false;
+        if (BuildManager.main.IsOnCooldown(entry)) return false;
 
         if (entry.tower.cost > LevelManager.main.ecto)
         {
@@ -49,6 +50,8 @@ public class Plot : MonoBehaviour
 
         Ghost ghost = tower.GetComponent<Ghost>();
         if (ghost != null) ghost.Initialize(entry.tower.towerId, entry.pathIndex);
+
+        BuildManager.main.StartCooldown(entry); // starts when placed, not when picked up
 
         sr.color = startColor;
         return true;

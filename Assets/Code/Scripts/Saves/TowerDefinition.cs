@@ -28,6 +28,7 @@ public class TowerDefinition
     public string displayName;
     public string description;
     public int cost;
+    public float placementCooldown = 5f; // seconds before this ghost can be placed again
     public float baseRange;
     public float baseAttackSpeed;
     public int baseDamage;

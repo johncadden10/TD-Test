@@ -631,7 +631,7 @@ MonoBehaviour:
   reaperEffect: {fileID: 897683388670816920}
   soulPrefab: {fileID: 2225912334050266548, guid: cc69a79b0d58b704c8fb3a3a0f24ad14, type: 3}
   vengefulSoulPrefab: {fileID: 4852131558035956408, guid: dfb297e4b809d0d459d9522826c8a6a9, type: 3}
-  currencyGain: 25
+  currencyGain: 25000
   generationSpeed: 10.25
   vengefulBaseDamage: 35
 --- !u!212 &4714573070721817640

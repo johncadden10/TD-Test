@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
 public class BuildManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class BuildManager : MonoBehaviour
     [SerializeField] private TowerDefinition[] testTowers;
 
     private LevelLoadout.Entry selected;
+    private readonly Dictionary<string, float> cooldownEnd = new Dictionary<string, float>();
     private bool isHolding;
     private bool isDragging;
     private Vector2 pressStart;
@@ -87,6 +89,27 @@ public class BuildManager : MonoBehaviour
             }
             // else: it was a click, so stay selected and wait for a plot click
         }
+    }
+
+    public float CooldownRemaining(LevelLoadout.Entry entry)
+    {
+        if (cooldownEnd.TryGetValue(entry.tower.towerId, out float end))
+            return Mathf.Max(0f, end - Time.time);
+        return 0f;
+    }
+
+    public bool IsOnCooldown(LevelLoadout.Entry entry) => CooldownRemaining(entry) > 0f;
+
+    public float CooldownFraction(LevelLoadout.Entry entry)
+    {
+        float total = entry.tower.placementCooldown;
+        return total <= 0f ? 0f : Mathf.Clamp01(CooldownRemaining(entry) / total);
+    }
+
+    public void StartCooldown(LevelLoadout.Entry entry)
+    {
+        if (entry.tower.placementCooldown > 0f)
+            cooldownEnd[entry.tower.towerId] = Time.time + entry.tower.placementCooldown;
     }
 
     // called by Plot on click when something is selected (click-click mode)
