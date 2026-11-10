@@ -11,9 +11,13 @@ public class TowerAnimator : MonoBehaviour
     private static readonly int IsAttackingBool = Animator.StringToHash("isAttacking");
     private static readonly int IsPreDeath = Animator.StringToHash("PreDeath");
 
-    public void SetPaused(bool paused)
+    private bool paused;
+    private float speedMultiplier = 1f;
+
+    public void SetPaused(bool value)
     {
-        animator.speed = paused ? 0f : 1f;
+        paused = value;
+        ApplySpeed();
     }
     
     public void SetAttacking()
@@ -39,5 +43,17 @@ public class TowerAnimator : MonoBehaviour
     public void SetPreDeath()
     {
         animator.SetTrigger(IsPreDeath);
+    }
+
+    public void SetSpeedMultiplier(float value)
+    {
+        if (Mathf.Approximately(value, speedMultiplier)) return;
+        speedMultiplier = value;
+        ApplySpeed();
+    }
+
+    private void ApplySpeed()
+    {
+        animator.speed = paused ? 0f : speedMultiplier;
     }
 }

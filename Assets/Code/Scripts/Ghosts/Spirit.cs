@@ -16,7 +16,7 @@ public class Spirit : Ghost
         if (IsStunned) return;
         if (isAnimationPlaying) return;
 
-        timeUntilFire += Time.deltaTime;
+        timeUntilFire += HasteDelta;
 
         if (timeUntilFire >= attackSpeed)
         {

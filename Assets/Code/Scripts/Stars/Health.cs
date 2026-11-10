@@ -44,17 +44,18 @@ public class Health : MonoBehaviour
     // old signature, so existing ghosts still compile
     public void TakeDamage(float dmg) => TakeDamage(new DamageInfo(dmg));
 
-    public void TakeDamage(DamageInfo info)
+    public bool TakeDamage(DamageInfo info)
     {
-        if (isDestroyed || !IsTargetable) return; // immune while untargetable
+        if (isDestroyed || (!IsTargetable && !info.ignoreHidden)) return false;
 
         foreach (IDamageModifier m in modifiers) m.Modify(ref info);
-        if (info.amount <= 0) return;
+        if (info.amount <= 0f) return false;
 
         hitPoints -= info.amount;
         OnDamaged?.Invoke(info);
 
-        if (hitPoints <= 0) Die(info);
+        if (hitPoints <= 0f) Die(info);
+        return true;
     }
 
     private void Die(DamageInfo killingBlow)

@@ -8,7 +8,7 @@ public class Banshee : Ghost
     protected override void Update()
     {
         if (IsStunned) return;
-        timeUntilFire += Time.deltaTime;
+        timeUntilFire += HasteDelta;
 
         bool enemiesInRange = EnemiesInRange();
 
@@ -37,8 +37,8 @@ public class Banshee : Ghost
 
         foreach (RaycastHit2D hit in hits)
         {
-            Health h = hit.transform.GetComponent<Health>();
-            if (h != null) h.TakeDamage(MakeDamage(attackDamage));
+            Health h = hit.transform.GetComponentInParent<Health>();
+            if (h != null) h.TakeDamage(MakeDamage(ScaleVsStatus(attackDamage, hit.transform)));
         }
     }
 }

@@ -48,6 +48,11 @@ public class HiddenUnlessNearGhost : MonoBehaviour
         return false;
     }
 
+    public bool WithinRevealRange(Vector2 point)
+    {
+        return Vector2.Distance(point, transform.position) <= revealRadius;
+    }
+
     private void SetAlpha(float a)
     {
         foreach (SpriteRenderer sr in renderers)

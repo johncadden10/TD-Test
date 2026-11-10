@@ -51,7 +51,7 @@ public class Reaper : Ghost
         if (IsStunned) return;
         if (isGenerating) return;
 
-        progress += Time.deltaTime * SpeedMultiplier * AdjacencyMultiplier;
+        progress += HasteDelta * SpeedMultiplier * AdjacencyMultiplier;
 
         if (progress >= generationSpeed)
         {

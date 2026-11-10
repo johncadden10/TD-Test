@@ -45,6 +45,16 @@ public abstract class Ghost : MonoBehaviour
     public int Tier { get; private set; }
     public float LifetimeMultiplier { get; set; } = 1f;
     public float MaxLifetime => lifetime * LifetimeMultiplier;
+    
+    // range upgrades (Yokai uses this as its blast radius)
+    public float RangeMultiplier { get; set; } = 1f;
+    public float TargetingRange => targetingRange * RangeMultiplier;
+
+    // restoring lifetime, with optional overheal
+    private float overhealHaste = 1f;
+    public bool IsOverhealed => lifetimeRemaining > MaxLifetime;
+    public float FireRateMultiplier => IsOverhealed ? overhealHaste : 1f;
+
     public DamageType DamageType
     {
         get => damageType;
@@ -72,6 +82,11 @@ public abstract class Ghost : MonoBehaviour
     public float PhaseRegenMultiplier { get; set; } = 1f;
     public bool IsPhased => Time.time < phaseUntil;
 
+    public float StatusBonusMultiplier { get; set; } = 1f;
+
+    public float OverhealCapSeconds { get; private set; }
+    protected float HasteDelta => Time.deltaTime * FireRateMultiplier;
+
     protected float lifetimeRemaining;
     private bool preDeathTriggered;
     public bool IsAlive => lifetimeRemaining > 0f;
@@ -79,8 +94,6 @@ public abstract class Ghost : MonoBehaviour
     protected Transform target;
     protected float timeUntilFire;
     protected void RaiseFired(Transform t) => OnFired?.Invoke(t);
-
-    public float TargetingRange => targetingRange;
 
     private float phaseUntil;
     private float nextPhaseAllowed;
@@ -122,7 +135,7 @@ public abstract class Ghost : MonoBehaviour
         }
 
         if (!isAttackAnimationPlaying)
-            timeUntilFire += Time.deltaTime;
+            timeUntilFire += Time.deltaTime * FireRateMultiplier;
 
         if (timeUntilFire >= attackSpeed && !isAttackAnimationPlaying)
         {
@@ -167,8 +180,8 @@ public abstract class Ghost : MonoBehaviour
                 OnPreDeath();
             }
 
-            if (healthBar != null)
-                healthBar.SetProgress(Mathf.Clamp01(lifetimeRemaining / MaxLifetime));
+            if (healthBar != null) 
+                healthBar.SetLifetime(lifetimeRemaining, MaxLifetime, OverhealCapSeconds);
 
             yield return null;
         }
@@ -191,6 +204,8 @@ public abstract class Ghost : MonoBehaviour
             wasStunned = stunned;
             if (towerAnimator != null) towerAnimator.SetPaused(stunned);
         }
+        if (towerAnimator != null)
+            towerAnimator.SetSpeedMultiplier(FireRateMultiplier);
 
         float targetAlpha = IsPhased ? phasedOpacity : 1f;
         if (!Mathf.Approximately(phaseAlpha, targetAlpha))
@@ -228,7 +243,7 @@ public abstract class Ghost : MonoBehaviour
             towerAnimator.SetPreDeath();
     }
 
-    public void OnDeathEnd()
+    public virtual void OnDeathEnd()
     {
         Destroy(gameObject);
     }
@@ -282,7 +297,20 @@ public abstract class Ghost : MonoBehaviour
     public void AddLifetime(float seconds)
     {
         if (!IsAlive || isDying || seconds <= 0f) return;
-        lifetimeRemaining = Mathf.Min(lifetimeRemaining + seconds, MaxLifetime);
+        float raised = Mathf.Min(lifetimeRemaining + seconds, MaxLifetime);
+        lifetimeRemaining = Mathf.Max(lifetimeRemaining, raised);
+    }
+
+    public void RestoreLifetime(float seconds, float overhealSeconds, float haste)
+    {
+        if (isDying || !IsAlive) return;
+
+        OverhealCapSeconds = Mathf.Max(OverhealCapSeconds, overhealSeconds);
+
+        float cap = Mathf.Max(lifetimeRemaining, MaxLifetime + overhealSeconds);
+        lifetimeRemaining = Mathf.Min(lifetimeRemaining + seconds, cap);
+
+        if (haste > 1f) overhealHaste = Mathf.Max(overhealHaste, haste);
     }
 
     public static Ghost Nearest(Vector2 from, float maxRange)
@@ -394,6 +422,12 @@ public abstract class Ghost : MonoBehaviour
     protected DamageInfo MakeDamage(float amount)
     {
         return new DamageInfo(amount, damageType, gameObject);
+    }
+
+    protected float ScaleVsStatus(float amount, Component star)
+    {
+        StatusController sc = star.GetComponentInParent<StatusController>();
+        return (sc != null && sc.HasAnyStatus) ? amount * StatusBonusMultiplier : amount;
     }
 
     protected virtual void ApplyTierEffect(int pathIndex, int tierIndex) { }
