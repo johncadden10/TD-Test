@@ -9,6 +9,8 @@ public class BeltedModifier : MonoBehaviour, IDamageModifier
 
     public void Modify(ref DamageInfo info)
     {
+        if (info.ignoreBelted) return; // skips both the physical resist and the clamp to 1
+        
         if (info.type.Has(DamageType.Physical))
             info.amount *= physicalMultiplier;
 

@@ -7,14 +7,16 @@ public struct DamageInfo
     public GameObject source;
     public bool fromStatus;
     public bool ignoreHidden; // may hit an untargetable (hidden) star
+    public bool ignoreBelted;
 
     public DamageInfo(float amount, DamageType type = DamageType.Neutral, GameObject source = null,
-                      bool fromStatus = false, bool ignoreHidden = false)
+                      bool fromStatus = false, bool ignoreHidden = false, bool ignoreBelted = false)
     {
         this.amount = amount;
         this.type = type;
         this.source = source;
         this.fromStatus = fromStatus;
         this.ignoreHidden = ignoreHidden;
+        this.ignoreBelted = ignoreBelted;
     }
 }

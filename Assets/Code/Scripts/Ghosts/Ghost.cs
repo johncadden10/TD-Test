@@ -40,7 +40,6 @@ public abstract class Ghost : MonoBehaviour
     public string TowerId { get; private set; }
     // stat multipliers modifiers can change
     public float DamageMultiplier { get; set; } = 1f;
-    public float AttackSpeedMultiplier { get; set; } = 1f;
     public float RangeBonus { get; set; } = 0f;
     public int Tier { get; private set; }
     public float LifetimeMultiplier { get; set; } = 1f;
@@ -53,7 +52,8 @@ public abstract class Ghost : MonoBehaviour
     // restoring lifetime, with optional overheal
     private float overhealHaste = 1f;
     public bool IsOverhealed => lifetimeRemaining > MaxLifetime;
-    public float FireRateMultiplier => IsOverhealed ? overhealHaste : 1f;
+    public float FireRateMultiplier => FireRateBonus * (IsOverhealed ? overhealHaste : 1f);
+    public float FireRateBonus { get; set; } = 1f;
 
     public DamageType DamageType
     {
@@ -135,7 +135,7 @@ public abstract class Ghost : MonoBehaviour
         }
 
         if (!isAttackAnimationPlaying)
-            timeUntilFire += Time.deltaTime * FireRateMultiplier;
+            timeUntilFire += HasteDelta;
 
         if (timeUntilFire >= attackSpeed && !isAttackAnimationPlaying)
         {
@@ -328,7 +328,7 @@ public abstract class Ghost : MonoBehaviour
 
     protected void FindTarget()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, TargetingRange, Vector2.zero, 0f, enemyMask);
 
         Transform best = null;
         float bestRemaining = float.MaxValue;
@@ -359,7 +359,7 @@ public abstract class Ghost : MonoBehaviour
 
     protected bool CheckTargetIsInRange()
     {
-        return Vector2.Distance(target.position, transform.position) <= targetingRange;
+        return Vector2.Distance(target.position, transform.position) <= TargetingRange;
     }
 
     protected virtual void RotateTowardsTarget()

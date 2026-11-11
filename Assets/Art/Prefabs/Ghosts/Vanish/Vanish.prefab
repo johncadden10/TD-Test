@@ -72,6 +72,7 @@ MonoBehaviour:
   - {r: 1, g: 0.5, b: 0, a: 1}
   phasedOpacity: 0.5
   bulletPrefab: {fileID: 691850364357836796, guid: e98e377d371b6514b8153b9150f73eb8, type: 3}
+  multiTurnRate: 50
 --- !u!212 &6528938513971431400
 SpriteRenderer:
   m_ObjectHideFlags: 0

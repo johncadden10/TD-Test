@@ -5,18 +5,23 @@ public class Projectile : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] private GameObject blastEffectPrefab; // optional, scaled to the blast radius
 
     [Header("Attributes")]
     [SerializeField] protected float bulletSpeed = 4f;
     [SerializeField] protected float bulletLifetime = 2f;
     [SerializeField] protected float bulletDamage = 4f;
-    [SerializeField] protected int pierce = 0;       // stars it passes through; it breaks on hit number pierce + 1
-    [SerializeField] protected float turnRate = 0f;  // degrees per second, 0 = instant tracking
+    [SerializeField] protected int pierce = 0;
+    [SerializeField] protected float turnRate = 0f;
 
     public float SpeedMultiplier { get; set; } = 1f;
     public int Pierce { get => pierce; set => pierce = value; }
     public float TurnRate { get => turnRate; set => turnRate = value; }
-    public float DamageMultiplier { get; set; } = 1f;
+    public bool IgnoreBelted { get; set; }
+    public bool IgnoreAbsorbers { get; set; }
+
+    public bool Reseek { get; set; }
+    private float retargetTimer;
 
     protected Transform target;
     protected DamageType damageType = DamageType.Neutral;
@@ -27,10 +32,22 @@ public class Projectile : MonoBehaviour
     private int hitCount;
     private readonly HashSet<Health> alreadyHit = new HashSet<Health>();
 
+    // delayed blast
+    private float blastDelay, blastRadius, blastDamageMultiplier;
+    private bool fusing;
+    private Transform stuckTo;
+    private Vector3 stuckOffset;
+
     public void SetTarget(Transform t) { target = t; }
     public void SetDamageType(DamageType type) { damageType = type; }
 
-    // fixed direction, no homing (Poltergeist pellets)
+    public void ConfigureBlast(float delay, float radius, float damageMultiplier)
+    {
+        blastDelay = delay;
+        blastRadius = radius;
+        blastDamageMultiplier = damageMultiplier;
+    }
+
     public void SetDirection(Vector2 dir)
     {
         heading = dir.normalized;
@@ -38,7 +55,6 @@ public class Projectile : MonoBehaviour
         rb.linearVelocity = heading * bulletSpeed * SpeedMultiplier;
     }
 
-    // starts in a direction, then curves toward the target at the given turn rate
     public void Launch(Vector2 dir, Transform t, float turn)
     {
         heading = dir.normalized;
@@ -50,18 +66,38 @@ public class Projectile : MonoBehaviour
 
     protected virtual void Start()
     {
-        Destroy(gameObject, bulletLifetime);
+        Invoke(nameof(Expire), bulletLifetime);
+    }
+
+    private void Expire()
+    {
+        if (!fusing) Destroy(gameObject);
+    }
+
+    private void Update()
+    {
+        if (fusing && stuckTo != null)
+            transform.position = stuckTo.position + stuckOffset; // rides the star while the fuse burns
     }
 
     protected virtual void FixedUpdate()
     {
         if (consumed) return;
 
-        // lose tracking if the target became untargetable (hidden protostar)
         if (target != null)
         {
             Health h = target.GetComponent<Health>();
             if (h != null && !h.IsTargetable) target = null;
+        }
+
+        if (Reseek && homing && target == null)
+        {
+            retargetTimer -= Time.fixedDeltaTime;
+            if (retargetTimer <= 0f)
+            {
+                retargetTimer = 0.1f;
+                target = FindNewTarget();
+            }
         }
 
         if (homing && target != null)
@@ -79,22 +115,42 @@ public class Projectile : MonoBehaviour
                 heading = Rotate(heading, step);
             }
         }
-        // no target: keep flying along the last heading
 
         Vector2 pull = Vector2.zero;
-        foreach (ProjectileAbsorber a in ProjectileAbsorber.All)
+        if (!IgnoreAbsorbers)
         {
-            if (!a.IsActive) continue;
-
-            if (a.InsideHorizon(rb.position))
+            foreach (ProjectileAbsorber a in ProjectileAbsorber.All)
             {
-                Absorbed(a);
-                return;
+                if (!a.IsActive) continue;
+
+                if (a.InsideHorizon(rb.position))
+                {
+                    Absorbed(a);
+                    return;
+                }
+                pull += a.PullAt(rb.position);
             }
-            pull += a.PullAt(rb.position);
         }
 
         rb.linearVelocity = heading * bulletSpeed * SpeedMultiplier + pull;
+    }
+
+    private Transform FindNewTarget()
+    {
+        Transform best = null;
+        float bestDist = float.MaxValue;
+
+        foreach (Health h in FindObjectsByType<Health>(FindObjectsSortMode.None))
+        {
+            if (!h.IsTargetable || alreadyHit.Contains(h)) continue;
+
+            ConstellationLink link = h.GetComponent<ConstellationLink>();
+            if (link != null && link.IsBlocked) continue;
+
+            float d = Vector2.Distance(rb.position, h.transform.position);
+            if (d < bestDist) { bestDist = d; best = h.transform; }
+        }
+        return best;
     }
 
     private void Absorbed(ProjectileAbsorber a)
@@ -108,35 +164,76 @@ public class Projectile : MonoBehaviour
     {
         if (consumed) return;
 
-        ProjectileAbsorber absorber = other.GetComponentInParent<ProjectileAbsorber>();
-        if (absorber != null && absorber.IsActive)
+        if (!IgnoreAbsorbers)
         {
-            Absorbed(absorber);
-            return;
+            ProjectileAbsorber absorber = other.GetComponentInParent<ProjectileAbsorber>();
+            if (absorber != null && absorber.IsActive)
+            {
+                Absorbed(absorber);
+                return;
+            }
         }
 
         Health h = other.GetComponentInParent<Health>();
-        if (h == null || !h.IsTargetable) return; // pass through hidden stars
+        if (h == null || !h.IsTargetable) return;
 
         OnHit(h);
     }
 
     protected virtual void OnHit(Health h)
     {
-        if (!alreadyHit.Add(h)) return; // a star with several colliders only counts once
+        if (!alreadyHit.Add(h)) return;
 
-        h.TakeDamage(new DamageInfo(bulletDamage * DamageMultiplier, damageType, gameObject));
+        h.TakeDamage(MakeDamage(bulletDamage));
         hitCount++;
 
         if (hitCount > pierce)
         {
             consumed = true;
-            Destroy(gameObject);
+            if (blastDelay > 0f) BeginFuse(h.transform);
+            else Destroy(gameObject);
             return;
         }
 
-        // passed through the star it was chasing, so fly on instead of circling back
         if (target != null && h.transform == target) target = null;
+    }
+
+    private void BeginFuse(Transform star)
+    {
+        CancelInvoke(nameof(Expire));
+        fusing = true;
+        rb.linearVelocity = Vector2.zero;
+        rb.simulated = false; // no more collisions
+        stuckTo = star;
+        stuckOffset = transform.position - star.position;
+        Invoke(nameof(Blast), blastDelay);
+    }
+
+    private void Blast()
+    {
+        Vector2 pos = transform.position;
+        float damage = bulletDamage * blastDamageMultiplier;
+
+        foreach (Health h in FindObjectsByType<Health>(FindObjectsSortMode.None))
+        {
+            if (Vector2.Distance(h.transform.position, pos) > blastRadius) continue;
+            h.TakeDamage(MakeDamage(damage));
+        }
+
+        if (blastEffectPrefab != null)
+        {
+            GameObject fx = Instantiate(blastEffectPrefab, pos, Quaternion.identity);
+            fx.transform.localScale = Vector3.one * blastRadius * 2f; // assumes a 1-unit sprite
+        }
+
+        Destroy(gameObject);
+    }
+
+    private DamageInfo MakeDamage(float amount)
+    {
+        DamageInfo info = new DamageInfo(amount, damageType, gameObject);
+        info.ignoreBelted = IgnoreBelted;
+        return info;
     }
 
     private static Vector2 Rotate(Vector2 v, float degrees)
