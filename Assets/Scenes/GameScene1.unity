@@ -5876,20 +5876,23 @@ MonoBehaviour:
   startingEcto: 125
   incomeLevels:
   - gain: 25
-    interval: 8
+    interval: 6.25
     upgradeCost: 0
   - gain: 25
-    interval: 6
-    upgradeCost: 75
+    interval: 4.1666665
+    upgradeCost: 50
   - gain: 25
-    interval: 4.5
-    upgradeCost: 150
+    interval: 3.3333333
+    upgradeCost: 125
   - gain: 25
-    interval: 3
-    upgradeCost: 250
+    interval: 3.125
+    upgradeCost: 200
+  - gain: 25
+    interval: 2.5
+    upgradeCost: 350
   - gain: 25
     interval: 2
-    upgradeCost: 400
+    upgradeCost: 500
   onIncomeChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6016,8 +6019,8 @@ MonoBehaviour:
     duration: 15
     enemyGroups:
     - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
-      count: 5
-      spawnInterval: 0.75
+      count: 3
+      spawnInterval: 1.5
       belted: 0
       fused: 0
       constellation: 1
@@ -6027,7 +6030,7 @@ MonoBehaviour:
       belted: 0
       fused: 0
       constellation: 0
-    timeBetweenGroups: 0.25
+    timeBetweenGroups: 0.5
   - waveName: Round 7
     useCustomWave: 1
     duration: 15
@@ -11681,9 +11684,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speeds:
   - 1
-  - 1.25
   - 1.5
-  - 1.75
+  - 2
+  - 4
   label: {fileID: 29581386}
   enableHotkeys: 1
 --- !u!1001 &2138697190

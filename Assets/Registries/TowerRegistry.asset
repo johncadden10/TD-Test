@@ -58,7 +58,7 @@ MonoBehaviour:
         description: Phantoms phase and become invisible when attacked by a star
           and take no damage.
         cost: 200
-        ectoCost: 200
+        ectoCost: 150
         modifierPrefab: {fileID: 735922247001707355, guid: 9ab656a336bf5a04b930b688104b04fd, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_2_2
@@ -97,21 +97,21 @@ MonoBehaviour:
         description: Harvested souls that expire turn into vengeful souls that launch
           themselves at nearby stars to deal damage.
         cost: 175
-        ectoCost: 300
+        ectoCost: 225
         modifierPrefab: {fileID: 5066518819745044181, guid: 392fdf2b7b443674da57b2ffc5baf4d9, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_1_2
         displayName: Explosive Souls
         description: Vengeful souls deal more damage and explode on contact.
         cost: 400
-        ectoCost: 500
+        ectoCost: 350
         modifierPrefab: {fileID: 5066518819745044181, guid: 36fccaa24bb342944a8060d0a7eaa1fa, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_1_3
         displayName: Rapid Harvest
         description: Harvests souls much faster, but souls provide less ecto.
         cost: 1200
-        ectoCost: 650
+        ectoCost: 550
         modifierPrefab: {fileID: 5066518819745044181, guid: 361f0f6f6989b54418519f17852d5b5c, type: 3}
         icon: {fileID: 0}
     - pathId: reaper_path_2
@@ -121,21 +121,21 @@ MonoBehaviour:
         displayName: Auto Harvest
         description: Souls are automatically collected.
         cost: 100
-        ectoCost: 100
+        ectoCost: 50
         modifierPrefab: {fileID: 5066518819745044181, guid: 85695eb72718b4d46bc6df3983c5bd01, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_2_2
         displayName: Coworkers
         description: Souls increase in value the longer they are jarred for.
         cost: 600
-        ectoCost: 375
+        ectoCost: 275
         modifierPrefab: {fileID: 5066518819745044181, guid: 361097da8bd78db409a37a6008006de3, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_2_3
         displayName: Older and Wiser
         description: Souls increase in value the longer the reaper is alive.
         cost: 1500
-        ectoCost: 725
+        ectoCost: 575
         modifierPrefab: {fileID: 5066518819745044181, guid: eb46d98d07fe0e94db6840c5765bc251, type: 3}
         icon: {fileID: 0}
   - towerId: banshee
@@ -221,7 +221,7 @@ MonoBehaviour:
         displayName: Improved Stats
         description: Increases range, pierce, and projectile speed.
         cost: 100
-        ectoCost: 100
+        ectoCost: 75
         modifierPrefab: {fileID: 4914684363805038858, guid: f48ff1a7899f2184c96844ea3ff69773, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_1_2
@@ -236,7 +236,7 @@ MonoBehaviour:
         displayName: Cirrostratus
         description: Clouds are no longer projectiles or magic type damage.
         cost: 1500
-        ectoCost: 225
+        ectoCost: 250
         modifierPrefab: {fileID: 4914684363805038858, guid: 4970afbe9257afb4eae05e42688a99b3, type: 3}
         icon: {fileID: 0}
     - pathId: vanish_path_1
@@ -246,7 +246,7 @@ MonoBehaviour:
         displayName: Quick Clouds
         description: Fires clouds much faster.
         cost: 175
-        ectoCost: 150
+        ectoCost: 125
         modifierPrefab: {fileID: 4914684363805038858, guid: 8813058a6ac304c458c868c19327f750, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_2_2
@@ -254,7 +254,7 @@ MonoBehaviour:
         description: Clouds blow up after a short delay upon impact, dealing damage
           twice.
         cost: 400
-        ectoCost: 225
+        ectoCost: 250
         modifierPrefab: {fileID: 4914684363805038858, guid: 28c77310df63a744d8f5ff849802e6bd, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_2_3
@@ -392,7 +392,7 @@ MonoBehaviour:
     displayName: Yokai
     description: Incredibly short lifetime that gives effects on expiration; base
       deals heavy damage
-    cost: 200
+    cost: 150
     placementCooldown: 30
     baseRange: 1.5
     baseAttackSpeed: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
         description: Yokai's burst leaves behind flames in its radius that persist
           for a period of time.
         cost: 175
-        ectoCost: 150
+        ectoCost: 100
         modifierPrefab: {fileID: 2287601713824298542, guid: 7caebd9542d8a404695f96c2397fc02e, type: 3}
         icon: {fileID: 0}
       - upgradeId: yokai_1_2
@@ -418,14 +418,14 @@ MonoBehaviour:
         description: Any star that takes damage from the residual flames is stunned
           until the disappear.
         cost: 400
-        ectoCost: 325
+        ectoCost: 250
         modifierPrefab: {fileID: 2287601713824298542, guid: 23b5e2e51a65b6041a256794460c1aaf, type: 3}
         icon: {fileID: 0}
       - upgradeId: yokai_1_3
         displayName: Nuclear Explosion
         description: Gives additional range.
         cost: 1200
-        ectoCost: 550
+        ectoCost: 400
         modifierPrefab: {fileID: 2287601713824298542, guid: 3057929222eac4d4c866f1b7d676f354, type: 3}
         icon: {fileID: 0}
     - pathId: yokai_path_2
