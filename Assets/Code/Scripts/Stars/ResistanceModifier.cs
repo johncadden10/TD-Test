@@ -21,4 +21,11 @@ public class ResistanceModifier : MonoBehaviour, IDamageModifier
                 info.amount *= e.multiplier;
         }
     }
+
+    public bool IsImmuneTo(DamageType type)
+    {
+        foreach (Entry e in entries)
+            if (type.Has(e.type) && e.multiplier <= 0f) return true;
+        return false;
+    }
 }

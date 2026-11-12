@@ -283,46 +283,46 @@ MonoBehaviour:
         displayName: Frozen Solid
         description: Slow effect becomes a freeze that locks stars in place temporarily.
         cost: 175
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 150
+        modifierPrefab: {fileID: 1419669052618122590, guid: d6e4707063d474b4bb977af247d89adb, type: 3}
         icon: {fileID: 0}
       - upgradeId: spirit_1_2
         displayName: Permafrost
         description: Stars move slower even after thawing.
         cost: 400
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 225
+        modifierPrefab: {fileID: 1419669052618122590, guid: 3127e0f800664604a9cfe72299c175dd, type: 3}
         icon: {fileID: 0}
       - upgradeId: spirit_1_3
         displayName: Stronger Freeze
-        description: Attacks can freeze larger stars like galaxies.
+        description: 
         cost: 1200
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 400
+        modifierPrefab: {fileID: 1419669052618122590, guid: 31df59822d12e7d4d8ebf23b716a3b2d, type: 3}
         icon: {fileID: 0}
     - pathId: spirit_path_2
       displayName: Path 2
       tiers:
       - upgradeId: spirit_2_1
         displayName: Improved Aura
-        description: Increases range and attack speed.
+        description: 
         cost: 100
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 175
+        modifierPrefab: {fileID: 1419669052618122590, guid: 4be54e75a1185dc4ca2e198efaaa22ab, type: 3}
         icon: {fileID: 0}
       - upgradeId: spirit_2_2
         displayName: Frostbite
-        description: Attacks cause slowed stars to be vulnerable and deal less damage.
+        description: 
         cost: 600
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 275
+        modifierPrefab: {fileID: 1419669052618122590, guid: 41a1f26d3cbfdb149b215bf8d7600b1d, type: 3}
         icon: {fileID: 0}
       - upgradeId: spirit_2_3
         displayName: Viral Frost
-        description: Ice beams now have a splash effect.
+        description: 
         cost: 1500
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 400
+        modifierPrefab: {fileID: 1419669052618122590, guid: d111c26f4f717fc4ca15525837b838e4, type: 3}
         icon: {fileID: 0}
   - towerId: poltergeist
     displayName: Poltergeist

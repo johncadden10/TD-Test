@@ -65,6 +65,7 @@ public abstract class Ghost : MonoBehaviour
     // events modifiers can subscribe to
     public event Action<Transform> OnFired;       // call inside Shoot logic
     public event Action OnTick;                   // call every Update
+    public event System.Action<float> OnLifetimeReduced;
 
     private static readonly List<Ghost> active = new List<Ghost>();
     public static IReadOnlyList<Ghost> Active => active;
@@ -296,6 +297,7 @@ public abstract class Ghost : MonoBehaviour
         if (!IsAlive || isDying) return;
         if (AbsorbStarAttack()) return;
         lifetimeRemaining -= seconds;
+        if (seconds > 0f) OnLifetimeReduced?.Invoke(seconds);
     }
 
     public void AddLifetime(float seconds)

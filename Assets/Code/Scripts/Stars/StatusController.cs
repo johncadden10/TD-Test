@@ -23,13 +23,15 @@ public class StatusController : MonoBehaviour, IDamageModifier
     private float burnTimeLeft, burnCurrentDps, burnTickTimer;
     private float vulnerableTimeLeft, vulnerableMultiplier = 1f;
     private float weakenTimeLeft, weakenMultiplier = 1f;
+    private float permChillMultiplier = 1f;
 
     public float StunTimeLeft { get; private set; }
 
     public bool IsStunned => StunTimeLeft > 0f;
     public bool IsBurning => burnTimeLeft > 0f;
     public bool IsVulnerable => vulnerableTimeLeft > 0f;
-    public bool IsSlowed => speedEffects.Count > 0;
+    public bool IsSlowed => speedEffects.Count > 0 || IsPermanentlyChilled;
+    public bool IsPermanentlyChilled => permChillMultiplier < 1f;
     public bool IsWeakened => weakenTimeLeft > 0f;
     public float DamageDealtMultiplier => IsWeakened ? weakenMultiplier : 1f;
     public bool HasAnyStatus => IsStunned || IsBurning || IsVulnerable || IsSlowed || IsWeakened;
@@ -39,9 +41,19 @@ public class StatusController : MonoBehaviour, IDamageModifier
         get
         {
             if (IsStunned) return 0f;
-            float m = 1f;
-            foreach (SpeedEffect e in speedEffects) m = Mathf.Min(m, e.multiplier); // strongest slow wins
+            float m = permChillMultiplier;
+            foreach (SpeedEffect e in speedEffects) m = Mathf.Min(m, e.multiplier);
             return m;
+        }
+    }
+
+    public bool IsChilled
+    {
+        get
+        {
+            if (IsPermanentlyChilled) return true;
+            foreach (SpeedEffect e in speedEffects) if (e.cold) return true;
+            return false;
         }
     }
 
@@ -101,6 +113,12 @@ public class StatusController : MonoBehaviour, IDamageModifier
     {
         weakenMultiplier = IsWeakened ? Mathf.Min(weakenMultiplier, multiplier) : multiplier;
         weakenTimeLeft = Mathf.Max(weakenTimeLeft, duration);
+    }
+
+    public void AddPermanentChill(float multiplier)
+    {
+        if (immuneToColdSlow) return;
+        permChillMultiplier = Mathf.Min(permChillMultiplier, multiplier);
     }
 
     public void Stun(float duration) => StunTimeLeft = Mathf.Max(StunTimeLeft, duration);
