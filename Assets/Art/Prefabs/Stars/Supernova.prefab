@@ -186,6 +186,8 @@ MonoBehaviour:
   hitPoints: 64
   livesToSubtract: 3
   currencyWorth: 0
+  deathEffectPrefab: {fileID: 1157764077424845484, guid: ddb12177210c1be45824b1fe7509e410, type: 3}
+  deathEffectScale: 1
 --- !u!114 &7474519971126947222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +201,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immuneToColdSlow: 0
+  burnDps: 3
+  burnDuration: 3
+  burnTickInterval: 1
+  chillMultiplier: 0.7
+  chillDuration: 3
 --- !u!114 &-6407747852262008338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +235,6 @@ MonoBehaviour:
   radius: 2
   lifetimeDamage: 10
   stunDuration: 0
-  explosionEffectPrefab: {fileID: 0}
+  explosionEffectPrefab: {fileID: 1157764077424845484, guid: ed75b1450993f3144adc251043b21a84, type: 3}
   fuseTint: {fileID: 1220051569094541993}
   fuseColor: {r: 1, g: 0, b: 0, a: 1}

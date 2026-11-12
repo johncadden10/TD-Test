@@ -16,6 +16,7 @@ public class DelayedExplosion : MonoBehaviour
     [SerializeField] private Color fuseColor = Color.red;
 
     private Health health;
+    private StatusController status;
     private bool fuseLit;
     private float fuseRemaining;
     private Color baseColor;
@@ -26,6 +27,7 @@ public class DelayedExplosion : MonoBehaviour
     private void Awake()
     {
         health = GetComponent<Health>();
+        status = GetComponent<StatusController>();
         if (fuseTint != null) baseColor = fuseTint.color;
     }
 
@@ -34,7 +36,8 @@ public class DelayedExplosion : MonoBehaviour
 
     private void HandleDamaged(DamageInfo info)
     {
-        if (fuseLit) return; // timer starts once and isn't reset
+        //if (info.fromStatus) return; // burn ticks don't light the fuse
+        if (fuseLit) return;         // the timer starts once and isn't reset
         fuseLit = true;
         fuseRemaining = fuseTime;
     }
@@ -60,12 +63,15 @@ public class DelayedExplosion : MonoBehaviour
         fuseLit = false;
         enabled = false;
 
+        // read at the moment of the blast, so weakening the Nova before it goes off still counts
+        float damage = lifetimeDamage * (status != null ? status.DamageDealtMultiplier : 1f);
+
         foreach (Ghost g in Ghost.Active)
         {
             if (!g.IsAlive) continue;
             if (Vector2.Distance(g.transform.position, transform.position) > radius) continue;
 
-            if (lifetimeDamage > 0f) g.ReduceLifetime(lifetimeDamage);
+            if (damage > 0f) g.ReduceLifetime(damage);
             if (stunDuration > 0f) g.Stun(stunDuration);
         }
 

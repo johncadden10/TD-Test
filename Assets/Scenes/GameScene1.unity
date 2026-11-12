@@ -5929,6 +5929,7 @@ MonoBehaviour:
   - {fileID: 3903896035924657682, guid: 05f14ffcc6dd43e41884fbc00c587e0b, type: 3}
   - {fileID: 2043083814474225297, guid: 4b9dc92806562f343bc8430fb0d512ad, type: 3}
   modifierVisuals: {fileID: 11400000, guid: f6a4caf0b2858a04a9071625fbfab0ae, type: 2}
+  defaultDeathEffect: {fileID: 1157764077424845484, guid: ddb12177210c1be45824b1fe7509e410, type: 3}
   waves:
   - waveName: Round 13
     useCustomWave: 1
@@ -5959,13 +5960,13 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
       count: 2
       spawnInterval: 2
-      belted: 0
+      belted: 1
       fused: 0
       constellation: 0
     - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
       count: 2
       spawnInterval: 2
-      belted: 0
+      belted: 1
       fused: 0
       constellation: 0
     timeBetweenGroups: 3
@@ -5973,7 +5974,7 @@ MonoBehaviour:
     useCustomWave: 1
     duration: 30
     enemyGroups:
-    - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
+    - enemyPrefab: {fileID: 3903896035924657682, guid: 710663152d03bbf4dbed34f1ddaf47a8, type: 3}
       count: 1
       spawnInterval: 1
       belted: 0
@@ -5985,7 +5986,7 @@ MonoBehaviour:
       belted: 0
       fused: 0
       constellation: 0
-    - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
+    - enemyPrefab: {fileID: 3903896035924657682, guid: 3038396fddba03644aec5d48c8954879, type: 3}
       count: 1
       spawnInterval: 1
       belted: 0
@@ -5996,7 +5997,7 @@ MonoBehaviour:
     useCustomWave: 1
     duration: 30
     enemyGroups:
-    - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
+    - enemyPrefab: {fileID: 3903896035924657682, guid: ee6f7493381d79e44ab4bddaadbbf64d, type: 3}
       count: 5
       spawnInterval: 0.75
       belted: 0

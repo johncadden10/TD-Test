@@ -32,6 +32,8 @@ public class GhostDebuffer : MonoBehaviour
     private LineRenderer beam;
     private float beamHideAt;
 
+    private float DamageScale => status != null ? status.DamageDealtMultiplier : 1f;
+
     private bool CanAttack =>
         (status == null || !status.IsStunned) && Time.time >= disabledUntil;
 
@@ -71,7 +73,7 @@ public class GhostDebuffer : MonoBehaviour
     // ---- Aura ----
     private void UpdateAura()
     {
-        float drain = drainPerSecond * Time.deltaTime;
+        float drain = drainPerSecond * Time.deltaTime * DamageScale;
 
         foreach (Ghost g in Ghost.Active)
         {
@@ -100,12 +102,14 @@ public class GhostDebuffer : MonoBehaviour
         Vector2 dir = ((Vector2)aim.transform.position - start).normalized;
         Vector2 end = start + dir * beamLength;
 
+        float damage = pulseLifetimeDamage * DamageScale;
+
         // pierces: every ghost along the line is hit
         foreach (Ghost g in Ghost.Active)
         {
             if (!g.IsAlive) continue;
             if (DistanceToSegment(g.transform.position, start, end) <= beamHitWidth)
-                g.ReduceLifetime(pulseLifetimeDamage);
+                g.ReduceLifetime(damage);
         }
 
         ShowBeam(start, end);

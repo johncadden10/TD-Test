@@ -99,6 +99,10 @@ public abstract class Ghost : MonoBehaviour
     private float nextPhaseAllowed;
     private float phaseAlpha = 1f;
 
+    private int tempPierce;
+    private float tempPierceUntil;
+    public int TempPierce => Time.time < tempPierceUntil ? tempPierce : 0;
+
     private float retargetTimer;
     private bool isDying;
     private bool isAttackAnimationPlaying = false;
@@ -428,6 +432,13 @@ public abstract class Ghost : MonoBehaviour
     {
         StatusController sc = star.GetComponentInParent<StatusController>();
         return (sc != null && sc.HasAnyStatus) ? amount * StatusBonusMultiplier : amount;
+    }
+
+    public void AmplifyPierce(int amount, float duration)
+    {
+        if (Time.time >= tempPierceUntil) tempPierce = 0;
+        tempPierce = Mathf.Max(tempPierce, amount);
+        tempPierceUntil = Mathf.Max(tempPierceUntil, Time.time + duration);
     }
 
     protected virtual void ApplyTierEffect(int pathIndex, int tierIndex) { }

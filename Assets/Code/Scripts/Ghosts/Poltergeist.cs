@@ -22,6 +22,7 @@ public class Poltergeist : Ghost
 
             GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
             PoltergeistBullet bulletScript = bulletObj.GetComponent<PoltergeistBullet>();
+            bulletScript.Pierce += TempPierce;
             bulletScript.SetTarget(target);
             bulletScript.SetDirection(pelletDirection);
         }

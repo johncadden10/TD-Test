@@ -34,14 +34,17 @@ public class GhostShooter : MonoBehaviour
 
     private void Fire(Ghost target)
     {
+        // weakened stars deal less damage, applied when the shot is fired
+        float damage = lifetimeDamage * (status != null ? status.DamageDealtMultiplier : 1f);
+
         if (boltPrefab == null)
         {
-            target.ReduceLifetime(lifetimeDamage); // fallback: instant effect
+            target.ReduceLifetime(damage); // fallback: instant effect
             return;
         }
 
         StarBolt bolt = Instantiate(boltPrefab, transform.position, Quaternion.identity);
-        bolt.Init(target, lifetimeDamage);
+        bolt.Init(target, damage);
     }
 
     private void OnDrawGizmosSelected()

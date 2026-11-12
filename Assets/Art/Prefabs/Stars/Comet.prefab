@@ -186,6 +186,8 @@ MonoBehaviour:
   hitPoints: 24
   livesToSubtract: 2
   currencyWorth: 0
+  deathEffectPrefab: {fileID: 1157764077424845484, guid: ddb12177210c1be45824b1fe7509e410, type: 3}
+  deathEffectScale: 1
 --- !u!114 &5399912924394465620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immuneToColdSlow: 1
+  burnDps: 3
+  burnDuration: 3
+  burnTickInterval: 1
+  chillMultiplier: 0.7
+  chillDuration: 3
 --- !u!114 &4987364785229271609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,4 +238,4 @@ MonoBehaviour:
   radius: 2.5
   freezeDuration: 5
   anyFireHitDisables: 1
-  effectPrefab: {fileID: 0}
+  effectPrefab: {fileID: 1157764077424845484, guid: ed75b1450993f3144adc251043b21a84, type: 3}

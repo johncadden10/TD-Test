@@ -22,6 +22,7 @@ public class StatusController : MonoBehaviour, IDamageModifier
 
     private float burnTimeLeft, burnCurrentDps, burnTickTimer;
     private float vulnerableTimeLeft, vulnerableMultiplier = 1f;
+    private float weakenTimeLeft, weakenMultiplier = 1f;
 
     public float StunTimeLeft { get; private set; }
 
@@ -29,7 +30,9 @@ public class StatusController : MonoBehaviour, IDamageModifier
     public bool IsBurning => burnTimeLeft > 0f;
     public bool IsVulnerable => vulnerableTimeLeft > 0f;
     public bool IsSlowed => speedEffects.Count > 0;
-    public bool HasAnyStatus => IsStunned || IsBurning || IsVulnerable || IsSlowed;
+    public bool IsWeakened => weakenTimeLeft > 0f;
+    public float DamageDealtMultiplier => IsWeakened ? weakenMultiplier : 1f;
+    public bool HasAnyStatus => IsStunned || IsBurning || IsVulnerable || IsSlowed || IsWeakened;
 
     public float SpeedMultiplier
     {
@@ -94,6 +97,12 @@ public class StatusController : MonoBehaviour, IDamageModifier
         vulnerableTimeLeft = Mathf.Max(vulnerableTimeLeft, duration);
     }
 
+    public void AddWeaken(float multiplier, float duration)
+    {
+        weakenMultiplier = IsWeakened ? Mathf.Min(weakenMultiplier, multiplier) : multiplier;
+        weakenTimeLeft = Mathf.Max(weakenTimeLeft, duration);
+    }
+
     public void Stun(float duration) => StunTimeLeft = Mathf.Max(StunTimeLeft, duration);
 
     // ---- ticking ----
@@ -103,6 +112,7 @@ public class StatusController : MonoBehaviour, IDamageModifier
 
         StunTimeLeft = Mathf.Max(0f, StunTimeLeft - dt);
         vulnerableTimeLeft = Mathf.Max(0f, vulnerableTimeLeft - dt);
+        weakenTimeLeft = Mathf.Max(0f, weakenTimeLeft - dt);
 
         for (int i = speedEffects.Count - 1; i >= 0; i--)
         {

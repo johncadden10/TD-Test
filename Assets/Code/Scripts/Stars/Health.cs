@@ -7,6 +7,10 @@ public class Health : MonoBehaviour
     [SerializeField] private int livesToSubtract = 1;
     [SerializeField] private int currencyWorth = 0;
 
+    [Header("Death Effect")]
+    [SerializeField] private GameObject deathEffectPrefab;  // leave empty to use the spawner's default
+    [SerializeField] private float deathEffectScale = 1f;   // per-star size tweak
+
     private bool isDestroyed = false;
     private float maxHitPoints;
 
@@ -15,6 +19,7 @@ public class Health : MonoBehaviour
     public float MaxHitPoints => maxHitPoints;
     public bool IsFull => hitPoints >= maxHitPoints;
     public event System.Action<DamageInfo> OnDamaged;
+    public static event System.Action<Health> OnAnyStarKilled;
 
     public bool IsTargetable { get; set; } = true;
     
@@ -62,8 +67,23 @@ public class Health : MonoBehaviour
     {
         isDestroyed = true;
         foreach (IDeathEffect e in deathEffects) e.OnDeath(killingBlow);
+        OnAnyStarKilled?.Invoke(this);
+
+        SpawnDeathEffect();
+
         EnemySpawner.onEnemyDestroy.Invoke();
         LevelManager.main.IncreaseEcto(currencyWorth);
         Destroy(gameObject);
+    }
+
+    private void SpawnDeathEffect()
+    {
+        GameObject prefab = deathEffectPrefab;
+        if (prefab == null && EnemySpawner.Instance != null)
+            prefab = EnemySpawner.Instance.DefaultDeathEffect;
+        if (prefab == null) return;
+
+        GameObject fx = Instantiate(prefab, transform.position, Quaternion.identity);
+        fx.transform.localScale = Vector3.one * deathEffectScale;
     }
 }

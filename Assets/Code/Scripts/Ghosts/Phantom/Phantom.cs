@@ -29,7 +29,7 @@ public class Phantom : Ghost
             Projectile p = obj.GetComponent<Projectile>();
 
             p.SetDamageType(DamageType);
-            p.Pierce += PierceBonus;
+            p.Pierce += PierceBonus + TempPierce;
             p.SpeedMultiplier = OrbSpeedMultiplier;
             p.Launch(dir, target, baseTurnRate * TurnRateMultiplier);
         }

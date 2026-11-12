@@ -36,7 +36,7 @@ public class Vanish : Ghost
             Projectile p = obj.GetComponent<Projectile>();
 
             p.SetDamageType(DamageType);
-            p.Pierce += PierceBonus;
+            p.Pierce += PierceBonus + TempPierce;
             p.SpeedMultiplier = CloudSpeedMultiplier;
             p.IgnoreBelted = CloudsIgnoreBelted;
             p.IgnoreAbsorbers = CloudsIgnoreAbsorbers;

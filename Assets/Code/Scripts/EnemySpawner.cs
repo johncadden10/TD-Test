@@ -36,6 +36,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs;   // used by auto-scaled waves
     [SerializeField] private ModifierVisuals modifierVisuals;
 
+    [Header("Effects")]
+    [SerializeField] private GameObject defaultDeathEffect;
+    public GameObject DefaultDeathEffect => defaultDeathEffect;
+
     [Header("Waves")]
     [SerializeField] private List<Wave> waves;
 

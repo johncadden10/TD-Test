@@ -158,23 +158,22 @@ MonoBehaviour:
         displayName: Side Effects
         description: Targets affected by outside effects take additional damage.
         cost: 175
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 175
+        modifierPrefab: {fileID: 7111036167356293165, guid: 5aa83ef43c43a7344b37d30bd7022d12, type: 3}
         icon: {fileID: 0}
       - upgradeId: banshee_1_2
-        displayName: Amplify
-        description: Projectiles that travel through banshee's radius are amplified,
-          causing them to move faster and deal increased damage.
+        displayName: Pulse Scream
+        description: 
         cost: 400
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 275
+        modifierPrefab: {fileID: 7111036167356293165, guid: 29dfbfbf1356696458e5a4b752c425cd, type: 3}
         icon: {fileID: 0}
       - upgradeId: banshee_1_3
-        displayName: Stripping Screams
-        description: Removes belted resistance from targets.
+        displayName: Amplify
+        description: 
         cost: 1200
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 350
+        modifierPrefab: {fileID: 7111036167356293165, guid: f9fa3f1f27e83a64694761f1d5d343fd, type: 3}
         icon: {fileID: 0}
     - pathId: banshee_path_2
       displayName: Path 2
@@ -183,23 +182,23 @@ MonoBehaviour:
         displayName: Constructive Resonance
         description: Screams that cross paths have their damage increased significantly.
         cost: 100
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 175
+        modifierPrefab: {fileID: 7111036167356293165, guid: a9dbcb4f088734e42b7bc3e6b467a060, type: 3}
         icon: {fileID: 0}
       - upgradeId: banshee_2_2
         displayName: Worldwide Screams
         description: Drastically increases radius.
         cost: 600
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 250
+        modifierPrefab: {fileID: 7111036167356293165, guid: 00729246ffc323d4eba42b5fbefcaef6, type: 3}
         icon: {fileID: 0}
       - upgradeId: banshee_2_3
         displayName: Rupture
         description: Targets killed in banshees radius explode, dealing massive damage
           to nearby stars.
         cost: 1500
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 400
+        modifierPrefab: {fileID: 7111036167356293165, guid: d27c857b86b34b84dbe9223be10430e9, type: 3}
         icon: {fileID: 0}
   - towerId: vanish
     displayName: Vanish

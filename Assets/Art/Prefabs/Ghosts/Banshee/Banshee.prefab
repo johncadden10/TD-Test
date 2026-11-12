@@ -195,7 +195,13 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 1, a: 1}
   - {r: 1, g: 0.5, b: 0, a: 1}
   phasedOpacity: 0.5
-  bansheeAttack: {fileID: 3421276170929121715}
+  bansheeEffect: {fileID: 3421276170929121715}
+  pulseEffectPrefab: {fileID: 1157764077424845484, guid: ed75b1450993f3144adc251043b21a84, type: 3}
+  killBlastEffectPrefab: {fileID: 1157764077424845484, guid: ed75b1450993f3144adc251043b21a84, type: 3}
+  pulseInterval: 5
+  pulseRadiusMultiplier: 2
+  pulseSlowMultiplier: 0.5
+  pulseEffectDuration: 3
 --- !u!212 &3947002859859790600
 SpriteRenderer:
   m_ObjectHideFlags: 0
