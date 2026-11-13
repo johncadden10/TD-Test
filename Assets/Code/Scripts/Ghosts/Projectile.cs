@@ -20,6 +20,14 @@ public class Projectile : MonoBehaviour
     public bool IgnoreBelted { get; set; }
     public bool IgnoreAbsorbers { get; set; }
 
+    public float DamageMultiplier { get; set; } = 1f;
+    public float Lifetime { get => bulletLifetime; set => bulletLifetime = value; } // set before Start
+    public float StunOnHit { get; set; }
+    public float StunRadius { get; set; }
+    public float FusedBonusMultiplier { get; set; } = 1f;
+    public System.Action<Vector2, Vector2> OnBreak { get; set; }
+    
+
     public bool Reseek { get; set; }
     private float retargetTimer;
 
@@ -38,6 +46,11 @@ public class Projectile : MonoBehaviour
     private Transform stuckTo;
     private Vector3 stuckOffset;
 
+    // poltergeist split
+    private GameObject splitPrefab;
+    private int splitCount;
+    private float splitDamageMultiplier, splitLifetime;
+
     public void SetTarget(Transform t) { target = t; }
     public void SetDamageType(DamageType type) { damageType = type; }
 
@@ -46,6 +59,14 @@ public class Projectile : MonoBehaviour
         blastDelay = delay;
         blastRadius = radius;
         blastDamageMultiplier = damageMultiplier;
+    }
+
+    public void ConfigureSplit(GameObject prefab, int count, float damageMultiplier, float lifetime)
+    {
+        splitPrefab = prefab;
+        splitCount = count;
+        splitDamageMultiplier = damageMultiplier;
+        splitLifetime = lifetime;
     }
 
     public void SetDirection(Vector2 dir)
@@ -71,7 +92,32 @@ public class Projectile : MonoBehaviour
 
     private void Expire()
     {
-        if (!fusing) Destroy(gameObject);
+        if (fusing || consumed) return;
+        Split();
+        Destroy(gameObject);
+    }
+
+    private void Split()
+    {
+        if (splitCount <= 0 || splitPrefab == null) return;
+
+        float step = 360f / splitCount;
+        float offset = Random.value * step;
+        Vector2 baseDir = heading != Vector2.zero ? heading : Vector2.right;
+
+        for (int i = 0; i < splitCount; i++)
+        {
+            GameObject obj = Instantiate(splitPrefab, transform.position, Quaternion.identity);
+            Projectile f = obj.GetComponent<Projectile>();
+
+            f.SetDamageType(damageType);
+            f.IgnoreBelted = IgnoreBelted;
+            f.IgnoreAbsorbers = IgnoreAbsorbers;
+            f.DamageMultiplier = splitDamageMultiplier;
+            f.Lifetime = splitLifetime;
+            f.SpeedMultiplier = SpeedMultiplier;
+            f.SetDirection(Rotate(baseDir, offset + step * i)); // after the speed, since it sets velocity
+        }
     }
 
     private void Update()
@@ -184,12 +230,38 @@ public class Projectile : MonoBehaviour
     {
         if (!alreadyHit.Add(h)) return;
 
-        h.TakeDamage(MakeDamage(bulletDamage));
+        float dmg = bulletDamage * DamageMultiplier;
+        if (FusedBonusMultiplier > 1f && h.GetComponent<FusionModifier>() != null)
+            dmg *= FusedBonusMultiplier; // applied before the Fusion threshold check
+
+        bool landed = h.TakeDamage(MakeDamage(dmg));
+
+        if (StunOnHit > 0f)
+        {
+            if (StunRadius > 0f)
+            {
+                // splash stun: the impact point stuns everything nearby, even stars the hit didn't damage
+                Vector2 pos = transform.position;
+                foreach (Health other in FindObjectsByType<Health>(FindObjectsSortMode.None))
+                {
+                    if (!other.IsTargetable) continue;
+                    if (Vector2.Distance(other.transform.position, pos) > StunRadius) continue;
+                    other.GetComponent<StatusController>()?.Stun(StunOnHit);
+                }
+            }
+            else if (landed)
+            {
+                h.GetComponent<StatusController>()?.Stun(StunOnHit);
+            }
+        }
+
         hitCount++;
 
         if (hitCount > pierce)
         {
             consumed = true;
+            OnBreak?.Invoke(transform.position, heading);
+
             if (blastDelay > 0f) BeginFuse(h.transform);
             else Destroy(gameObject);
             return;

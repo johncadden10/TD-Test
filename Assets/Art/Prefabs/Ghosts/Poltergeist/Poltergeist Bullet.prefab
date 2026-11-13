@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.259167, g: 0.3935052, b: 0.6037736, a: 1}
+  m_Color: {r: 0.36078432, g: 0.3019608, b: 0.20784315, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -167,9 +167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6637853578854068638}
+  blastEffectPrefab: {fileID: 0}
   bulletSpeed: 4.5
-  bulletLifetime: 2
-  bulletDamage: 5
+  bulletLifetime: 0.55
+  bulletDamage: 4
   pierce: 0
   turnRate: 0
 --- !u!114 &-1073092437332682618

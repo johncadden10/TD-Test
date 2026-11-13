@@ -327,7 +327,7 @@ MonoBehaviour:
   - towerId: poltergeist
     displayName: Poltergeist
     description: Hurls an array of rock shards with a wide spread.
-    cost: 300
+    cost: 225
     placementCooldown: 8
     baseRange: 2
     baseAttackSpeed: 0
@@ -344,22 +344,22 @@ MonoBehaviour:
         displayName: Good Arm
         description: Sharper shards pierce targets and travel faster.
         cost: 175
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 125
+        modifierPrefab: {fileID: 3468984008453022493, guid: 7648723c6e0c064488635879a7c64d4b, type: 3}
         icon: {fileID: 0}
       - upgradeId: poltergeist_1_2
-        displayName: Backtrack
-        description: Periodically throws targets backwards on the track.
-        cost: 400
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
-        icon: {fileID: 0}
-      - upgradeId: poltergeist_1_3
         displayName: Shattering Shards
         description: Shards split off into fragments at the end of their travel time.
+        cost: 400
+        ectoCost: 300
+        modifierPrefab: {fileID: 3468984008453022493, guid: f338b3107f50a62438a8fa7ccbb18712, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: poltergeist_1_3
+        displayName: Rapid Fire
+        description: 
         cost: 1200
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 425
+        modifierPrefab: {fileID: 3468984008453022493, guid: 365a019422e41bc4daa0106905bcbe78, type: 3}
         icon: {fileID: 0}
     - pathId: poltergeist_path_2
       displayName: Path 2
@@ -368,24 +368,24 @@ MonoBehaviour:
         displayName: Tighter Spread
         description: Shards are thrown with reduced spread.
         cost: 100
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 100
+        modifierPrefab: {fileID: 3468984008453022493, guid: bfdd05f5da7629640af1e6b75199b558, type: 3}
         icon: {fileID: 0}
       - upgradeId: poltergeist_2_2
-        displayName: Bowling Ball
+        displayName: Bowling Boulder
         description: High damage boulders are rolled forward, and explode with debris
           attack upon contact with a star.
         cost: 600
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 325
+        modifierPrefab: {fileID: 3468984008453022493, guid: 6b5a6521aefcfd74684ca7e563270dbc, type: 3}
         icon: {fileID: 0}
       - upgradeId: poltergeist_2_3
-        displayName: Gutter Ball
+        displayName: Sudden Impact
         description: Boulders that come in contact with the track roll backwards
           along the path.
         cost: 1500
-        ectoCost: 0
-        modifierPrefab: {fileID: 0}
+        ectoCost: 400
+        modifierPrefab: {fileID: 3468984008453022493, guid: e8a0b3a2481508442bb6a1266fa47669, type: 3}
         icon: {fileID: 0}
   - towerId: yokai
     displayName: Yokai

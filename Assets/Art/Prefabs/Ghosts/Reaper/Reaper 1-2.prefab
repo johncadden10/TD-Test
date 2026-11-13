@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86576fa981c3264aa4f730e42bd9da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMultiplier: 1.4
+  damageMultiplier: 1.5
   splashRadius: 1.5

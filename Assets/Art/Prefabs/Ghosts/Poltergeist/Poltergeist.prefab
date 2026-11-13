@@ -58,9 +58,9 @@ MonoBehaviour:
     m_Bits: 64
   firingPoint: {fileID: 7518978875005943187}
   healthBar: {fileID: 7449889640111348040}
-  targetingRange: 4
+  targetingRange: 2.5
   attackSpeed: 1.6
-  lifetime: 72
+  lifetime: 64
   attackDamage: 10
   preDeathDuration: 1
   retargetInterval: 0.1
@@ -72,8 +72,10 @@ MonoBehaviour:
   - {r: 1, g: 0.5, b: 0, a: 1}
   phasedOpacity: 0.5
   bulletPrefab: {fileID: 691850364357836796, guid: b4aad9fb5795f4642802eb5457e854dd, type: 3}
+  boulderPrefab: {fileID: 691850364357836796, guid: 34f4a86e796285044a1eba38554bc67c, type: 3}
   pelletCount: 5
-  spreadAngle: 30
+  spreadAngle: 40
+  boulderTurnRate: 120
 --- !u!212 &7080169855427108236
 SpriteRenderer:
   m_ObjectHideFlags: 0

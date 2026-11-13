@@ -186,6 +186,8 @@ MonoBehaviour:
   hitPoints: 9
   livesToSubtract: 1
   currencyWorth: 0
+  deathEffectPrefab: {fileID: 0}
+  deathEffectScale: 1
 --- !u!114 &4754274803427343037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immuneToColdSlow: 0
+  burnDps: 3
+  burnDuration: 3
+  burnTickInterval: 1
+  chillMultiplier: 0.7
+  chillDuration: 3
 --- !u!114 &-2841054750196192138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafa7951e1ad4bd478e6686acfa69ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revealRadius: 1.5
+  revealRadius: 2
   fadeSpeed: 1
   untargetableWhenHidden: 1
   hiddenOpacity: 0.3

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9560be2ecf2a1244ba87dd2564a39902
+guid: bf9a482b2ad82f349954ad5071c3f12c
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -89,6 +89,96 @@ TextureImporter:
   - first:
       213: -852550996433054961
     second: WispSS_28
+  - first:
+      213: -1780277086944283901
+    second: WispSS_29
+  - first:
+      213: -583884524031076775
+    second: WispSS_30
+  - first:
+      213: -4912682127297720459
+    second: WispSS_31
+  - first:
+      213: -8818588416003769201
+    second: WispSS_32
+  - first:
+      213: -7436225891039451695
+    second: WispSS_33
+  - first:
+      213: 4963277758664262674
+    second: WispSS_34
+  - first:
+      213: -2852671464296106393
+    second: WispSS_35
+  - first:
+      213: 8111102082372112350
+    second: WispSS_36
+  - first:
+      213: -1841228352440945704
+    second: WispSS_37
+  - first:
+      213: 5879627435957743215
+    second: WispSS_38
+  - first:
+      213: 2436283758161350796
+    second: WispSS_39
+  - first:
+      213: -5198571597394474800
+    second: WispSS_40
+  - first:
+      213: -5514242097538684728
+    second: WispSS_41
+  - first:
+      213: -8593113402357597719
+    second: WispSS_42
+  - first:
+      213: -2281856204432438504
+    second: WispSS_43
+  - first:
+      213: 2681893972519555821
+    second: WispSS_44
+  - first:
+      213: 8818598376140387301
+    second: WispSS_45
+  - first:
+      213: -1285943333995419112
+    second: WispSS_46
+  - first:
+      213: 8380981672371032770
+    second: WispSS_47
+  - first:
+      213: 6489960698457007606
+    second: WispSS_48
+  - first:
+      213: 4694236754134870150
+    second: WispSS_49
+  - first:
+      213: 5118970220895902868
+    second: WispSS_50
+  - first:
+      213: -1544673528506997439
+    second: WispSS_51
+  - first:
+      213: -7178883608457605938
+    second: WispSS_52
+  - first:
+      213: -3373240823248818632
+    second: WispSS_53
+  - first:
+      213: 7818102641028034066
+    second: WispSS_54
+  - first:
+      213: -2622093219042160429
+    second: WispSS_55
+  - first:
+      213: -2834190660998989387
+    second: WispSS_56
+  - first:
+      213: 5182478808181380854
+    second: WispSS_57
+  - first:
+      213: 3233945286578565911
+    second: WispSS_58
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -169,6 +259,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -835,10 +938,582 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 00dd2964692036b43ae73cc6fecfb1d7
-      internalID: 336879478
+      spriteID: 3033be6fb6f2b47e0800000000000000
+      internalID: -1780277086944283901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_30
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95697437e10a5e7f0800000000000000
+      internalID: -583884524031076775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_31
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f420c32a5a2dbb0800000000000000
+      internalID: -4912682127297720459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_32
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c78bbfe841e9580800000000000000
+      internalID: -8818588416003769201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_33
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d5e70f63f73dc890800000000000000
+      internalID: -7436225891039451695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_34
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214c7ce23da11e440800000000000000
+      internalID: 4963277758664262674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_35
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766bcb5da664968d0800000000000000
+      internalID: -2852671464296106393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_36
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edf88b49e5c609070800000000000000
+      internalID: 8111102082372112350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_37
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d331669194a276e0800000000000000
+      internalID: -1841228352440945704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_38
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ee6eb5002a89150800000000000000
+      internalID: 5879627435957743215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_39
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c80d2498b2b6fc120800000000000000
+      internalID: 2436283758161350796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_40
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d80ed5eca6fad7b0800000000000000
+      internalID: -5198571597394474800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_41
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c8a3ba270a7973b0800000000000000
+      internalID: -5514242097538684728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_42
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e9b3d983e02fb880800000000000000
+      internalID: -8593113402357597719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_43
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b88423fd73550e0800000000000000
+      internalID: -2281856204432438504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_44
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de21a45db50083520800000000000000
+      internalID: 2681893972519555821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_45
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e33faa0084f16a70800000000000000
+      internalID: 8818598376140387301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_46
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81aebe7d959672ee0800000000000000
+      internalID: -1285943333995419112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_47
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c21cba3d6a3f4470800000000000000
+      internalID: 8380981672371032770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_48
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f5a6c5bed8f01a50800000000000000
+      internalID: 6489960698457007606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_49
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688aacde477452140800000000000000
+      internalID: 4694236754134870150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_50
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c9d406b4c3a0740800000000000000
+      internalID: 5118970220895902868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_51
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145246f1c97309ae0800000000000000
+      internalID: -1544673528506997439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_52
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc820ab46b7f5c90800000000000000
+      internalID: -7178883608457605938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_53
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e686ce757df21d0800000000000000
+      internalID: -3373240823248818632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_54
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ee4001eea7f7c60800000000000000
+      internalID: 7818102641028034066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WispSS_55
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d018071c147c9bd0800000000000000
+      internalID: -2622093219042160429
       vertices: []
       indices: 
       edges: []
@@ -847,7 +1522,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 67d121ddaa6b60b42ac475237a37692e
+    spriteID: c15687764f23b054aae04cfb5ce53691
     internalID: 0
     vertices: []
     indices: 
@@ -879,10 +1554,36 @@ TextureImporter:
       WispSS_26: -1710295843415997958
       WispSS_27: 6392001078955003348
       WispSS_28: -852550996433054961
-      WispSS_29: 336879478
+      WispSS_29: -1780277086944283901
       WispSS_3: 4313900801178082425
+      WispSS_30: -583884524031076775
+      WispSS_31: -4912682127297720459
+      WispSS_32: -8818588416003769201
+      WispSS_33: -7436225891039451695
+      WispSS_34: 4963277758664262674
+      WispSS_35: -2852671464296106393
+      WispSS_36: 8111102082372112350
+      WispSS_37: -1841228352440945704
+      WispSS_38: 5879627435957743215
+      WispSS_39: 2436283758161350796
       WispSS_4: 2890503861517882931
+      WispSS_40: -5198571597394474800
+      WispSS_41: -5514242097538684728
+      WispSS_42: -8593113402357597719
+      WispSS_43: -2281856204432438504
+      WispSS_44: 2681893972519555821
+      WispSS_45: 8818598376140387301
+      WispSS_46: -1285943333995419112
+      WispSS_47: 8380981672371032770
+      WispSS_48: 6489960698457007606
+      WispSS_49: 4694236754134870150
       WispSS_5: -658503098101115493
+      WispSS_50: 5118970220895902868
+      WispSS_51: -1544673528506997439
+      WispSS_52: -7178883608457605938
+      WispSS_53: -3373240823248818632
+      WispSS_54: 7818102641028034066
+      WispSS_55: -2622093219042160429
       WispSS_6: -6794505460418519590
       WispSS_7: 3395391216656604689
       WispSS_8: -2999440943355744640

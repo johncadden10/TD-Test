@@ -81,14 +81,20 @@ public class StatusController : MonoBehaviour, IDamageModifier
             AddSlow(chillMultiplier, chillDuration, true);
     }
 
+    private bool CanReceiveDirectly()
+    {
+        ConstellationLink link = GetComponent<ConstellationLink>();
+        return link == null || !link.IsBlocked;
+    }
+
     // ---- applying statuses ----
-    public void ApplyBurn(float dps, float duration)
+    private void ApplyBurnLocal(float dps, float duration)
     {
         burnCurrentDps = IsBurning ? Mathf.Max(burnCurrentDps, dps) : dps; // strongest wins, duration refreshes
         burnTimeLeft = Mathf.Max(burnTimeLeft, duration);
     }
 
-    public void AddSlow(float multiplier, float duration, bool isCold = false)
+    private void AddSlowLocal(float multiplier, float duration, bool isCold = false)
     {
         if (isCold && immuneToColdSlow) return;
 
@@ -103,25 +109,75 @@ public class StatusController : MonoBehaviour, IDamageModifier
         speedEffects.Add(new SpeedEffect { multiplier = multiplier, timeLeft = duration, cold = isCold });
     }
 
-    public void AddVulnerable(float multiplier, float duration)
+    private void AddVulnerableLocal(float multiplier, float duration)
     {
         vulnerableMultiplier = IsVulnerable ? Mathf.Max(vulnerableMultiplier, multiplier) : multiplier;
         vulnerableTimeLeft = Mathf.Max(vulnerableTimeLeft, duration);
     }
 
-    public void AddWeaken(float multiplier, float duration)
+    private void AddWeakenLocal(float multiplier, float duration)
     {
         weakenMultiplier = IsWeakened ? Mathf.Min(weakenMultiplier, multiplier) : multiplier;
         weakenTimeLeft = Mathf.Max(weakenTimeLeft, duration);
     }
 
-    public void AddPermanentChill(float multiplier)
+    private void AddPermanentChillLocal(float multiplier)
     {
         if (immuneToColdSlow) return;
         permChillMultiplier = Mathf.Min(permChillMultiplier, multiplier);
     }
 
-    public void Stun(float duration) => StunTimeLeft = Mathf.Max(StunTimeLeft, duration);
+    private void StunLocal(float duration) => StunTimeLeft = Mathf.Max(StunTimeLeft, duration);
+
+    // constellation appliers
+    private void Share(System.Action<StatusController> apply)
+    {
+        ConstellationLink link = GetComponent<ConstellationLink>();
+        if (link == null) return;
+        foreach (StatusController s in link.Followers()) apply(s);
+    }
+
+    public void Stun(float duration)
+    {
+        if (!CanReceiveDirectly()) return;
+        StunLocal(duration);
+        Share(s => s.StunLocal(duration));
+    }
+
+    public void AddSlow(float multiplier, float duration, bool isCold = false)
+    {
+        if (!CanReceiveDirectly()) return;
+        AddSlowLocal(multiplier, duration, isCold);
+        Share(s => s.AddSlowLocal(multiplier, duration, isCold));
+    }
+
+    public void AddPermanentChill(float multiplier)
+    {
+        if (!CanReceiveDirectly()) return;
+        AddPermanentChillLocal(multiplier);
+        Share(s => s.AddPermanentChillLocal(multiplier));
+    }
+
+    public void ApplyBurn(float dps, float duration)
+    {
+        if (!CanReceiveDirectly()) return;
+        ApplyBurnLocal(dps, duration);
+        Share(s => s.ApplyBurnLocal(dps, duration));
+    }
+
+    public void AddVulnerable(float multiplier, float duration)
+    {
+        if (!CanReceiveDirectly()) return;
+        AddVulnerableLocal(multiplier, duration);
+        Share(s => s.AddVulnerableLocal(multiplier, duration));
+    }
+
+    public void AddWeaken(float multiplier, float duration)
+    {
+        if (!CanReceiveDirectly()) return;
+        AddWeakenLocal(multiplier, duration);
+        Share(s => s.AddWeakenLocal(multiplier, duration));
+    }
 
     // ---- ticking ----
     private void Update()

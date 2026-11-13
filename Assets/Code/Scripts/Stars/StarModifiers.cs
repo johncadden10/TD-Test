@@ -22,11 +22,11 @@ public static class StarModifiers
                 (visuals != null ? visuals.overlayScale : 1.3f) * 1.15f); // slightly larger so both rings show
         }
 
-        if (group.constellation && ahead != null)
+        if (group.constellation)
         {
             ConstellationLink link = star.GetComponent<ConstellationLink>();
             if (link == null) link = star.AddComponent<ConstellationLink>();
-            link.Setup(ahead, visuals);
+            link.Setup(ahead, visuals); // ahead is null for the head
         }
 
         star.GetComponent<Health>().RefreshModifiers();
