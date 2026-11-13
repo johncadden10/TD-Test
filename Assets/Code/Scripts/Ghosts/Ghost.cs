@@ -160,13 +160,13 @@ public abstract class Ghost : MonoBehaviour
     // each tower implements its own shoot logic
     protected abstract void Shoot();
 
-    public void OnAttackFire()
+    public virtual void OnAttackFire()
     {
         if (target == null) return;
         Shoot();
     }
 
-    public void OnAttackEnd()
+    public virtual void OnAttackEnd()
     {
         isAttackAnimationPlaying = false;
     }
