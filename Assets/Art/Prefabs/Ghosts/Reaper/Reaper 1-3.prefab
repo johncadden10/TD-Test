@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 2.25
-  valueMultiplier: 0.5
+  valueMultiplier: 0.6

@@ -100,6 +100,8 @@ public abstract class Ghost : MonoBehaviour
     private float nextPhaseAllowed;
     private float phaseAlpha = 1f;
 
+    private float drainPausedUntil;
+
     private int tempPierce;
     private float tempPierceUntil;
     public int TempPierce => Time.time < tempPierceUntil ? tempPierce : 0;
@@ -177,7 +179,7 @@ public abstract class Ghost : MonoBehaviour
 
         while (lifetimeRemaining > 0f)
         {
-            lifetimeRemaining -= Time.deltaTime;
+            lifetimeRemaining -= Time.time < drainPausedUntil ? 0f : Time.deltaTime;
 
             if (!preDeathTriggered && preDeathDuration > 0f && lifetimeRemaining <= preDeathDuration)
             {
@@ -191,7 +193,13 @@ public abstract class Ghost : MonoBehaviour
             yield return null;
         }
 
+        Wisp.NotifyGhostExpired(this);
         OnLifetimeExpired();
+    }
+
+    public void PauseNaturalDrain(float seconds)
+    {
+        drainPausedUntil = Mathf.Max(drainPausedUntil, Time.time + seconds);
     }
 
     public void Stun(float duration)

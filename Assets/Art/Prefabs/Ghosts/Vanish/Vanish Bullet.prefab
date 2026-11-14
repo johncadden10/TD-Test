@@ -167,8 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6637853578854068638}
+  blastEffectPrefab: {fileID: 0}
   bulletSpeed: 3
-  bulletLifetime: 3
+  bulletLifetime: 1.5
   bulletDamage: 3
   pierce: 0
   turnRate: 0

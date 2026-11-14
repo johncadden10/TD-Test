@@ -58,14 +58,14 @@ MonoBehaviour:
         description: Phantoms phase and become invisible when attacked by a star
           and take no damage.
         cost: 200
-        ectoCost: 150
+        ectoCost: 100
         modifierPrefab: {fileID: 735922247001707355, guid: 9ab656a336bf5a04b930b688104b04fd, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_2_2
         displayName: Phase Share
         description: Phantoms cause nearby ghosts to go invisible when phasing
         cost: 450
-        ectoCost: 250
+        ectoCost: 150
         modifierPrefab: {fileID: 735922247001707355, guid: f356c5073b0bff34abcf7a70d312c05b, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_2_3
@@ -73,7 +73,7 @@ MonoBehaviour:
         description: Phantoms gain increased overall lifetime, and regain lifetime
           when phasing. Lifetime regeneration spreads to nearby ghosts.
         cost: 1000
-        ectoCost: 450
+        ectoCost: 325
         modifierPrefab: {fileID: 735922247001707355, guid: f59fecee314152248ba238be46ed40f3, type: 3}
         icon: {fileID: 0}
   - towerId: reaper
@@ -226,7 +226,7 @@ MonoBehaviour:
       - upgradeId: vanish_1_2
         displayName: Don't Vanish
         description: Greatly increases lifetime, and allows clouds to ignore belted
-          resistance..
+          resistance.
         cost: 600
         ectoCost: 175
         modifierPrefab: {fileID: 4914684363805038858, guid: 00c24169398bdc844a8e231e98cf694d, type: 3}
@@ -235,7 +235,7 @@ MonoBehaviour:
         displayName: Cirrostratus
         description: Clouds are no longer projectiles or magic type damage.
         cost: 1500
-        ectoCost: 250
+        ectoCost: 300
         modifierPrefab: {fileID: 4914684363805038858, guid: 4970afbe9257afb4eae05e42688a99b3, type: 3}
         icon: {fileID: 0}
     - pathId: vanish_path_1
@@ -245,7 +245,7 @@ MonoBehaviour:
         displayName: Quick Clouds
         description: Fires clouds much faster.
         cost: 175
-        ectoCost: 125
+        ectoCost: 100
         modifierPrefab: {fileID: 4914684363805038858, guid: 8813058a6ac304c458c868c19327f750, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_2_2
@@ -253,14 +253,14 @@ MonoBehaviour:
         description: Clouds blow up after a short delay upon impact, dealing damage
           twice.
         cost: 400
-        ectoCost: 250
+        ectoCost: 225
         modifierPrefab: {fileID: 4914684363805038858, guid: 28c77310df63a744d8f5ff849802e6bd, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_2_3
         displayName: Multi-Cloud
         description: Fires three clouds at once.
         cost: 1200
-        ectoCost: 350
+        ectoCost: 325
         modifierPrefab: {fileID: 4914684363805038858, guid: 736c8d090b7ea8c44881590382199fb2, type: 3}
         icon: {fileID: 0}
   - towerId: spirit
@@ -469,50 +469,47 @@ MonoBehaviour:
       displayName: Path 1
       tiers:
       - upgradeId: wisp_1_1
-        displayName: Burning Burst
-        description: Yokai's burst leaves behind flames in its radius that persist
-          for a period of time.
+        displayName: ROI
+        description: 
         cost: 175
-        ectoCost: 100
-        modifierPrefab: {fileID: 2287601713824298542, guid: 7caebd9542d8a404695f96c2397fc02e, type: 3}
+        ectoCost: 200
+        modifierPrefab: {fileID: 959469913739193895, guid: 4298929a99264c04aa17a3d334cdd6a9, type: 3}
         icon: {fileID: 0}
       - upgradeId: wisp_1_2
-        displayName: Stunning Blast
-        description: Any star that takes damage from the residual flames is stunned
-          until the disappear.
+        displayName: Ecto Refund
+        description: 
         cost: 400
-        ectoCost: 250
-        modifierPrefab: {fileID: 2287601713824298542, guid: 23b5e2e51a65b6041a256794460c1aaf, type: 3}
+        ectoCost: 325
+        modifierPrefab: {fileID: 959469913739193895, guid: 1db7ab9f405cb7b42ad7fe5fa28bd760, type: 3}
         icon: {fileID: 0}
       - upgradeId: wisp_1_3
-        displayName: Nuclear Explosion
-        description: Gives additional range.
+        displayName: Value Booster
+        description: 
         cost: 1200
-        ectoCost: 400
-        modifierPrefab: {fileID: 2287601713824298542, guid: 3057929222eac4d4c866f1b7d676f354, type: 3}
+        ectoCost: 550
+        modifierPrefab: {fileID: 959469913739193895, guid: 8b1f927273b76ff44aa8f684362da562, type: 3}
         icon: {fileID: 0}
     - pathId: wisp_path_2
       displayName: Path 2
       tiers:
       - upgradeId: wisp_2_1
-        displayName: Restoration
-        description: Burst gives ghosts half of their lifetime back.
-        cost: 100
-        ectoCost: 150
-        modifierPrefab: {fileID: 2287601713824298542, guid: b8c04383f874b5f44a703cc2715ec087, type: 3}
+        displayName: Life Lock
+        description: 
+        cost: 300
+        ectoCost: 275
+        modifierPrefab: {fileID: 959469913739193895, guid: e5892815329834e43bf456c0a7d63042, type: 3}
         icon: {fileID: 0}
       - upgradeId: wisp_2_2
-        displayName: Overstay
-        description: Yokai's burst can now overheal ghosts.
+        displayName: Wide Coverage
+        description: 
         cost: 600
-        ectoCost: 300
-        modifierPrefab: {fileID: 2287601713824298542, guid: ff8771833d3ba0749b955cf35651409f, type: 3}
+        ectoCost: 400
+        modifierPrefab: {fileID: 959469913739193895, guid: b8a572610a7a9db4dbac62b5c7deecd2, type: 3}
         icon: {fileID: 0}
       - upgradeId: wisp_2_3
-        displayName: Thrive
-        description: Yokai's burst gives ghosts even more of their lifetime back;
-          ghosts have increased rate of fire while overhealed.
+        displayName: Healthy Smoke
+        description: 
         cost: 1500
         ectoCost: 525
-        modifierPrefab: {fileID: 2287601713824298542, guid: 36454221c091ecf49b088049564d95e1, type: 3}
+        modifierPrefab: {fileID: 959469913739193895, guid: cdbafdb5a01943a4fb9fe3c337acc7df, type: 3}
         icon: {fileID: 0}

@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeMultiplier: 1.6
-  extraPierce: 3
+  extraPierce: 2
   speedMultiplier: 1.3

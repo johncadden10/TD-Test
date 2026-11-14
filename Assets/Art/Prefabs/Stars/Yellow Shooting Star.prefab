@@ -186,6 +186,8 @@ MonoBehaviour:
   hitPoints: 40
   livesToSubtract: 2
   currencyWorth: 0
+  deathEffectPrefab: {fileID: 0}
+  deathEffectScale: 1
 --- !u!114 &4754274803427343037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immuneToColdSlow: 0
+  burnDps: 3
+  burnDuration: 3
+  burnTickInterval: 1
+  chillMultiplier: 0.7
+  chillDuration: 3
 --- !u!114 &5190541044167306521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,4 +234,4 @@ MonoBehaviour:
   boltPrefab: {fileID: 1551245117614602980, guid: 0c2f40404a53bfb4ca951d94179f0e1a, type: 3}
   range: 5
   fireInterval: 3
-  lifetimeDamage: 3
+  lifetimeDamage: 4
