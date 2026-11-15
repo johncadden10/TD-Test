@@ -14,6 +14,7 @@ public class Phantom : Ghost
     public int PierceBonus { get; set; } = 0;
     public float OrbSpeedMultiplier { get; set; } = 1f;
     public float TurnRateMultiplier { get; set; } = 1f;
+    public bool OrbsReseek { get; set; }
 
     protected override void Shoot()
     {
@@ -29,6 +30,7 @@ public class Phantom : Ghost
             Projectile p = obj.GetComponent<Projectile>();
 
             p.SetDamageType(DamageType);
+            p.Reseek = OrbsReseek;
             p.Pierce += PierceBonus + TempPierce;
             p.SpeedMultiplier = OrbSpeedMultiplier;
             p.Launch(dir, target, baseTurnRate * TurnRateMultiplier);

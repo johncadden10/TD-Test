@@ -1,13 +1,12 @@
 using UnityEngine;
 
-// Path 1-2: much longer life; clouds ignore belted
 public class DurableCloudsModifier : VanishModifier
 {
-    [SerializeField] private float lifetimeMultiplier = 2f;
+    [SerializeField] private float rangeMultiplier = 1.3f;
 
     protected override void Apply()
     {
-        vanish.LifetimeMultiplier *= lifetimeMultiplier;
+        vanish.RangeMultiplier *= rangeMultiplier;
         vanish.CloudsIgnoreBelted = true;
     }
 }
