@@ -44,6 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306e4b88b8baa6d46b8acdf64d251e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeMultiplier: 1.6
   extraPierce: 2
-  speedMultiplier: 1.3
+  lifetimeMultiplier: 1.6666666

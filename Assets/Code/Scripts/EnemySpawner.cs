@@ -111,6 +111,11 @@ public class EnemySpawner : MonoBehaviour
         if (countdown <= 0f) LaunchNextWave();
     }
 
+    public void SetWaves(List<Wave> newWaves)
+    {
+        waves = newWaves;
+    }
+
     // skips the countdown (call-early button, testing)
     public void CallNextWave()
     {
@@ -205,7 +210,7 @@ public class EnemySpawner : MonoBehaviour
     {
         Debug.Log($"Victory! Loading {victorySceneName} in {victoryDelay} seconds...");
         yield return new WaitForSeconds(victoryDelay);
-        SceneManager.LoadScene(victorySceneName);
+        LevelRewardManager.main.CompleteLevel(LevelSession.current != null ? LevelSession.current.levelId : "");
     }
 
     private int EnemiesPerWave(int waveIndex)

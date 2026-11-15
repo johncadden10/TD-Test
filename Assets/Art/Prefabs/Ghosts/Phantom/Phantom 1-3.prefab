@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spread: 360
-  turnRateMultiplier: 2.5
+  turnRateMultiplier: 1

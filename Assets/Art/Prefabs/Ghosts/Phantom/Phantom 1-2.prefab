@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: 1.4
   extraPierce: 1
+  turnRateMultiplier: 2.5

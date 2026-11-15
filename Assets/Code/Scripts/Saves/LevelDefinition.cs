@@ -14,6 +14,9 @@ public class LevelDefinition
     public Sprite preview;
     public List<string> enemyTypes; // shown on loadout screen before entering
     public int towerSlotCount = 4;
+    public GameObject layoutPrefab;
+    public WaveSet waves;
+    public int startingEcto = 125;
 }
 
 [System.Serializable]

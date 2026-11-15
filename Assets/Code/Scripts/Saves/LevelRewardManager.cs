@@ -13,15 +13,14 @@ public class LevelRewardManager : MonoBehaviour
         main = this;
     }
 
-    /*
     public void CompleteLevel(string levelId)
     {
         SaveData save = SaveManager.main.CurrentSave;
-        LevelDefinition level = levelRegistry.levels.Find(l => l.levelId == levelId);
+        LevelDefinition level = levelRegistry.GetLevelById(levelId);
 
         if (level == null) return;
 
-        int levelIndex = levelRegistry.levels.IndexOf(level);
+        int levelIndex = levelRegistry.GetGlobalLevelIndex(levelId);
 
         // unlock next level
         if (levelIndex + 1 > save.highestLevelUnlocked)
@@ -32,5 +31,5 @@ public class LevelRewardManager : MonoBehaviour
 
         SaveManager.main.SaveCurrentSlot();
         SceneManager.LoadScene(hubSceneName);
-    } */
+    } 
 }

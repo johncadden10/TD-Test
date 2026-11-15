@@ -97,8 +97,9 @@ public class HubManager : MonoBehaviour
 
     public void OnEnterLevel()
     {
+        LevelSession.current = pendingLevel;
         loadoutUI.CommitLoadout();
-        SceneManager.LoadScene(pendingLevel.sceneName);
+        SceneManager.LoadScene(pendingLevel.sceneName); // every level's sceneName is now "Level"
         SaveData save = SaveManager.main.CurrentSave;
         int needed = Mathf.Min(pendingLevel.towerSlotCount, save.unlockedTowers.Count);
         if (save.selectedTowers.Count != needed) return;

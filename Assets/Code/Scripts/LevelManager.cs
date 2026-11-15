@@ -10,6 +10,7 @@ public class IncomeLevel
     public int upgradeCost = 0;    // cost to reach this level (ignored for level 0)
 }
 
+[DefaultExecutionOrder(-200)]
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager main;
@@ -91,5 +92,13 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log("Insufficient Ecto!");
         return false;
+    }
+
+    public void ApplyLayout(Transform[] newPath, int startingEctoAmount)
+    {
+        path = newPath;
+        startPoint = newPath[0];
+        endPoint = newPath[newPath.Length - 1];
+        startingEcto = startingEctoAmount;
     }
 }
