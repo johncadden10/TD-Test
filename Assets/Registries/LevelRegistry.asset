@@ -31,6 +31,9 @@ MonoBehaviour:
       - blue_star
       - galaxy
       towerSlotCount: 1
+      layoutPrefab: {fileID: 0}
+      waves: {fileID: 0}
+      startingEcto: 125
     - levelId: world1_level2
       displayName: Level 1-2
       sceneName: GameScene
@@ -41,6 +44,9 @@ MonoBehaviour:
       preview: {fileID: 0}
       enemyTypes: []
       towerSlotCount: 4
+      layoutPrefab: {fileID: 0}
+      waves: {fileID: 0}
+      startingEcto: 125
     - levelId: world1_level3
       displayName: Level 1-3
       sceneName: GameScene1
@@ -51,6 +57,22 @@ MonoBehaviour:
       preview: {fileID: 0}
       enemyTypes: []
       towerSlotCount: 4
+      layoutPrefab: {fileID: 0}
+      waves: {fileID: 0}
+      startingEcto: 125
+    - levelId: world1_level10
+      displayName: Level 1-10
+      sceneName: Level
+      essenceReward: 200
+      worldIndex: 3
+      mapPosition: {x: 240, y: 160}
+      connections: 0200000004000000
+      preview: {fileID: 0}
+      enemyTypes: []
+      towerSlotCount: 4
+      layoutPrefab: {fileID: 2974435398913908714, guid: aebeaf340317aa64d8d835d15cebb75d, type: 3}
+      waves: {fileID: 11400000, guid: 9fed89c51412ffb43bd7a7cc0865aa07, type: 2}
+      startingEcto: 125
   - worldName: Mansion
     background: {fileID: 0}
     constellationColor: {r: 1, g: 0.71290123, b: 0, a: 0}

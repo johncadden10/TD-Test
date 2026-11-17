@@ -9,6 +9,8 @@ public class Plot : MonoBehaviour
 
     private GameObject tower;
     private Color startColor;
+    private Ghost occupant;
+    public Ghost Occupant => occupant;
 
     private void Start()
     {
@@ -49,6 +51,7 @@ public class Plot : MonoBehaviour
         tower = Instantiate(entry.tower.prefab, transform.position, Quaternion.identity);
 
         Ghost ghost = tower.GetComponent<Ghost>();
+        occupant = ghost;
         if (ghost != null) ghost.Initialize(entry.tower.towerId, entry.pathIndex);
 
         BuildManager.main.StartCooldown(entry); // starts when placed, not when picked up

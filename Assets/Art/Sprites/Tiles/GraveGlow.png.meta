@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: a1b1f361a89dce54493853ccb08d94cb
+guid: 11f76045325903f478eae45a284bab3d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2696143128963170653
-    second: BansheeAttackSS_0
-  - first:
-      213: 4928082836141086911
-    second: BansheeAttackSS_1
-  - first:
-      213: 674357702720131424
-    second: BansheeAttackSS_2
-  - first:
-      213: 4388270967578791104
-    second: BansheeAttackSS_3
+      213: 4715392430729200446
+    second: GraveGlow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BansheeAttackSS_0
+      name: GraveGlow_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 96
-        height: 96
+        width: 28
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ae3a86eb10659ad0800000000000000
-      internalID: -2696143128963170653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BansheeAttackSS_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb893e7ba31146440800000000000000
-      internalID: 4928082836141086911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BansheeAttackSS_2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0619e2af1cccb5900800000000000000
-      internalID: 674357702720131424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BansheeAttackSS_3
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0cc81b8e13546ec30800000000000000
-      internalID: 4388270967578791104
+      spriteID: e330e2abe60707140800000000000000
+      internalID: 4715392430729200446
       vertices: []
       indices: 
       edges: []
@@ -200,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8d91d61790b4b57498733302cba43f70
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BansheeAttackSS_0: -2696143128963170653
-      BansheeAttackSS_1: 4928082836141086911
-      BansheeAttackSS_2: 674357702720131424
-      BansheeAttackSS_3: 4388270967578791104
+      GraveGlow_0: 4715392430729200446
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
