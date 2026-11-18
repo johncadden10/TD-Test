@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7474519971126947222}
   - component: {fileID: -6407747852262008338}
   - component: {fileID: 8953341586665828106}
+  - component: {fileID: 1587453303649209397}
   m_Layer: 6
   m_Name: Hypervelocity Star
   m_TagString: Enemy
@@ -186,6 +187,8 @@ MonoBehaviour:
   hitPoints: 50
   livesToSubtract: 3
   currencyWorth: 0
+  deathEffectPrefab: {fileID: 0}
+  deathEffectScale: 1
 --- !u!114 &7474519971126947222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +202,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immuneToColdSlow: 0
+  burnDps: 3
+  burnDuration: 3
+  burnTickInterval: 1
+  chillMultiplier: 0.7
+  chillDuration: 3
 --- !u!114 &-6407747852262008338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,3 +235,20 @@ MonoBehaviour:
   jumpDistance: 1.5
   cooldown: 0.25
   minDamage: 0
+--- !u!114 &1587453303649209397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03a87e8a1809cb4ab0fbd08b11b3a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: b940f225b1120454b83ef94e7a69b244, type: 2}
+  flashDuration: 0.12
+  strength: 0.7
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  skipStatusDamage: 0

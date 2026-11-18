@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6163944980004024821}
   - component: {fileID: 5399912924394465620}
   - component: {fileID: 3973099344988002473}
+  - component: {fileID: 1694123167499488285}
   m_Layer: 6
   m_Name: Jovian Planet
   m_TagString: Enemy
@@ -185,6 +186,8 @@ MonoBehaviour:
   hitPoints: 40
   livesToSubtract: 2
   currencyWorth: 0
+  deathEffectPrefab: {fileID: 0}
+  deathEffectScale: 1
 --- !u!114 &5399912924394465620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,3 +216,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immuneToColdSlow: 0
+  burnDps: 3
+  burnDuration: 3
+  burnTickInterval: 1
+  chillMultiplier: 0.7
+  chillDuration: 3
+--- !u!114 &1694123167499488285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03a87e8a1809cb4ab0fbd08b11b3a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: b940f225b1120454b83ef94e7a69b244, type: 2}
+  flashDuration: 0.12
+  strength: 0.7
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  skipStatusDamage: 0

@@ -31,6 +31,7 @@ public static class StarModifiers
 
         star.GetComponent<Health>().RefreshModifiers();
         star.GetComponent<HiddenUnlessNearGhost>()?.RefreshRenderers();
+        star.GetComponent<HitFlash>()?.CacheRenderers();
     }
 
     private static void AddOverlay(GameObject star, string name, Sprite sprite, Color color, float scale)

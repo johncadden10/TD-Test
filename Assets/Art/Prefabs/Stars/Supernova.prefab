@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7474519971126947222}
   - component: {fileID: -6407747852262008338}
   - component: {fileID: 3177956699464152517}
+  - component: {fileID: 7563444963260937723}
   m_Layer: 6
   m_Name: Supernova
   m_TagString: Enemy
@@ -238,3 +239,20 @@ MonoBehaviour:
   explosionEffectPrefab: {fileID: 1157764077424845484, guid: ed75b1450993f3144adc251043b21a84, type: 3}
   fuseTint: {fileID: 1220051569094541993}
   fuseColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &7563444963260937723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03a87e8a1809cb4ab0fbd08b11b3a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: b940f225b1120454b83ef94e7a69b244, type: 2}
+  flashDuration: 0.12
+  strength: 0.7
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  skipStatusDamage: 0

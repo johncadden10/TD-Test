@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: -6163944980004024821}
   - component: {fileID: 4754274803427343037}
   - component: {fileID: 8233781696080141978}
+  - component: {fileID: -1255522977254090908}
+  - component: {fileID: -7232581184611391902}
+  - component: {fileID: 5919454362396998842}
   m_Layer: 6
   m_Name: Red Star
   m_TagString: Enemy
@@ -33,7 +36,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8, y: 1, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 1384647961
   m_SortingLayer: 1
   m_SortingOrder: 4
-  m_Sprite: {fileID: -8284390914871688179, guid: f78e4b89c73d5b744874fa56b298c15b, type: 3}
+  m_Sprite: {fileID: -718540207899180220, guid: d7031631e6b52d1489ddfc09404f9036, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,6 +188,8 @@ MonoBehaviour:
   hitPoints: 15
   livesToSubtract: 1
   currencyWorth: 0
+  deathEffectPrefab: {fileID: 0}
+  deathEffectScale: 1
 --- !u!114 &4754274803427343037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,3 +216,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immuneToColdSlow: 0
+  burnDps: 3
+  burnDuration: 3
+  burnTickInterval: 1
+  chillMultiplier: 0.7
+  chillDuration: 3
+--- !u!114 &-1255522977254090908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2350b5781c54918408b09115983653c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: -7232581184611391902}
+  tierThresholds:
+  - 88
+  - 82
+  - 76
+  - 70
+  - 64
+  - 58
+  - 52
+  - 46
+  - 40
+  - 35
+  - 30
+  - 25
+  - 20
+  - 16
+  - 11
+  - 7
+  - 3
+--- !u!95 &-7232581184611391902
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bafe17428961ee458c7583ccefe6999, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5919454362396998842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03a87e8a1809cb4ab0fbd08b11b3a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: b940f225b1120454b83ef94e7a69b244, type: 2}
+  flashDuration: 0.12
+  strength: 0.7
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  skipStatusDamage: 0
