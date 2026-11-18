@@ -19,7 +19,7 @@ MonoBehaviour:
     levels:
     - levelId: world1_level1
       displayName: Level 1-1
-      sceneName: TestScene1
+      sceneName: Level
       essenceReward: 150
       worldIndex: 0
       mapPosition: {x: 0, y: 0}
@@ -27,12 +27,9 @@ MonoBehaviour:
       preview: {fileID: 0}
       enemyTypes:
       - red_star
-      - yellow_star
-      - blue_star
-      - galaxy
       towerSlotCount: 1
-      layoutPrefab: {fileID: 0}
-      waves: {fileID: 0}
+      layoutPrefab: {fileID: 2974435398913908714, guid: 341e00941ace4814c93a07a892a1a5c8, type: 3}
+      waves: {fileID: 11400000, guid: b6b9a761b220cb249a3904ecca9b4c57, type: 2}
       startingEcto: 125
     - levelId: world1_level2
       displayName: Level 1-2

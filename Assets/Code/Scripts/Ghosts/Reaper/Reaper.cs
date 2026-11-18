@@ -23,6 +23,8 @@ public class Reaper : Ghost
     public float ValueGrowthPerSecond { get; set; } = 0f;
     public int MaxValueBonus { get; set; } = 0;
     public bool AutoCollect { get; set; } = false;
+    public float MagnetRadius { get; set; }
+    public float MagnetSpeed { get; set; }
     [System.NonSerialized] public VengefulSettings Vengeful = new VengefulSettings();
 
     private float timeRemaining;
@@ -49,6 +51,7 @@ public class Reaper : Ghost
     protected override void Update()
     {
         if (IsStunned) return;
+        if (MagnetRadius > 0f) PullSouls();
         if (isGenerating) return;
 
         progress += HasteDelta * SpeedMultiplier * AdjacencyMultiplier;
@@ -72,12 +75,11 @@ public class Reaper : Ghost
 
         if (AutoCollect)
         {
-            LevelManager.main.IncreaseEcto(value);
+            LevelManager.main.IncreaseEcto(value); // no soul is spawned
         }
         else
         {
-            Vector2 offset = Random.insideUnitCircle * 0.5f;
-            Soul soul = Instantiate(soulPrefab, (Vector2)transform.position + offset, Quaternion.identity);
+            Soul soul = Instantiate(soulPrefab, transform.position, Quaternion.identity);
             soul.Init(value, Vengeful);
         }
 
@@ -93,6 +95,24 @@ public class Reaper : Ghost
     {
         float bonus = Mathf.Min((Time.time - spawnTime) * ValueGrowthPerSecond, MaxValueBonus);
         return Mathf.RoundToInt((currencyGain + bonus) * ValueMultiplier);
+    }
+
+    private void PullSouls()
+    {
+        float dt = Time.deltaTime;
+        var souls = Soul.All;
+
+        for (int i = souls.Count - 1; i >= 0; i--)
+        {
+            if (i >= souls.Count) continue; // the list can shrink as souls are collected
+            Soul s = souls[i];
+            if (s == null) continue;
+
+            if (Vector2.Distance(s.transform.position, transform.position) <= MagnetRadius)
+                s.PullToward(this, transform.position, MagnetSpeed, dt);
+            else
+                s.ReleaseMagnet(this);
+        }
     }
 
     protected override void Shoot() { }

@@ -18,9 +18,9 @@ MonoBehaviour:
     description: Fires seeking ghost orbs from a great distance.
     cost: 75
     placementCooldown: 5
-    baseRange: 0
+    baseRange: 5.5
     baseAttackSpeed: 0
-    baseDamage: 5
+    baseDamage: 4
     prefab: {fileID: 2866573512344937733, guid: 127fc7bb2ed1e8b44b9c784a6bdab18d, type: 3}
     icon: {fileID: 7263154431260547652, guid: a8edf187b2fdbe04c88c08fe4d211969, type: 3}
     unlockedByDefault: 1
@@ -37,17 +37,17 @@ MonoBehaviour:
         modifierPrefab: {fileID: 735922247001707355, guid: c0b0629f78807d44a9295f1a5f63d788, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_1_2
-        displayName: Strong Orbs
-        description: Fires orbs faster and gives additional pierce.
+        displayName: Seeking Stars
+        description: 
         cost: 325
-        ectoCost: 250
+        ectoCost: 300
         modifierPrefab: {fileID: 735922247001707355, guid: 588300c23bea81b4fa47cf18bf1a2120, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_1_3
         displayName: Orbliteration
         description: Fires five orbs in different directions that track down stars.
         cost: 525
-        ectoCost: 525
+        ectoCost: 575
         modifierPrefab: {fileID: 735922247001707355, guid: 507750827b9462042938f665329daaea, type: 3}
         icon: {fileID: 0}
     - pathId: phantom_path_2

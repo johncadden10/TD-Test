@@ -12,7 +12,6 @@ public class GraveTile : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private int soulValue = 15;
     [SerializeField] private float interval = 8f;
-    [SerializeField] private float spawnSpread = 0.4f;
 
     private static readonly int GeneratingHash = Animator.StringToHash("Generating");
 
@@ -49,7 +48,7 @@ public class GraveTile : MonoBehaviour
     private void SpawnSoul()
     {
         Vector2 origin = soulSpawnPoint != null ? (Vector2)soulSpawnPoint.position : (Vector2)transform.position;
-        Vector2 pos = origin + Random.insideUnitCircle * spawnSpread;
+        Vector2 pos = origin;
 
         Soul soul = Instantiate(soulPrefab, pos, Quaternion.identity);
         soul.Init(soulValue, null); // plain soul: no vengeful behaviour
