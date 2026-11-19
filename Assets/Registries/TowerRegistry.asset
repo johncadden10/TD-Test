@@ -391,7 +391,7 @@ MonoBehaviour:
     displayName: Yokai
     description: Incredibly short lifetime that gives effects on expiration; base
       deals heavy damage
-    cost: 150
+    cost: 125
     placementCooldown: 30
     baseRange: 1.5
     baseAttackSpeed: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
         displayName: Nuclear Explosion
         description: Gives additional range.
         cost: 1200
-        ectoCost: 400
+        ectoCost: 350
         modifierPrefab: {fileID: 2287601713824298542, guid: 3057929222eac4d4c866f1b7d676f354, type: 3}
         icon: {fileID: 0}
     - pathId: yokai_path_2
@@ -441,7 +441,7 @@ MonoBehaviour:
         displayName: Overstay
         description: Yokai's burst can now overheal ghosts.
         cost: 600
-        ectoCost: 300
+        ectoCost: 225
         modifierPrefab: {fileID: 2287601713824298542, guid: ff8771833d3ba0749b955cf35651409f, type: 3}
         icon: {fileID: 0}
       - upgradeId: yokai_2_3
@@ -449,7 +449,7 @@ MonoBehaviour:
         description: Yokai's burst gives ghosts even more of their lifetime back;
           ghosts have increased rate of fire while overhealed.
         cost: 1500
-        ectoCost: 525
+        ectoCost: 350
         modifierPrefab: {fileID: 2287601713824298542, guid: 36454221c091ecf49b088049564d95e1, type: 3}
         icon: {fileID: 0}
   - towerId: wisp

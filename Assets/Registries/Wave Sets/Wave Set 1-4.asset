@@ -37,16 +37,16 @@ MonoBehaviour:
     timeBetweenGroups: 0.5
   - waveName: Round 3
     useCustomWave: 1
-    duration: 32
+    duration: 36
     enemyGroups:
     - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
-      count: 4
+      count: 3
       spawnInterval: 2
       belted: 0
       fused: 0
       constellation: 0
     - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
-      count: 4
+      count: 3
       spawnInterval: 2
       belted: 0
       fused: 0

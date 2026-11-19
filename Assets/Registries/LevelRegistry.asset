@@ -66,10 +66,13 @@ MonoBehaviour:
       sceneName: Level
       essenceReward: 500
       worldIndex: 3
-      mapPosition: {x: 400, y: 400}
+      mapPosition: {x: 260, y: 160}
       connections: 080000000a000000
       preview: {fileID: 0}
-      enemyTypes: []
+      enemyTypes:
+      - red_star
+      - yellow_star
+      - red_shooting_star
       towerSlotCount: 2
       layoutPrefab: {fileID: 2974435398913908714, guid: cf05a8cf3fa70074a8fe486a3d8a54ff, type: 3}
       waves: {fileID: 11400000, guid: 7f8ff3e7775966249867bac3246b158b, type: 2}
@@ -78,7 +81,7 @@ MonoBehaviour:
       displayName: Level 1-10
       sceneName: Level
       essenceReward: 500
-      worldIndex: 3
+      worldIndex: 9
       mapPosition: {x: 400, y: 400}
       connections: 080000000a000000
       preview: {fileID: 0}
