@@ -77,9 +77,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1384647961
   m_SortingLayer: 1
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -2329259201001530734, guid: f4d3748673f42f54492a219395fcb15b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 2868101353237766674, guid: 8e1e5daf79e7f554b924d585deb2bbf7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 5805831464823133406}
-  hoverColor: {r: 0.7960785, g: 0.8588236, b: 0.98823535, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 0.11764706}

@@ -1284,7 +1284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &813584872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1709,23 +1709,8 @@ MonoBehaviour:
   startingEcto: 125
   incomeLevels:
   - gain: 25
-    interval: 6.25
-    upgradeCost: 0
-  - gain: 25
     interval: 4.1666665
-    upgradeCost: 50
-  - gain: 25
-    interval: 3.3333333
-    upgradeCost: 125
-  - gain: 25
-    interval: 3.125
-    upgradeCost: 200
-  - gain: 25
-    interval: 2.5
-    upgradeCost: 350
-  - gain: 25
-    interval: 2
-    upgradeCost: 500
+    upgradeCost: 0
   onIncomeChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3264,9 +3249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speeds:
   - 1
-  - 1.5
-  - 2
-  - 4
+  - 1.7
   label: {fileID: 29581386}
   enableHotkeys: 1
 --- !u!1660057539 &9223372036854775807

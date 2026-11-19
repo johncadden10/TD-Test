@@ -187,7 +187,7 @@ MonoBehaviour:
   lifetime: 42
   attackDamage: 1
   preDeathDuration: 1
-  retargetInterval: 0.1
+  retargetInterval: 0.15
   damageType: 0
   tierColors:
   - {r: 1, g: 1, b: 1, a: 1}
@@ -200,7 +200,6 @@ MonoBehaviour:
   killBlastEffectPrefab: {fileID: 1157764077424845484, guid: ed75b1450993f3144adc251043b21a84, type: 3}
   pulseInterval: 5
   pulseRadiusMultiplier: 2
-  pulseSlowMultiplier: 0.5
   pulseEffectDuration: 3
 --- !u!212 &3947002859859790600
 SpriteRenderer:

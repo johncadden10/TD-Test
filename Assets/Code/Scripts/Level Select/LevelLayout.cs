@@ -1,11 +1,26 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class LevelLayout : MonoBehaviour
 {
-    [SerializeField] private Transform pathRoot;       // children = waypoints, in order
-    [SerializeField] private float cameraSize = 5f;    // orthographic size for this level
+    [Header("Path")]
+    [SerializeField] private Transform pathRoot;
 
+    [Header("Tilemap Plots")]
+    public Tilemap plotMarkers;
+    public GameObject plotPrefab;
+    public Transform plotsRoot;
+
+    [Header("Camera")]
+    [SerializeField] private float cameraSize = 5f;
     public float CameraSize => cameraSize;
+
+    private void Awake()
+    {
+        // marker tiles are for editing only
+        if (plotMarkers != null)
+            plotMarkers.GetComponent<TilemapRenderer>().enabled = false;
+    }
 
     public Transform[] GetPath()
     {
