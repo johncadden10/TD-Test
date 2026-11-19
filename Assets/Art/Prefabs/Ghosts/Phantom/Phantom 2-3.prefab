@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetimeMultiplier: 1.4
   lifetimeRegen: 5
-  shareFraction: 0.4
+  shareFraction: 0.7

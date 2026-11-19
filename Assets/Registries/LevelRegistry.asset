@@ -61,13 +61,26 @@ MonoBehaviour:
       layoutPrefab: {fileID: 2974435398913908714, guid: c73fd9ba88fd57f4d82ffa4d9b4c72da, type: 3}
       waves: {fileID: 11400000, guid: 2dfcd6496c8b6194ca97e59db40cdbca, type: 2}
       startingEcto: 125
+    - levelId: world1_level4
+      displayName: Level 1-4
+      sceneName: Level
+      essenceReward: 500
+      worldIndex: 3
+      mapPosition: {x: 400, y: 400}
+      connections: 080000000a000000
+      preview: {fileID: 0}
+      enemyTypes: []
+      towerSlotCount: 2
+      layoutPrefab: {fileID: 2974435398913908714, guid: cf05a8cf3fa70074a8fe486a3d8a54ff, type: 3}
+      waves: {fileID: 11400000, guid: 7f8ff3e7775966249867bac3246b158b, type: 2}
+      startingEcto: 125
     - levelId: world1_level10
       displayName: Level 1-10
       sceneName: Level
       essenceReward: 500
       worldIndex: 3
-      mapPosition: {x: 240, y: 160}
-      connections: 0200000004000000
+      mapPosition: {x: 400, y: 400}
+      connections: 080000000a000000
       preview: {fileID: 0}
       enemyTypes: []
       towerSlotCount: 4

@@ -47,3 +47,4 @@ MonoBehaviour:
   fragments: 12
   fragmentDamageMultiplier: 0.5
   fragmentLifetime: 0.25
+  rangeMultiplier: 1.2

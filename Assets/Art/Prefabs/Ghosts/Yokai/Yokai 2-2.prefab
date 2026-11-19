@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d47875a19e977d49b57e1b5cab784e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overheal: 0.3
+  seconds: 15
