@@ -16,15 +16,15 @@ MonoBehaviour:
   - enemyId: red_star
     displayName: Red Star
     description: Weakest basic star
-    icon: {fileID: -8284390914871688179, guid: f78e4b89c73d5b744874fa56b298c15b, type: 3}
+    icon: {fileID: -718540207899180220, guid: d7031631e6b52d1489ddfc09404f9036, type: 3}
   - enemyId: yellow_star
     displayName: Yellow Star
     description: Average basic star
-    icon: {fileID: -3768136888096122267, guid: 3c690e864371ab9479e745b48b1fde6e, type: 3}
+    icon: {fileID: 2698290833124934633, guid: d7031631e6b52d1489ddfc09404f9036, type: 3}
   - enemyId: blue_star
     displayName: Blue Star
     description: Toughest basic star
-    icon: {fileID: -1413163155605188201, guid: 447a969135b02574b98ba86a7a76e83d, type: 3}
+    icon: {fileID: -5386704272692404010, guid: d7031631e6b52d1489ddfc09404f9036, type: 3}
   - enemyId: galaxy
     displayName: Galaxy
     description: Slow, with extremely high health
@@ -32,12 +32,16 @@ MonoBehaviour:
   - enemyId: red_shooting_star
     displayName: Red Shooting Star
     description: A weak star that can shoot bolts at ghosts to lower their lifetime
-    icon: {fileID: -6479558217058493216, guid: 36cf4ef800dd1544ca4e965342eabcea, type: 3}
+    icon: {fileID: -8284390914871688179, guid: f78e4b89c73d5b744874fa56b298c15b, type: 3}
   - enemyId: yellow_shooting_star
     displayName: Yellow Shooting Star
     description: An average star that can shoot bolts at ghosts to lower their lifetime
-    icon: {fileID: -6479558217058493216, guid: 36cf4ef800dd1544ca4e965342eabcea, type: 3}
-  - enemyId: yellow_shooting_star
-    displayName: Yellow Shooting Star
-    description: An average star that can shoot bolts at ghosts to lower their lifetime
-    icon: {fileID: -6479558217058493216, guid: 36cf4ef800dd1544ca4e965342eabcea, type: 3}
+    icon: {fileID: -3768136888096122267, guid: 3c690e864371ab9479e745b48b1fde6e, type: 3}
+  - enemyId: blue_shooting_star
+    displayName: Blue Shooting Star
+    description: An tough star that can shoot bolts at ghosts to lower their lifetime
+    icon: {fileID: -1413163155605188201, guid: 447a969135b02574b98ba86a7a76e83d, type: 3}
+  - enemyId: blue_shooting_star
+    displayName: Blue Shooting Star
+    description: An tough star that can shoot bolts at ghosts to lower their lifetime
+    icon: {fileID: -1413163155605188201, guid: 447a969135b02574b98ba86a7a76e83d, type: 3}

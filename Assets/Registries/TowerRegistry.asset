@@ -33,7 +33,7 @@ MonoBehaviour:
         displayName: Twin Orbs
         description: Fires two orbs at once.
         cost: 150
-        ectoCost: 225
+        ectoCost: 200
         modifierPrefab: {fileID: 735922247001707355, guid: c0b0629f78807d44a9295f1a5f63d788, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_1_2
@@ -86,8 +86,8 @@ MonoBehaviour:
     baseDamage: 0
     prefab: {fileID: 8801678570361711476, guid: df494da4b4aa86c42a366810a50d1f88, type: 3}
     icon: {fileID: 4178998774675028891, guid: d83ee7849ea7ffd478eadf9795bef75a, type: 3}
-    unlockedByDefault: 1
-    unlockedAfterLevel: 0
+    unlockedByDefault: 0
+    unlockedAfterLevel: 1
     upgradePaths:
     - pathId: reaper_path_1
       displayName: Path 1
@@ -148,8 +148,8 @@ MonoBehaviour:
     baseDamage: 1
     prefab: {fileID: 4525154340494255734, guid: f55f1947629d3c64a9d48a0051395cff, type: 3}
     icon: {fileID: 21300000, guid: 5d7481682c04e6c46af82fed1133c09e, type: 3}
-    unlockedByDefault: 1
-    unlockedAfterLevel: 0
+    unlockedByDefault: 0
+    unlockedAfterLevel: 3
     upgradePaths:
     - pathId: banshee_path_1
       displayName: Path 1
@@ -210,7 +210,7 @@ MonoBehaviour:
     baseDamage: 3
     prefab: {fileID: 2866573512344937733, guid: 836361f9356a8104eb9ab27eeaea0d46, type: 3}
     icon: {fileID: -771845516268585335, guid: 9955d6b4d961c5545b656e5d97e545f5, type: 3}
-    unlockedByDefault: 1
+    unlockedByDefault: 0
     unlockedAfterLevel: 0
     upgradePaths:
     - pathId: vanish_path_2
@@ -334,8 +334,8 @@ MonoBehaviour:
     baseDamage: 0
     prefab: {fileID: 172405090663571643, guid: 829051b417f8d294faf07152e7bc12cc, type: 3}
     icon: {fileID: 3086133501085875104, guid: aa8eeff14fdec8749929a1e49424ad8c, type: 3}
-    unlockedByDefault: 0
-    unlockedAfterLevel: 0
+    unlockedByDefault: 1
+    unlockedAfterLevel: 2
     upgradePaths:
     - pathId: poltergeist_path_1
       displayName: Path 1
@@ -398,7 +398,7 @@ MonoBehaviour:
     baseDamage: 0
     prefab: {fileID: 6544359843665614805, guid: f32f060c7cbcc32499c8988d1a93a2ec, type: 3}
     icon: {fileID: 1731234740, guid: 87385522efc739a45a8214f27354887a, type: 3}
-    unlockedByDefault: 0
+    unlockedByDefault: 1
     unlockedAfterLevel: 0
     upgradePaths:
     - pathId: yokai_path_1
@@ -462,8 +462,8 @@ MonoBehaviour:
     baseDamage: 0
     prefab: {fileID: 4525154340494255734, guid: a00448043ceaa7f4c9435bd8f686ee60, type: 3}
     icon: {fileID: -2302556619345206245, guid: bf9a482b2ad82f349954ad5071c3f12c, type: 3}
-    unlockedByDefault: 0
-    unlockedAfterLevel: 0
+    unlockedByDefault: 1
+    unlockedAfterLevel: 1
     upgradePaths:
     - pathId: wisp_path_1
       displayName: Path 1

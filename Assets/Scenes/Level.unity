@@ -1284,7 +1284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &813584872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speeds:
   - 1
-  - 1.7
+  - 2
   label: {fileID: 29581386}
   enableHotkeys: 1
 --- !u!1660057539 &9223372036854775807

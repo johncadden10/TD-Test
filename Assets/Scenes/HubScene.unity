@@ -8109,6 +8109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelRegistry: {fileID: 11400000, guid: 6415ed83ee37a124c81ec0db8e5d948a, type: 2}
+  towerRegistry: {fileID: 11400000, guid: 62c61d66db5d210428350d34783c5ae9, type: 2}
   hubSceneName: HubScene
 --- !u!1 &882227346
 GameObject:
@@ -10791,6 +10792,7 @@ MonoBehaviour:
   loadoutPanel: {fileID: 1237417506}
   ghostPanel: {fileID: 1425923418}
   levelRegistry: {fileID: 11400000, guid: 6415ed83ee37a124c81ec0db8e5d948a, type: 2}
+  towerRegistry: {fileID: 11400000, guid: 62c61d66db5d210428350d34783c5ae9, type: 2}
   constellationMapUI: {fileID: 1853644114}
   loadoutUI: {fileID: 1237417508}
   mainMenuSceneName: TitleScene

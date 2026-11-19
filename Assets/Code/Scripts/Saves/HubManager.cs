@@ -14,6 +14,7 @@ public class HubManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private LevelRegistry levelRegistry;
+    [SerializeField] private TowerRegistry towerRegistry;
     [SerializeField] private ConstellationMapUI constellationMapUI;
     [SerializeField] private LoadoutUI loadoutUI;
 
@@ -35,6 +36,11 @@ public class HubManager : MonoBehaviour
             SaveManager.main.LoadSlot(0); // only when testing straight from the hub
     #endif
         ShowHub();
+
+        SaveData s = SaveManager.main.CurrentSave;
+        foreach (TowerDefinition t in towerRegistry.towers)
+            if (!t.unlockedByDefault && t.unlockedAfterLevel < s.highestLevelUnlocked && !s.unlockedTowers.Contains(t.towerId))
+                s.unlockedTowers.Add(t.towerId);
     }
 
     // --- Hub ---
