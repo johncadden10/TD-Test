@@ -204,7 +204,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathRoot: {fileID: 5664894388193314912}
-  cameraSize: 4.55
+  plotMarkers: {fileID: 0}
+  plotPrefab: {fileID: 0}
+  plotsRoot: {fileID: 0}
+  cameraSize: 4.5
 --- !u!1 &3446728447617900284
 GameObject:
   m_ObjectHideFlags: 0
