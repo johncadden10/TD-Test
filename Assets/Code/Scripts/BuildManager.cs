@@ -8,6 +8,7 @@ public class BuildManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private SpriteRenderer previewRenderer; // empty GameObject with a SpriteRenderer
+    [SerializeField] private Sprite crucifixIcon;
     [SerializeField] private float dragThreshold = 15f;      // pixels before a press counts as a drag
 
     [Header("Testing (used only if no loadout was committed)")]
@@ -17,9 +18,11 @@ public class BuildManager : MonoBehaviour
     private readonly Dictionary<string, float> cooldownEnd = new Dictionary<string, float>();
     private bool isHolding;
     private bool isDragging;
+    private Plot hovered;
     private Vector2 pressStart;
 
     public LevelLoadout.Entry Selected => selected;
+    public bool ExercismActive { get; private set; }
 
     private void Awake()
     {
@@ -37,6 +40,7 @@ public class BuildManager : MonoBehaviour
     // called by a build button on pointer down
     public void BeginSelect(LevelLoadout.Entry entry)
     {
+        ClearCrucifix();
         selected = entry;
         isHolding = true;
         isDragging = false;
@@ -56,38 +60,56 @@ public class BuildManager : MonoBehaviour
 
     private void Update()
     {
-        if (selected == null) return;
+        bool active = selected != null || ExercismActive;
 
-        // preview follows the mouse
+        if (!active)
+        {
+            UpdateHover(Vector3.zero, false); // clears any leftover highlight
+            return;
+        }
+
         Vector3 world = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         world.z = 0f;
         previewRenderer.transform.position = world;
 
-        // cancel
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
         {
             ClearSelection();
+            ClearCrucifix();
             return;
         }
 
-        // detect drag
+        bool overUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+        UpdateHover(world, !overUI);
+
+        // click-then-click mode: the tool is already selected, so this click targets a plot
+        if (Input.GetMouseButtonDown(0) && !isHolding && !overUI)
+        {
+            Plot clicked = PlotAt(world);
+            if (clicked != null) OnPlotClicked(clicked);
+            return;
+        }
+
         if (isHolding && !isDragging &&
             Vector2.Distance(pressStart, Input.mousePosition) > dragThreshold)
             isDragging = true;
 
-        // release
         if (isHolding && Input.GetMouseButtonUp(0))
         {
             isHolding = false;
 
             if (isDragging)
             {
-                // drag mode: drop onto whatever plot is under the mouse
-                Plot plot = GetPlotUnderMouse(world);
-                if (plot != null) plot.TryBuild(selected);
-                ClearSelection(); // dropping always ends the action
+                Plot plot = PlotAt(world);
+                if (plot != null)
+                {
+                    if (ExercismActive) plot.TryExercise();
+                    else plot.TryBuild(selected);
+                }
+                ClearSelection();
+                ClearCrucifix();
             }
-            // else: it was a click, so stay selected and wait for a plot click
+            // a click leaves the tool selected, waiting for a plot click
         }
     }
 
@@ -115,14 +137,52 @@ public class BuildManager : MonoBehaviour
     // called by Plot on click when something is selected (click-click mode)
     public void OnPlotClicked(Plot plot)
     {
+        if (ExercismActive)
+        {
+            if (plot.TryExercise()) ClearCrucifix();   // one use per pick-up, like placing a ghost
+            return;
+        }
+
         if (selected == null) return;
-        if (plot.TryBuild(selected))
-            ClearSelection();
+        if (plot.TryBuild(selected)) ClearSelection();
     }
 
-    private Plot GetPlotUnderMouse(Vector3 world)
+    private Plot PlotAt(Vector3 world)
     {
-        Collider2D hit = Physics2D.OverlapPoint(world);
-        return hit != null ? hit.GetComponent<Plot>() : null;
+        foreach (Collider2D c in Physics2D.OverlapPointAll(world))
+        {
+            Plot p = c.GetComponent<Plot>();
+            if (p != null) return p;
+        }
+        return null;
+    }
+
+    private void UpdateHover(Vector3 world, bool active)
+    {
+        Plot p = active ? PlotAt(world) : null;
+        if (p == hovered) return;
+
+        if (hovered != null) hovered.SetHover(false);
+        hovered = p;
+        if (hovered != null) hovered.SetHover(true);
+    }
+
+    public void BeginExercism()
+    {
+        ClearSelection();                    // drop any selected ghost
+        ExercismActive = true;
+        isHolding = true;
+        isDragging = false;
+        pressStart = Input.mousePosition;
+        previewRenderer.sprite = crucifixIcon;
+        previewRenderer.gameObject.SetActive(true);
+    }
+
+    public void ClearCrucifix()
+    {
+        ExercismActive = false;
+        isHolding = false;
+        isDragging = false;
+        previewRenderer.gameObject.SetActive(false);
     }
 }

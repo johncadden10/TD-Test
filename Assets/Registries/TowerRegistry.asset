@@ -62,19 +62,19 @@ MonoBehaviour:
         modifierPrefab: {fileID: 735922247001707355, guid: 9ab656a336bf5a04b930b688104b04fd, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_2_2
-        displayName: Phase Share
-        description: Phantoms cause nearby ghosts to go invisible when phasing
+        displayName: Reclamation
+        description: Phantoms regain lifetime when phasing.
         cost: 450
         ectoCost: 150
-        modifierPrefab: {fileID: 735922247001707355, guid: f356c5073b0bff34abcf7a70d312c05b, type: 3}
+        modifierPrefab: {fileID: 735922247001707355, guid: f59fecee314152248ba238be46ed40f3, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_2_3
-        displayName: Reclamation
-        description: Phantoms gain increased overall lifetime, and regain lifetime
-          when phasing. Lifetime regeneration spreads to nearby ghosts.
+        displayName: Phase Share
+        description: Phantoms gain increased overall lifetime, and spread their phase
+          to surrounding ghosts.
         cost: 1000
         ectoCost: 325
-        modifierPrefab: {fileID: 735922247001707355, guid: f59fecee314152248ba238be46ed40f3, type: 3}
+        modifierPrefab: {fileID: 735922247001707355, guid: f356c5073b0bff34abcf7a70d312c05b, type: 3}
         icon: {fileID: 0}
   - towerId: reaper
     displayName: Reaper
@@ -119,7 +119,7 @@ MonoBehaviour:
       tiers:
       - upgradeId: reaper_2_1
         displayName: Auto Harvest
-        description: Souls are automatically collected.
+        description: Automatically collects nearby souls.
         cost: 100
         ectoCost: 50
         modifierPrefab: {fileID: 5066518819745044181, guid: 85695eb72718b4d46bc6df3983c5bd01, type: 3}
@@ -128,14 +128,14 @@ MonoBehaviour:
         displayName: Coworkers
         description: Souls increase in value the longer they are jarred for.
         cost: 600
-        ectoCost: 275
+        ectoCost: 250
         modifierPrefab: {fileID: 5066518819745044181, guid: 361097da8bd78db409a37a6008006de3, type: 3}
         icon: {fileID: 0}
       - upgradeId: reaper_2_3
         displayName: Older and Wiser
         description: Souls increase in value the longer the reaper is alive.
         cost: 1500
-        ectoCost: 575
+        ectoCost: 525
         modifierPrefab: {fileID: 5066518819745044181, guid: eb46d98d07fe0e94db6840c5765bc251, type: 3}
         icon: {fileID: 0}
   - towerId: banshee
@@ -200,6 +200,71 @@ MonoBehaviour:
         ectoCost: 400
         modifierPrefab: {fileID: 7111036167356293165, guid: d27c857b86b34b84dbe9223be10430e9, type: 3}
         icon: {fileID: 0}
+  - towerId: yokai
+    displayName: Yokai
+    description: Incredibly short lifetime that gives effects on expiration; base
+      deals heavy damage
+    cost: 150
+    placementCooldown: 20
+    baseRange: 1.5
+    baseAttackSpeed: 0
+    baseDamage: 0
+    prefab: {fileID: 6544359843665614805, guid: f32f060c7cbcc32499c8988d1a93a2ec, type: 3}
+    icon: {fileID: 1731234740, guid: 87385522efc739a45a8214f27354887a, type: 3}
+    unlockedByDefault: 0
+    unlockedAfterLevel: 5
+    upgradePaths:
+    - pathId: yokai_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: yokai_1_1
+        displayName: Burning Burst
+        description: Yokai's burst leaves behind flames in its radius that persist
+          for a period of time.
+        cost: 175
+        ectoCost: 100
+        modifierPrefab: {fileID: 2287601713824298542, guid: 7caebd9542d8a404695f96c2397fc02e, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: yokai_1_2
+        displayName: Stunning Blast
+        description: Any star that takes damage from the residual flames is stunned
+          until the disappear.
+        cost: 400
+        ectoCost: 250
+        modifierPrefab: {fileID: 2287601713824298542, guid: 23b5e2e51a65b6041a256794460c1aaf, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: yokai_1_3
+        displayName: Nuclear Explosion
+        description: Gives additional range.
+        cost: 1200
+        ectoCost: 350
+        modifierPrefab: {fileID: 2287601713824298542, guid: 3057929222eac4d4c866f1b7d676f354, type: 3}
+        icon: {fileID: 0}
+    - pathId: yokai_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: yokai_2_1
+        displayName: Restoration
+        description: Burst gives ghosts half of their lifetime back.
+        cost: 100
+        ectoCost: 150
+        modifierPrefab: {fileID: 2287601713824298542, guid: b8c04383f874b5f44a703cc2715ec087, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: yokai_2_2
+        displayName: Overstay
+        description: Yokai's burst can now overheal ghosts.
+        cost: 600
+        ectoCost: 225
+        modifierPrefab: {fileID: 2287601713824298542, guid: ff8771833d3ba0749b955cf35651409f, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: yokai_2_3
+        displayName: Thrive
+        description: Yokai's burst gives ghosts even more of their lifetime back;
+          ghosts have increased rate of fire while overhealed.
+        cost: 1500
+        ectoCost: 350
+        modifierPrefab: {fileID: 2287601713824298542, guid: 36454221c091ecf49b088049564d95e1, type: 3}
+        icon: {fileID: 0}
   - towerId: vanish
     displayName: Vanish
     description: A cheap, short lived ghost that fires weak clouds.
@@ -211,7 +276,7 @@ MonoBehaviour:
     prefab: {fileID: 2866573512344937733, guid: 836361f9356a8104eb9ab27eeaea0d46, type: 3}
     icon: {fileID: -771845516268585335, guid: 9955d6b4d961c5545b656e5d97e545f5, type: 3}
     unlockedByDefault: 0
-    unlockedAfterLevel: 0
+    unlockedAfterLevel: 6
     upgradePaths:
     - pathId: vanish_path_2
       displayName: Path 2
@@ -274,7 +339,7 @@ MonoBehaviour:
     prefab: {fileID: 8310401880475599105, guid: 45c1c99cec321444f814af33a2835b1c, type: 3}
     icon: {fileID: 4559490955071778096, guid: 9c56f818206e0084890cc617ea36fc20, type: 3}
     unlockedByDefault: 0
-    unlockedAfterLevel: 0
+    unlockedAfterLevel: 7
     upgradePaths:
     - pathId: spirit_path_1
       displayName: Path 1
@@ -324,6 +389,67 @@ MonoBehaviour:
         ectoCost: 400
         modifierPrefab: {fileID: 1419669052618122590, guid: d111c26f4f717fc4ca15525837b838e4, type: 3}
         icon: {fileID: 0}
+  - towerId: wisp
+    displayName: Wisp
+    description: Emits a constant gas that generates ecto for each ghost in radius.
+    cost: 250
+    placementCooldown: 30
+    baseRange: 1.5
+    baseAttackSpeed: 0
+    baseDamage: 0
+    prefab: {fileID: 4525154340494255734, guid: a00448043ceaa7f4c9435bd8f686ee60, type: 3}
+    icon: {fileID: -2302556619345206245, guid: bf9a482b2ad82f349954ad5071c3f12c, type: 3}
+    unlockedByDefault: 0
+    unlockedAfterLevel: 9
+    upgradePaths:
+    - pathId: wisp_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: wisp_1_1
+        displayName: ROI
+        description: 
+        cost: 175
+        ectoCost: 200
+        modifierPrefab: {fileID: 959469913739193895, guid: 4298929a99264c04aa17a3d334cdd6a9, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: wisp_1_2
+        displayName: Ecto Refund
+        description: 
+        cost: 400
+        ectoCost: 325
+        modifierPrefab: {fileID: 959469913739193895, guid: 1db7ab9f405cb7b42ad7fe5fa28bd760, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: wisp_1_3
+        displayName: Value Booster
+        description: 
+        cost: 1200
+        ectoCost: 550
+        modifierPrefab: {fileID: 959469913739193895, guid: 8b1f927273b76ff44aa8f684362da562, type: 3}
+        icon: {fileID: 0}
+    - pathId: wisp_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: wisp_2_1
+        displayName: Life Lock
+        description: 
+        cost: 300
+        ectoCost: 275
+        modifierPrefab: {fileID: 959469913739193895, guid: e5892815329834e43bf456c0a7d63042, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: wisp_2_2
+        displayName: Wide Coverage
+        description: 
+        cost: 600
+        ectoCost: 400
+        modifierPrefab: {fileID: 959469913739193895, guid: b8a572610a7a9db4dbac62b5c7deecd2, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: wisp_2_3
+        displayName: Healthy Smoke
+        description: 
+        cost: 1500
+        ectoCost: 525
+        modifierPrefab: {fileID: 959469913739193895, guid: cdbafdb5a01943a4fb9fe3c337acc7df, type: 3}
+        icon: {fileID: 0}
   - towerId: poltergeist
     displayName: Poltergeist
     description: Hurls an array of rock shards with a wide spread.
@@ -334,8 +460,8 @@ MonoBehaviour:
     baseDamage: 0
     prefab: {fileID: 172405090663571643, guid: 829051b417f8d294faf07152e7bc12cc, type: 3}
     icon: {fileID: 3086133501085875104, guid: aa8eeff14fdec8749929a1e49424ad8c, type: 3}
-    unlockedByDefault: 1
-    unlockedAfterLevel: 2
+    unlockedByDefault: 0
+    unlockedAfterLevel: 10
     upgradePaths:
     - pathId: poltergeist_path_1
       displayName: Path 1
@@ -386,130 +512,4 @@ MonoBehaviour:
         cost: 1500
         ectoCost: 400
         modifierPrefab: {fileID: 3468984008453022493, guid: e8a0b3a2481508442bb6a1266fa47669, type: 3}
-        icon: {fileID: 0}
-  - towerId: yokai
-    displayName: Yokai
-    description: Incredibly short lifetime that gives effects on expiration; base
-      deals heavy damage
-    cost: 125
-    placementCooldown: 30
-    baseRange: 1.5
-    baseAttackSpeed: 0
-    baseDamage: 0
-    prefab: {fileID: 6544359843665614805, guid: f32f060c7cbcc32499c8988d1a93a2ec, type: 3}
-    icon: {fileID: 1731234740, guid: 87385522efc739a45a8214f27354887a, type: 3}
-    unlockedByDefault: 1
-    unlockedAfterLevel: 0
-    upgradePaths:
-    - pathId: yokai_path_1
-      displayName: Path 1
-      tiers:
-      - upgradeId: yokai_1_1
-        displayName: Burning Burst
-        description: Yokai's burst leaves behind flames in its radius that persist
-          for a period of time.
-        cost: 175
-        ectoCost: 100
-        modifierPrefab: {fileID: 2287601713824298542, guid: 7caebd9542d8a404695f96c2397fc02e, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: yokai_1_2
-        displayName: Stunning Blast
-        description: Any star that takes damage from the residual flames is stunned
-          until the disappear.
-        cost: 400
-        ectoCost: 250
-        modifierPrefab: {fileID: 2287601713824298542, guid: 23b5e2e51a65b6041a256794460c1aaf, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: yokai_1_3
-        displayName: Nuclear Explosion
-        description: Gives additional range.
-        cost: 1200
-        ectoCost: 350
-        modifierPrefab: {fileID: 2287601713824298542, guid: 3057929222eac4d4c866f1b7d676f354, type: 3}
-        icon: {fileID: 0}
-    - pathId: yokai_path_2
-      displayName: Path 2
-      tiers:
-      - upgradeId: yokai_2_1
-        displayName: Restoration
-        description: Burst gives ghosts half of their lifetime back.
-        cost: 100
-        ectoCost: 150
-        modifierPrefab: {fileID: 2287601713824298542, guid: b8c04383f874b5f44a703cc2715ec087, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: yokai_2_2
-        displayName: Overstay
-        description: Yokai's burst can now overheal ghosts.
-        cost: 600
-        ectoCost: 225
-        modifierPrefab: {fileID: 2287601713824298542, guid: ff8771833d3ba0749b955cf35651409f, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: yokai_2_3
-        displayName: Thrive
-        description: Yokai's burst gives ghosts even more of their lifetime back;
-          ghosts have increased rate of fire while overhealed.
-        cost: 1500
-        ectoCost: 350
-        modifierPrefab: {fileID: 2287601713824298542, guid: 36454221c091ecf49b088049564d95e1, type: 3}
-        icon: {fileID: 0}
-  - towerId: wisp
-    displayName: Wisp
-    description: Emits a constant gas that generates ecto for each ghost in radius.
-    cost: 250
-    placementCooldown: 20
-    baseRange: 1.5
-    baseAttackSpeed: 0
-    baseDamage: 0
-    prefab: {fileID: 4525154340494255734, guid: a00448043ceaa7f4c9435bd8f686ee60, type: 3}
-    icon: {fileID: -2302556619345206245, guid: bf9a482b2ad82f349954ad5071c3f12c, type: 3}
-    unlockedByDefault: 1
-    unlockedAfterLevel: 1
-    upgradePaths:
-    - pathId: wisp_path_1
-      displayName: Path 1
-      tiers:
-      - upgradeId: wisp_1_1
-        displayName: ROI
-        description: 
-        cost: 175
-        ectoCost: 200
-        modifierPrefab: {fileID: 959469913739193895, guid: 4298929a99264c04aa17a3d334cdd6a9, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: wisp_1_2
-        displayName: Ecto Refund
-        description: 
-        cost: 400
-        ectoCost: 325
-        modifierPrefab: {fileID: 959469913739193895, guid: 1db7ab9f405cb7b42ad7fe5fa28bd760, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: wisp_1_3
-        displayName: Value Booster
-        description: 
-        cost: 1200
-        ectoCost: 550
-        modifierPrefab: {fileID: 959469913739193895, guid: 8b1f927273b76ff44aa8f684362da562, type: 3}
-        icon: {fileID: 0}
-    - pathId: wisp_path_2
-      displayName: Path 2
-      tiers:
-      - upgradeId: wisp_2_1
-        displayName: Life Lock
-        description: 
-        cost: 300
-        ectoCost: 275
-        modifierPrefab: {fileID: 959469913739193895, guid: e5892815329834e43bf456c0a7d63042, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: wisp_2_2
-        displayName: Wide Coverage
-        description: 
-        cost: 600
-        ectoCost: 400
-        modifierPrefab: {fileID: 959469913739193895, guid: b8a572610a7a9db4dbac62b5c7deecd2, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: wisp_2_3
-        displayName: Healthy Smoke
-        description: 
-        cost: 1500
-        ectoCost: 525
-        modifierPrefab: {fileID: 959469913739193895, guid: cdbafdb5a01943a4fb9fe3c337acc7df, type: 3}
         icon: {fileID: 0}

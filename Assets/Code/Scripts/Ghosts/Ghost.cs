@@ -44,6 +44,7 @@ public abstract class Ghost : MonoBehaviour
     public int Tier { get; private set; }
     public float LifetimeMultiplier { get; set; } = 1f;
     public float MaxLifetime => lifetime * LifetimeMultiplier;
+    public bool IsExercising {get; private set; }
     
     // range upgrades (Yokai uses this as its blast radius)
     public float RangeMultiplier { get; set; } = 1f;
@@ -449,6 +450,14 @@ public abstract class Ghost : MonoBehaviour
         if (Time.time >= tempPierceUntil) tempPierce = 0;
         tempPierce = Mathf.Max(tempPierce, amount);
         tempPierceUntil = Mathf.Max(tempPierceUntil, Time.time + duration);
+    }
+
+    public void Exercise()
+    {
+        if (isDying || IsExercising) return;
+        IsExercising = true;
+        StopAllCoroutines();
+        Destroy(gameObject);
     }
 
     protected virtual void ApplyTierEffect(int pathIndex, int tierIndex) { }

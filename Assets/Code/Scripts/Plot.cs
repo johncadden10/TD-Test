@@ -6,6 +6,7 @@ public class Plot : MonoBehaviour
     [Header("References")]
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Color hoverColor;
+    [SerializeField] private Color crucifixHoverColor = new Color(1f, 0.4f, 0.4f);
 
     private GameObject tower;
     private Color startColor;
@@ -17,22 +18,16 @@ public class Plot : MonoBehaviour
         startColor = sr.color;
     }
 
-    private void OnMouseEnter()
+    // called by BuildManager, which tracks the hovered plot itself
+    public void SetHover(bool on)
     {
-        // only highlight when something is being placed, and the plot is free
-        if (BuildManager.main.Selected != null && tower == null)
-            sr.color = hoverColor;
-    }
+        if (!on) { sr.color = startColor; return; }
 
-    private void OnMouseExit()
-    {
-        sr.color = startColor;
-    }
+        bool shovel = BuildManager.main.ExercismActive;
+        bool build = BuildManager.main.Selected != null;
 
-    private void OnMouseDown()
-    {
-        if (EventSystem.current.IsPointerOverGameObject()) return; // click was on UI
-        BuildManager.main.OnPlotClicked(this);
+        if (shovel && tower != null) sr.color = crucifixHoverColor;
+        else if (build && tower == null) sr.color = hoverColor;
     }
 
     public bool TryBuild(LevelLoadout.Entry entry)
@@ -56,6 +51,20 @@ public class Plot : MonoBehaviour
 
         BuildManager.main.StartCooldown(entry); // starts when placed, not when picked up
 
+        sr.color = startColor;
+        return true;
+    }
+
+    public bool TryExercise()
+    {
+        if (tower == null) return false;
+
+        Ghost g = tower.GetComponent<Ghost>();
+        if (g != null) g.Exercise();
+        else Destroy(tower);
+
+        tower = null;
+        occupant = null;
         sr.color = startColor;
         return true;
     }

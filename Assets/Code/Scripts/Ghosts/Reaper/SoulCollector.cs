@@ -23,7 +23,7 @@ public class SoulCollector : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            bool placing = BuildManager.main != null && BuildManager.main.Selected != null;
+            bool placing = BuildManager.main != null && (BuildManager.main.Selected != null || BuildManager.main.ExercismActive);
             bool overUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
 
             // a press that starts on UI or while placing a ghost never becomes a sweep

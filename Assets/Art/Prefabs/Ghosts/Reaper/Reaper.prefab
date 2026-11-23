@@ -182,7 +182,7 @@ MonoBehaviour:
   targetingRange: 5
   attackSpeed: 1
   lifetime: 76
-  attackDamage: 25
+  attackDamage: 20
   preDeathDuration: 1
   retargetInterval: 0.1
   damageType: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   vengefulSoulPrefab: {fileID: 4852131558035956408, guid: dfb297e4b809d0d459d9522826c8a6a9, type: 3}
   currencyGain: 25
   generationSpeed: 9
-  vengefulBaseDamage: 18
+  vengefulBaseDamage: 20
 --- !u!212 &4714573070721817640
 SpriteRenderer:
   m_ObjectHideFlags: 0

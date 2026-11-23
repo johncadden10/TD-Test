@@ -67,7 +67,7 @@ MonoBehaviour:
       essenceReward: 500
       worldIndex: 3
       mapPosition: {x: 260, y: 160}
-      connections: 080000000a000000
+      connections: 0200000004000000
       preview: {fileID: 0}
       enemyTypes:
       - red_star
@@ -76,6 +76,39 @@ MonoBehaviour:
       towerSlotCount: 2
       layoutPrefab: {fileID: 2974435398913908714, guid: cf05a8cf3fa70074a8fe486a3d8a54ff, type: 3}
       waves: {fileID: 11400000, guid: 7f8ff3e7775966249867bac3246b158b, type: 2}
+      startingEcto: 125
+    - levelId: world1_level5
+      displayName: Level 1-5
+      sceneName: Level
+      essenceReward: 550
+      worldIndex: 4
+      mapPosition: {x: 280, y: 20}
+      connections: 0300000005000000
+      preview: {fileID: 0}
+      enemyTypes:
+      - red_star
+      - yellow_star
+      - protostar
+      towerSlotCount: 3
+      layoutPrefab: {fileID: 2974435398913908714, guid: 1ab7693344ba82644b60354cde22eb02, type: 3}
+      waves: {fileID: 11400000, guid: 1e9c764aaf3d7604398518c7f5dc9ce1, type: 2}
+      startingEcto: 125
+    - levelId: world1_level6
+      displayName: Level 1-6
+      sceneName: Level
+      essenceReward: 600
+      worldIndex: 5
+      mapPosition: {x: 240, y: -140}
+      connections: 0400000006000000
+      preview: {fileID: 0}
+      enemyTypes:
+      - red_star
+      - yellow_star
+      - red_shooting_star
+      - protostar
+      towerSlotCount: 3
+      layoutPrefab: {fileID: 2974435398913908714, guid: e7e7ad67ac3b85f4a96ef4869e21af4a, type: 3}
+      waves: {fileID: 11400000, guid: 09f357c19b184f640b25823d3c5b7119, type: 2}
       startingEcto: 125
     - levelId: world1_level10
       displayName: Level 1-10

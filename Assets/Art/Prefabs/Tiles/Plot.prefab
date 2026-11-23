@@ -148,4 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 5805831464823133406}
-  hoverColor: {r: 1, g: 1, b: 1, a: 0.11764706}
+  hoverColor: {r: 0.79607844, g: 0.85882354, b: 0.9882353, a: 0.11764706}
+  crucifixHoverColor: {r: 1, g: 0.21568628, b: 0.21568628, a: 0.23529412}
