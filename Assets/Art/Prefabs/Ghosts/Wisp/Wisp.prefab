@@ -114,7 +114,7 @@ MonoBehaviour:
   healthBar: {fileID: 2838085582781147033}
   targetingRange: 1.55
   attackSpeed: 1.75
-  lifetime: 36
+  lifetime: 20
   attackDamage: 0
   preDeathDuration: 1
   retargetInterval: 0.1

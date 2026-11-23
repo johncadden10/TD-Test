@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 8233781696080141978}
   - component: {fileID: 5190541044167306521}
   - component: {fileID: 5619773378750351037}
+  - component: {fileID: -5822036668189646462}
+  - component: {fileID: 3472011254574330398}
   m_Layer: 6
   m_Name: Blue Shooting Star
   m_TagString: Enemy
@@ -84,8 +86,8 @@ SpriteRenderer:
   m_SortingLayerID: 1384647961
   m_SortingLayer: 1
   m_SortingOrder: 4
-  m_Sprite: {fileID: -1413163155605188201, guid: 447a969135b02574b98ba86a7a76e83d, type: 3}
-  m_Color: {r: 0, g: 0.36830664, b: 1, a: 1}
+  m_Sprite: {fileID: 1795733921521743381, guid: 7f105a5dc8ad21149ab80f82aec21a38, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -234,8 +236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boltPrefab: {fileID: 1551245117614602980, guid: 0c2f40404a53bfb4ca951d94179f0e1a, type: 3}
   range: 5
-  fireInterval: 3
-  lifetimeDamage: 6
+  fireInterval: 1.25
+  lifetimeDamage: 2
 --- !u!114 &5619773378750351037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,3 +255,56 @@ MonoBehaviour:
   strength: 0.7
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   skipStatusDamage: 0
+--- !u!95 &-5822036668189646462
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a28b70bed8c6ae143b5eb2c26eb4a07f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3472011254574330398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903896035924657682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2350b5781c54918408b09115983653c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: -5822036668189646462}
+  tierThresholds:
+  - 88
+  - 82
+  - 76
+  - 70
+  - 64
+  - 58
+  - 52
+  - 46
+  - 40
+  - 35
+  - 30
+  - 25
+  - 20
+  - 16
+  - 11
+  - 7
+  - 3

@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24659a2e4681ca54885b3a2c53e8df18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fraction: 0.25
-  cap: 0.5
+  fraction: 0.4
+  cap: 0.8

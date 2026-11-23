@@ -32,16 +32,17 @@ MonoBehaviour:
   - enemyId: red_shooting_star
     displayName: Red Shooting Star
     description: A weak star that can shoot bolts at ghosts to lower their lifetime
-    icon: {fileID: -8284390914871688179, guid: f78e4b89c73d5b744874fa56b298c15b, type: 3}
+    icon: {fileID: 6718631014597374329, guid: 7f105a5dc8ad21149ab80f82aec21a38, type: 3}
   - enemyId: yellow_shooting_star
     displayName: Yellow Shooting Star
     description: An average star that can shoot bolts at ghosts to lower their lifetime
-    icon: {fileID: -3768136888096122267, guid: 3c690e864371ab9479e745b48b1fde6e, type: 3}
+    icon: {fileID: -6881568964117704289, guid: 7f105a5dc8ad21149ab80f82aec21a38, type: 3}
   - enemyId: blue_shooting_star
     displayName: Blue Shooting Star
-    description: An tough star that can shoot bolts at ghosts to lower their lifetime
-    icon: {fileID: -1413163155605188201, guid: 447a969135b02574b98ba86a7a76e83d, type: 3}
-  - enemyId: blue_shooting_star
-    displayName: Blue Shooting Star
-    description: An tough star that can shoot bolts at ghosts to lower their lifetime
-    icon: {fileID: -1413163155605188201, guid: 447a969135b02574b98ba86a7a76e83d, type: 3}
+    description: A tough star that can shoot bolts at ghosts to lower their lifetime
+    icon: {fileID: 1795733921521743381, guid: 7f105a5dc8ad21149ab80f82aec21a38, type: 3}
+  - enemyId: protostar
+    displayName: Protostar
+    description: Fast but weak stars that can only be damaged when in close proximity
+      to other ghosts.
+    icon: {fileID: 8539674532320271272, guid: 9cb0e59fd00a02841952f3e859dfae5c, type: 3}
