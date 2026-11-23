@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6cd1ee373cbeab42b2429ce3ae5b125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ecto: 100
-  bonusPerGhost: 5
+  pulseRateMultiplier: 1.4

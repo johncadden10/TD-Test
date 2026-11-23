@@ -15,6 +15,7 @@ public class Wisp : Ghost
     // changed by upgrade modifiers
     public float EctoMultiplier { get; set; } = 1f;
     public int BonusEctoPerGhost { get; set; }
+    public int FlatEctoPerBurst { get; set; }
     public int ExpireEcto { get; set; }
     public float RefundFraction { get; set; }   // per Wisp
     public float RefundCap { get; set; }        // total across overlapping Wisps
@@ -61,10 +62,12 @@ public class Wisp : Ghost
         foreach (Ghost g in Ghost.Active)
             if (InRange(g)) count++;
 
-        if (count <= 0) return;
-
         int perGhost = Mathf.RoundToInt((ectoPerGhost + BonusEctoPerGhost) * EctoMultiplier);
-        LevelManager.main.IncreaseEcto(perGhost * count);
+        int total = perGhost * count + FlatEctoPerBurst;
+
+        if (total <= 0) return;
+
+        LevelManager.main.IncreaseEcto(total);
 
         if (pulseEffectPrefab != null)
         {

@@ -230,7 +230,7 @@ MonoBehaviour:
         description: Any star that takes damage from the residual flames is stunned
           until the disappear.
         cost: 400
-        ectoCost: 250
+        ectoCost: 225
         modifierPrefab: {fileID: 2287601713824298542, guid: 23b5e2e51a65b6041a256794460c1aaf, type: 3}
         icon: {fileID: 0}
       - upgradeId: yokai_1_3
@@ -247,14 +247,14 @@ MonoBehaviour:
         displayName: Restoration
         description: Burst gives ghosts half of their lifetime back.
         cost: 100
-        ectoCost: 150
+        ectoCost: 75
         modifierPrefab: {fileID: 2287601713824298542, guid: b8c04383f874b5f44a703cc2715ec087, type: 3}
         icon: {fileID: 0}
       - upgradeId: yokai_2_2
         displayName: Overstay
         description: Yokai's burst can now overheal ghosts.
         cost: 600
-        ectoCost: 225
+        ectoCost: 175
         modifierPrefab: {fileID: 2287601713824298542, guid: ff8771833d3ba0749b955cf35651409f, type: 3}
         icon: {fileID: 0}
       - upgradeId: yokai_2_3
@@ -262,7 +262,7 @@ MonoBehaviour:
         description: Yokai's burst gives ghosts even more of their lifetime back;
           ghosts have increased rate of fire while overhealed.
         cost: 1500
-        ectoCost: 350
+        ectoCost: 300
         modifierPrefab: {fileID: 2287601713824298542, guid: 36454221c091ecf49b088049564d95e1, type: 3}
         icon: {fileID: 0}
   - towerId: vanish
@@ -282,25 +282,24 @@ MonoBehaviour:
       displayName: Path 2
       tiers:
       - upgradeId: vanish_1_1
-        displayName: Improved Stats
-        description: Increases range, pierce, and projectile speed.
+        displayName: Don't Vanish
+        description: 
         cost: 100
         ectoCost: 75
         modifierPrefab: {fileID: 4914684363805038858, guid: f48ff1a7899f2184c96844ea3ff69773, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_1_2
-        displayName: Don't Vanish
-        description: Greatly increases lifetime, and allows clouds to ignore belted
-          resistance.
+        displayName: Horizon
+        description: 
         cost: 600
-        ectoCost: 175
+        ectoCost: 125
         modifierPrefab: {fileID: 4914684363805038858, guid: 00c24169398bdc844a8e231e98cf694d, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_1_3
         displayName: Cirrostratus
         description: Clouds are no longer projectiles or magic type damage.
         cost: 1500
-        ectoCost: 300
+        ectoCost: 250
         modifierPrefab: {fileID: 4914684363805038858, guid: 4970afbe9257afb4eae05e42688a99b3, type: 3}
         icon: {fileID: 0}
     - pathId: vanish_path_1
@@ -393,7 +392,7 @@ MonoBehaviour:
     displayName: Wisp
     description: Emits a constant gas that generates ecto for each ghost in radius.
     cost: 250
-    placementCooldown: 30
+    placementCooldown: 20
     baseRange: 1.5
     baseAttackSpeed: 0
     baseDamage: 0
@@ -406,16 +405,16 @@ MonoBehaviour:
       displayName: Path 1
       tiers:
       - upgradeId: wisp_1_1
-        displayName: ROI
+        displayName: Inherent Value
         description: 
         cost: 175
-        ectoCost: 200
+        ectoCost: 125
         modifierPrefab: {fileID: 959469913739193895, guid: 4298929a99264c04aa17a3d334cdd6a9, type: 3}
         icon: {fileID: 0}
       - upgradeId: wisp_1_2
         displayName: Ecto Refund
         description: 
-        cost: 400
+        cost: 325
         ectoCost: 325
         modifierPrefab: {fileID: 959469913739193895, guid: 1db7ab9f405cb7b42ad7fe5fa28bd760, type: 3}
         icon: {fileID: 0}
@@ -423,7 +422,7 @@ MonoBehaviour:
         displayName: Value Booster
         description: 
         cost: 1200
-        ectoCost: 550
+        ectoCost: 525
         modifierPrefab: {fileID: 959469913739193895, guid: 8b1f927273b76ff44aa8f684362da562, type: 3}
         icon: {fileID: 0}
     - pathId: wisp_path_2
@@ -440,7 +439,7 @@ MonoBehaviour:
         displayName: Wide Coverage
         description: 
         cost: 600
-        ectoCost: 400
+        ectoCost: 375
         modifierPrefab: {fileID: 959469913739193895, guid: b8a572610a7a9db4dbac62b5c7deecd2, type: 3}
         icon: {fileID: 0}
       - upgradeId: wisp_2_3

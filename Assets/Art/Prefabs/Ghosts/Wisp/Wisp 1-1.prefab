@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ee825641928de47817e7536c2feda1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ecto: 100
+  flatEcto: 10
+  lifetimeMultiplier: 1.6
