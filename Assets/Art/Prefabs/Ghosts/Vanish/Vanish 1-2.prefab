@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 1.2
   radius: 1.1
-  damageMultiplier: 1
+  damageMultiplier: 0.16666666

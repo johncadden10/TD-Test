@@ -21,6 +21,7 @@ public class SoulCollector : MonoBehaviour
 
     private void Update()
     {
+        if (GameSpeed.IsPaused) { holding = false; return; }
         if (Input.GetMouseButtonDown(0))
         {
             bool placing = BuildManager.main != null && (BuildManager.main.Selected != null || BuildManager.main.ExercismActive);

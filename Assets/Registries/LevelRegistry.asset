@@ -73,7 +73,7 @@ MonoBehaviour:
       - red_star
       - yellow_star
       - red_shooting_star
-      towerSlotCount: 2
+      towerSlotCount: 3
       layoutPrefab: {fileID: 2974435398913908714, guid: cf05a8cf3fa70074a8fe486a3d8a54ff, type: 3}
       waves: {fileID: 11400000, guid: 7f8ff3e7775966249867bac3246b158b, type: 2}
       startingEcto: 125
@@ -89,7 +89,7 @@ MonoBehaviour:
       - red_star
       - yellow_star
       - protostar
-      towerSlotCount: 3
+      towerSlotCount: 4
       layoutPrefab: {fileID: 2974435398913908714, guid: 1ab7693344ba82644b60354cde22eb02, type: 3}
       waves: {fileID: 11400000, guid: 1e9c764aaf3d7604398518c7f5dc9ce1, type: 2}
       startingEcto: 125
@@ -106,7 +106,7 @@ MonoBehaviour:
       - yellow_star
       - red_shooting_star
       - protostar
-      towerSlotCount: 3
+      towerSlotCount: 4
       layoutPrefab: {fileID: 2974435398913908714, guid: e7e7ad67ac3b85f4a96ef4869e21af4a, type: 3}
       waves: {fileID: 11400000, guid: 09f357c19b184f640b25823d3c5b7119, type: 2}
       startingEcto: 125

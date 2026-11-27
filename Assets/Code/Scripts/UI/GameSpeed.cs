@@ -24,6 +24,7 @@ public static class GameSpeed
     public static void Pause()  { pauseCount++; Apply(); }
     public static void Resume() { pauseCount = Mathf.Max(0, pauseCount - 1); Apply(); }
     public static void ClearPauses() { pauseCount = 0; Apply(); }
+    public static bool IsPaused => pauseCount > 0;
 
     private static void Apply()
     {

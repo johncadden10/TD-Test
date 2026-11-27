@@ -26,6 +26,8 @@ public class GameSpeedUI : MonoBehaviour
     private void Update()
     {
         if (!enableHotkeys) return;
+        
+        if (KeybindManager.Pressed(KeybindAction.GameSpeed)) Cycle();
 
         if (Input.GetKeyDown(KeyCode.Equals)) Step(1);
         if (Input.GetKeyDown(KeyCode.Minus))  Step(-1);

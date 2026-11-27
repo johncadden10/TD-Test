@@ -54,26 +54,24 @@ MonoBehaviour:
       displayName: Path 2
       tiers:
       - upgradeId: phantom_2_1
-        displayName: Phantom Sense
-        description: Phantoms phase and become invisible when attacked by a star
-          and take no damage.
+        displayName: Flaming Orbs
+        description: 
         cost: 200
-        ectoCost: 100
+        ectoCost: 150
         modifierPrefab: {fileID: 735922247001707355, guid: 9ab656a336bf5a04b930b688104b04fd, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_2_2
-        displayName: Reclamation
-        description: Phantoms regain lifetime when phasing.
+        displayName: Orb Growth
+        description: 
         cost: 450
-        ectoCost: 150
+        ectoCost: 325
         modifierPrefab: {fileID: 735922247001707355, guid: f59fecee314152248ba238be46ed40f3, type: 3}
         icon: {fileID: 0}
       - upgradeId: phantom_2_3
-        displayName: Phase Share
-        description: Phantoms gain increased overall lifetime, and spread their phase
-          to surrounding ghosts.
+        displayName: Scorched Earth
+        description: 
         cost: 1000
-        ectoCost: 325
+        ectoCost: 400
         modifierPrefab: {fileID: 735922247001707355, guid: f356c5073b0bff34abcf7a70d312c05b, type: 3}
         icon: {fileID: 0}
   - towerId: reaper
@@ -157,24 +155,24 @@ MonoBehaviour:
       - upgradeId: vanish_1_1
         displayName: Quick Clouds
         description: Fires clouds much faster.
-        cost: 175
+        cost: 150
         ectoCost: 75
-        modifierPrefab: {fileID: 4914684363805038858, guid: f48ff1a7899f2184c96844ea3ff69773, type: 3}
+        modifierPrefab: {fileID: 4914684363805038858, guid: 8813058a6ac304c458c868c19327f750, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_1_2
         displayName: Cloudburst
         description: Clouds blow up after a short delay upon impact, dealing damage
           twice.
-        cost: 400
+        cost: 325
         ectoCost: 175
-        modifierPrefab: {fileID: 4914684363805038858, guid: 00c24169398bdc844a8e231e98cf694d, type: 3}
+        modifierPrefab: {fileID: 4914684363805038858, guid: 28c77310df63a744d8f5ff849802e6bd, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_1_3
         displayName: Multi-Cloud
         description: Fires three clouds at once.
-        cost: 1200
+        cost: 900
         ectoCost: 300
-        modifierPrefab: {fileID: 4914684363805038858, guid: 4970afbe9257afb4eae05e42688a99b3, type: 3}
+        modifierPrefab: {fileID: 4914684363805038858, guid: 736c8d090b7ea8c44881590382199fb2, type: 3}
         icon: {fileID: 0}
     - pathId: vanish_path_2
       displayName: Path 2
@@ -182,23 +180,23 @@ MonoBehaviour:
       - upgradeId: vanish_2_1
         displayName: Phase Sense
         description: 
-        cost: 100
-        ectoCost: 100
-        modifierPrefab: {fileID: 4914684363805038858, guid: 8813058a6ac304c458c868c19327f750, type: 3}
+        cost: 75
+        ectoCost: 75
+        modifierPrefab: {fileID: 4914684363805038858, guid: f48ff1a7899f2184c96844ea3ff69773, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_2_2
         displayName: Reclamation
         description: 
-        cost: 600
+        cost: 250
         ectoCost: 200
-        modifierPrefab: {fileID: 4914684363805038858, guid: 28c77310df63a744d8f5ff849802e6bd, type: 3}
+        modifierPrefab: {fileID: 4914684363805038858, guid: 00c24169398bdc844a8e231e98cf694d, type: 3}
         icon: {fileID: 0}
       - upgradeId: vanish_2_3
         displayName: Phase Share
         description: 
-        cost: 1500
+        cost: 800
         ectoCost: 325
-        modifierPrefab: {fileID: 4914684363805038858, guid: 736c8d090b7ea8c44881590382199fb2, type: 3}
+        modifierPrefab: {fileID: 4914684363805038858, guid: 4970afbe9257afb4eae05e42688a99b3, type: 3}
         icon: {fileID: 0}
   - towerId: banshee
     displayName: Banshee

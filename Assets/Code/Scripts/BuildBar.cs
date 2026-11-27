@@ -7,10 +7,11 @@ public class BuildBar : MonoBehaviour
 
     private void Start()
     {
+        int i = 0;
         foreach (LevelLoadout.Entry entry in LevelLoadout.entries)
         {
             GameObject obj = Instantiate(buildButtonPrefab, container);
-            obj.GetComponent<BuildButton>().Setup(entry);
+            obj.GetComponent<BuildButton>().Setup(entry, i++);
         }
     }
 }

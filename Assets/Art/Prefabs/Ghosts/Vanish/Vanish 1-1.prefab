@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935427b1953afb44bbc2652dc961fda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateMultiplier: 2
+  rateMultiplier: 1.4

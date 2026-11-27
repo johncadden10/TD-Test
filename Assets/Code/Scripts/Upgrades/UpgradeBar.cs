@@ -7,10 +7,11 @@ public class UpgradeBar : MonoBehaviour
 
     private void Start()
     {
+        int i = 0;
         foreach (LevelLoadout.Entry entry in LevelLoadout.entries)
         {
             GameObject obj = Instantiate(upgradeButtonPrefab, container);
-            obj.GetComponent<UpgradeButton>().Setup(entry);
-        }
+            obj.GetComponent<UpgradeButton>().Setup(entry, i++);
+}
     }
 }

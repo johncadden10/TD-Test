@@ -38,11 +38,11 @@ public class BuildManager : MonoBehaviour
     }
 
     // called by a build button on pointer down
-    public void BeginSelect(LevelLoadout.Entry entry)
+    public void BeginSelect(LevelLoadout.Entry entry, bool fromKeyboard = false)
     {
         ClearCrucifix();
         selected = entry;
-        isHolding = true;
+        isHolding = !fromKeyboard;
         isDragging = false;
         pressStart = Input.mousePosition;
 
@@ -60,6 +60,7 @@ public class BuildManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameSpeed.IsPaused) return;
         bool active = selected != null || ExercismActive;
 
         if (!active)
@@ -72,7 +73,7 @@ public class BuildManager : MonoBehaviour
         world.z = 0f;
         previewRenderer.transform.position = world;
 
-        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetMouseButtonDown(1))
         {
             ClearSelection();
             ClearCrucifix();
@@ -167,11 +168,11 @@ public class BuildManager : MonoBehaviour
         if (hovered != null) hovered.SetHover(true);
     }
 
-    public void BeginExercism()
+    public void BeginExercism(bool fromKeyboard = false)
     {
         ClearSelection();                    // drop any selected ghost
         ExercismActive = true;
-        isHolding = true;
+        isHolding = !fromKeyboard;
         isDragging = false;
         pressStart = Input.mousePosition;
         previewRenderer.sprite = crucifixIcon;
@@ -184,5 +185,13 @@ public class BuildManager : MonoBehaviour
         isHolding = false;
         isDragging = false;
         previewRenderer.gameObject.SetActive(false);
+    }
+
+    public bool CancelTool()
+    {
+        bool had = selected != null || ExercismActive;
+        ClearSelection();
+        ClearCrucifix();
+        return had;
     }
 }
