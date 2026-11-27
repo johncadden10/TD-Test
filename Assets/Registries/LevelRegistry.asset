@@ -110,6 +110,41 @@ MonoBehaviour:
       layoutPrefab: {fileID: 2974435398913908714, guid: e7e7ad67ac3b85f4a96ef4869e21af4a, type: 3}
       waves: {fileID: 11400000, guid: 09f357c19b184f640b25823d3c5b7119, type: 2}
       startingEcto: 125
+    - levelId: world1_level7
+      displayName: Level 1-7
+      sceneName: Level
+      essenceReward: 800
+      worldIndex: 6
+      mapPosition: {x: 360, y: -220}
+      connections: 0500000007000000
+      preview: {fileID: 0}
+      enemyTypes:
+      - red_star
+      - yellow_star
+      - blue_star
+      - protostar
+      towerSlotCount: 4
+      layoutPrefab: {fileID: 2974435398913908714, guid: 5988acba621f09345b12081c5181f1de, type: 3}
+      waves: {fileID: 11400000, guid: 5668df1dc4be68c419676edcf60ada6d, type: 2}
+      startingEcto: 125
+    - levelId: world1_level8
+      displayName: Level 1-8
+      sceneName: Level
+      essenceReward: 850
+      worldIndex: 9
+      mapPosition: {x: 480, y: -120}
+      connections: 0600000008000000
+      preview: {fileID: 0}
+      enemyTypes:
+      - red_star
+      - yellow_star
+      - red_shooting_star
+      - yellow_shooting_star
+      - protostar
+      towerSlotCount: 4
+      layoutPrefab: {fileID: 2974435398913908714, guid: f28dcec19d7de9c418475746159bfb1c, type: 3}
+      waves: {fileID: 11400000, guid: b304c963e3da3d94c84c85baf4b3bce4, type: 2}
+      startingEcto: 125
     - levelId: world1_level10
       displayName: Level 1-10
       sceneName: Level

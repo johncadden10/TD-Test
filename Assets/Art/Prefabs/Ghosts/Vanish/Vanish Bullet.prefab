@@ -170,7 +170,7 @@ MonoBehaviour:
   blastEffectPrefab: {fileID: 0}
   bulletSpeed: 3
   bulletLifetime: 1.5
-  bulletDamage: 3
+  bulletDamage: 4
   pierce: 0
   turnRate: 0
 --- !u!114 &-8808622916621832454

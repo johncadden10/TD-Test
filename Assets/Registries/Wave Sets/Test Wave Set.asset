@@ -53,7 +53,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
       count: 2
       spawnInterval: 2
-      belted: 1
+      belted: 0
       fused: 0
       constellation: 0
     - enemyPrefab: {fileID: 3903896035924657682, guid: 4bca3e62872aa264e9cb064b395d1768, type: 3}
