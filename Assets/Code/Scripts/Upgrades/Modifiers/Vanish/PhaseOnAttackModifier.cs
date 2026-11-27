@@ -5,11 +5,13 @@ public class PhaseOnAttackModifier : GhostModifier
 {
     [SerializeField] private float duration = 3f;
     [SerializeField] private float cooldown = 5f;
+    [SerializeField] private float lifetimeMultiplier = 1.5f;
 
     protected override void OnAttached()
     {
         ghost.PhaseOnAttack = true;
         ghost.PhaseDuration = duration;
         ghost.PhaseCooldown = cooldown;
+        ghost.LifetimeMultiplier *= lifetimeMultiplier;
     }
 }

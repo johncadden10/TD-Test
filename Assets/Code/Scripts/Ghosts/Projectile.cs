@@ -40,11 +40,25 @@ public class Projectile : MonoBehaviour
     private int hitCount;
     private readonly HashSet<Health> alreadyHit = new HashSet<Health>();
 
+    // flames left where the projectile hits a star
+    private FlameZone flamePrefab;
+    private float flameRadius, flameDuration, flameDamage, flameTick;
+    private LayerMask flameMask;
+
     // delayed blast
     private float blastDelay, blastRadius, blastDamageMultiplier;
     private bool fusing;
     private Transform stuckTo;
     private Vector3 stuckOffset;
+
+    // growth while travelling
+    public float GrowthDamagePerSecond { get; set; }
+    public float GrowthSizePerSecond { get; set; }
+    public float GrowthCap { get; set; } = 3f;   // max multiplier for both damage and size
+    private float age;
+    private Vector3 baseScale;
+
+    private float GrowthBonus => Mathf.Min(GrowthDamagePerSecond * age, GrowthCap);
 
     // poltergeist split
     private GameObject splitPrefab;
@@ -53,6 +67,19 @@ public class Projectile : MonoBehaviour
 
     public void SetTarget(Transform t) { target = t; }
     public void SetDamageType(DamageType type) { damageType = type; }
+
+    public void ConfigureFlames(FlameZone prefab, float radius, float duration, float damagePerTick, float tick, LayerMask mask)
+    {
+        flamePrefab = prefab; flameRadius = radius; flameDuration = duration;
+        flameDamage = damagePerTick; flameTick = tick; flameMask = mask;
+    }
+
+    private void SpawnFlames()
+    {
+        if (flamePrefab == null) return;
+        FlameZone z = Instantiate(flamePrefab, transform.position, Quaternion.identity);
+        z.Init(flameRadius, flameDuration, flameDamage, flameTick, flameMask, false);
+    }
 
     public void ConfigureBlast(float delay, float radius, float damageMultiplier)
     {
@@ -120,10 +147,15 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    private void Awake() { baseScale = transform.localScale; }
+
     private void Update()
     {
         if (fusing && stuckTo != null)
             transform.position = stuckTo.position + stuckOffset; // rides the star while the fuse burns
+        age += Time.deltaTime;
+        if (GrowthSizePerSecond > 0f)
+            transform.localScale = baseScale * Mathf.Min(1f + GrowthSizePerSecond * age, GrowthCap);
     }
 
     protected virtual void FixedUpdate()
@@ -230,11 +262,12 @@ public class Projectile : MonoBehaviour
     {
         if (!alreadyHit.Add(h)) return;
 
-        float dmg = bulletDamage * DamageMultiplier;
+        float dmg = bulletDamage * DamageMultiplier + GrowthBonus;
         if (FusedBonusMultiplier > 1f && h.GetComponent<FusionModifier>() != null)
             dmg *= FusedBonusMultiplier; // applied before the Fusion threshold check
 
         bool landed = h.TakeDamage(MakeDamage(dmg));
+        SpawnFlames();
 
         if (StunOnHit > 0f)
         {

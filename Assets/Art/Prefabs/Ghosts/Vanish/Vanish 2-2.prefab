@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5718436491912773108}
-  - component: {fileID: 4199468787721183198}
+  - component: {fileID: -7722086095160007102}
   m_Layer: 0
   m_Name: Vanish 2-2
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4199468787721183198
+--- !u!114 &-7722086095160007102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4914684363805038858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e621b90081b84c4781594362c491062, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a91479dc290a8d40a3896acfd01fec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 1.2
-  radius: 1.1
-  damageMultiplier: 1
+  lifetimeRegen: 4

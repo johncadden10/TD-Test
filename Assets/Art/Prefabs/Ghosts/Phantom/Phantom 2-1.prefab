@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2512303801841511898}
-  - component: {fileID: 2300876993558891906}
+  - component: {fileID: -2720027989060890278}
   m_Layer: 0
   m_Name: Phantom 2-1
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2300876993558891906
+--- !u!114 &-2720027989060890278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,8 +41,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 735922247001707355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6dffeb3bf007954c8f846a35ae7f59e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a0a492b4d542d44cbaae4fdc78641d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
-  cooldown: 0.1

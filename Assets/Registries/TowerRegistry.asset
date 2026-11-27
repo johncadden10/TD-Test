@@ -138,6 +138,68 @@ MonoBehaviour:
         ectoCost: 525
         modifierPrefab: {fileID: 5066518819745044181, guid: eb46d98d07fe0e94db6840c5765bc251, type: 3}
         icon: {fileID: 0}
+  - towerId: vanish
+    displayName: Vanish
+    description: A cheap, short lived ghost that fires weak clouds.
+    cost: 25
+    placementCooldown: 3
+    baseRange: 2.5
+    baseAttackSpeed: 0
+    baseDamage: 3
+    prefab: {fileID: 2866573512344937733, guid: 836361f9356a8104eb9ab27eeaea0d46, type: 3}
+    icon: {fileID: -771845516268585335, guid: 9955d6b4d961c5545b656e5d97e545f5, type: 3}
+    unlockedByDefault: 0
+    unlockedAfterLevel: 2
+    upgradePaths:
+    - pathId: vanish_path_1
+      displayName: Path 1
+      tiers:
+      - upgradeId: vanish_1_1
+        displayName: Quick Clouds
+        description: Fires clouds much faster.
+        cost: 175
+        ectoCost: 75
+        modifierPrefab: {fileID: 4914684363805038858, guid: f48ff1a7899f2184c96844ea3ff69773, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: vanish_1_2
+        displayName: Cloudburst
+        description: Clouds blow up after a short delay upon impact, dealing damage
+          twice.
+        cost: 400
+        ectoCost: 175
+        modifierPrefab: {fileID: 4914684363805038858, guid: 00c24169398bdc844a8e231e98cf694d, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: vanish_1_3
+        displayName: Multi-Cloud
+        description: Fires three clouds at once.
+        cost: 1200
+        ectoCost: 300
+        modifierPrefab: {fileID: 4914684363805038858, guid: 4970afbe9257afb4eae05e42688a99b3, type: 3}
+        icon: {fileID: 0}
+    - pathId: vanish_path_2
+      displayName: Path 2
+      tiers:
+      - upgradeId: vanish_2_1
+        displayName: Phase Sense
+        description: 
+        cost: 100
+        ectoCost: 100
+        modifierPrefab: {fileID: 4914684363805038858, guid: 8813058a6ac304c458c868c19327f750, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: vanish_2_2
+        displayName: Reclamation
+        description: 
+        cost: 600
+        ectoCost: 200
+        modifierPrefab: {fileID: 4914684363805038858, guid: 28c77310df63a744d8f5ff849802e6bd, type: 3}
+        icon: {fileID: 0}
+      - upgradeId: vanish_2_3
+        displayName: Phase Share
+        description: 
+        cost: 1500
+        ectoCost: 325
+        modifierPrefab: {fileID: 4914684363805038858, guid: 736c8d090b7ea8c44881590382199fb2, type: 3}
+        icon: {fileID: 0}
   - towerId: banshee
     displayName: Banshee
     description: Loud screams do rapid damage close by.
@@ -264,68 +326,6 @@ MonoBehaviour:
         cost: 1500
         ectoCost: 300
         modifierPrefab: {fileID: 2287601713824298542, guid: 36454221c091ecf49b088049564d95e1, type: 3}
-        icon: {fileID: 0}
-  - towerId: vanish
-    displayName: Vanish
-    description: A cheap, short lived ghost that fires weak clouds.
-    cost: 25
-    placementCooldown: 3
-    baseRange: 2.5
-    baseAttackSpeed: 0
-    baseDamage: 3
-    prefab: {fileID: 2866573512344937733, guid: 836361f9356a8104eb9ab27eeaea0d46, type: 3}
-    icon: {fileID: -771845516268585335, guid: 9955d6b4d961c5545b656e5d97e545f5, type: 3}
-    unlockedByDefault: 0
-    unlockedAfterLevel: 6
-    upgradePaths:
-    - pathId: vanish_path_2
-      displayName: Path 2
-      tiers:
-      - upgradeId: vanish_1_1
-        displayName: Don't Vanish
-        description: 
-        cost: 100
-        ectoCost: 75
-        modifierPrefab: {fileID: 4914684363805038858, guid: f48ff1a7899f2184c96844ea3ff69773, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: vanish_1_2
-        displayName: Horizon
-        description: 
-        cost: 600
-        ectoCost: 125
-        modifierPrefab: {fileID: 4914684363805038858, guid: 00c24169398bdc844a8e231e98cf694d, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: vanish_1_3
-        displayName: Cirrostratus
-        description: Clouds are no longer projectiles or magic type damage.
-        cost: 1500
-        ectoCost: 250
-        modifierPrefab: {fileID: 4914684363805038858, guid: 4970afbe9257afb4eae05e42688a99b3, type: 3}
-        icon: {fileID: 0}
-    - pathId: vanish_path_1
-      displayName: Path 1
-      tiers:
-      - upgradeId: vanish_2_1
-        displayName: Quick Clouds
-        description: Fires clouds much faster.
-        cost: 175
-        ectoCost: 100
-        modifierPrefab: {fileID: 4914684363805038858, guid: 8813058a6ac304c458c868c19327f750, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: vanish_2_2
-        displayName: Cloudburst
-        description: Clouds blow up after a short delay upon impact, dealing damage
-          twice.
-        cost: 400
-        ectoCost: 225
-        modifierPrefab: {fileID: 4914684363805038858, guid: 28c77310df63a744d8f5ff849802e6bd, type: 3}
-        icon: {fileID: 0}
-      - upgradeId: vanish_2_3
-        displayName: Multi-Cloud
-        description: Fires three clouds at once.
-        cost: 1200
-        ectoCost: 325
-        modifierPrefab: {fileID: 4914684363805038858, guid: 736c8d090b7ea8c44881590382199fb2, type: 3}
         icon: {fileID: 0}
   - towerId: spirit
     displayName: Spirit
